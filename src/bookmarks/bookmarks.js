@@ -7,27 +7,28 @@ const bookmarkSettings = {
   'M1 HL Raids': false,
   'M2 HL Raids': true,
   'T1 Summons': false,
-  'T2 Summons': false
+  'T2 Summons': false,
 };
 
 const initialize = () => {
   jQuery.getJSON('../../assets/data/bookmarks.json', bookmarks => {
     Object.keys(bookmarks).forEach(key => {
       const bookmark = bookmarks[key];
+      let bookmarksElement;
+
       if (bookmark.url || bookmark.urlKey) {
-        jQuery('#bookmarks').append(getSingleBookmark(key, bookmark));
+        bookmarksElement = getSingleBookmark(key, bookmark);
       } else if (bookmarkSettings[key] !== false) {
-        jQuery('#bookmarks').append(getBookmarksGroup(key, bookmark));
+        bookmarksElement = getBookmarksGroup(key, bookmark);
       }
+      if (bookmarksElement) jQuery('#bookmarks').append(bookmarksElement);
     });
 
-    const jstDate = new Date(new Date().toLocaleString(undefined, { timeZone: 'Japan' }));
+    const jstDate = new Date(new Date().toLocaleString('en-US', { timeZone: 'Japan' }));
     const hour = jstDate.getHours();
     const minutes = jstDate.getMinutes();
-    // jQuery('#time').html(`${hour}:${minutes > 9 ? minutes : '0' + minutes}`);
-    jQuery('#bookmarks').append(
-      `<li class="option disabled"><i>${hour}:${minutes > 9 ? minutes : '0' + minutes} (JST)</i></li>`
-    );
+    const formattedDate = `${hour}:${minutes > 9 ? minutes : '0' + minutes}`;
+    jQuery('#bookmarks').append(`<li class="option disabled"><i>${formattedDate} (JST)</i></li>`);
   });
 };
 
@@ -37,7 +38,7 @@ const onUrlClick = (event, url) => {
       chrome.tabs.update({ active: true, url });
       window.close();
     },
-    2: () => window.open(url)
+    2: () => window.open(url),
   }[event.which]());
 };
 
@@ -82,9 +83,7 @@ const getBookmarksGroup = (key, bookmark) => {
       </span>
       <ul></ul>
     </li>`);
-  container
-    .find('ul')
-    .append(Object.keys(bookmark).map(nestedKey => getSingleBookmark(nestedKey, bookmark[nestedKey])));
+  container.find('ul').append(Object.keys(bookmark).map(nestedKey => getSingleBookmark(nestedKey, bookmark[nestedKey])));
   return container;
 };
 
