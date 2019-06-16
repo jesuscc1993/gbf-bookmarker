@@ -1,0 +1,118 @@
+{
+  "Home": { "url": "/#mypage" },
+  "Party": { "url": "/#party/index/0/npc/0" },
+  "Repeat Quest": { "urlKey": "lastQuest" },
+  "Guild Wars": { "urlKey": "guildWars" },
+  "Event": { "urlKey": "event" },
+  "Me": {
+    "Profile": { "url": "/#profile" },
+    "Journal": { "url": "/#archive/top" },
+    "Crew": { "url": "/#guild" },
+    "Friends": { "url": "/#friend" },
+    "Trophies": { "url": "/#title" }
+  },
+  "Items": {
+    "Inventory": { "url": "/#list" },
+    "Upgrade": { "url": "/#enhancement/weapon/base" },
+    "Uncap": { "url": "/#evolution/weapon/base" },
+    "Stash": { "url": "/#container" },
+    "Crate": { "url": "/#present" },
+    "Supplies": { "url": "/#item" }
+  },
+  "Co-op": {
+    "Co-op": { "url": "/#coopraid" },
+    "Join": { "url": "/#coopraid/offer" },
+    "Shop": { "url": "/#coopraid/lineup" }
+  },
+  "Shop": {
+    "MobaCoins": { "url": "/#shop/moba/0" },
+    "Crystals": { "url": "/#shop/lupi/0" },
+    "Treasure": { "url": "/#shop/exchange/list" },
+    "Pendants": { "url": "/#shop/exchange/points" },
+    "Weapon Series": { "url": "/#archaic" },
+    "Trade Moons": { "url": "/#shop/exchange/moon" },
+    "Journey Drops": { "url": "/#shop/exchange/trajectory" },
+    "Cerulean Stones": { "url": "/#shop/exchange/ceiling" },
+    "Arcanum": { "url": "/#arcarum2/enhancement" }
+  },
+  "Casino": {
+    "Poker": { "url": "/#casino/game/poker/200040" },
+    "Bingo": { "url": "/#casino/game/bingo/300030" },
+    "Cage": { "url": "/#casino/exchange" }
+  },
+  "Draw": {
+    "Rupie": { "url": "/#gacha/normal" },
+    "Premium": { "url": "/#gacha" }
+  },
+  "Quests": {
+    "Featured": { "url": "/#quest/index" },
+    "Special": { "url": "/#quest/extra" },
+    "Raids": { "url": "/#quest/assist" },
+    "Side Stories": { "url": "/#sidestory" },
+    "Fate Episodes": { "url": "/#quest/fate" },
+    "Pending Raids": { "url": "/#quest/assist/unclaimed" },
+    "Trial Battles": { "url": "/#trial_battle" },
+    "Arcanum": { "url": "/#arcarum2" }
+  },
+  "H Raids": {
+    "Tiamat": { "element": "wind", "raidId": 30004 },
+    "Colossus": { "element": "fire", "raidId": 30009 },
+    "Leviatan": { "element": "water", "raidId": 30015 },
+    "Yggdrasil": { "element": "earth", "raidId": 30019 },
+    "Luminiera": { "element": "light", "raidId": 30022 },
+    "Celeste": { "element": "dark", "raidId": 30025 }
+  },
+  "H+ Raids": {
+    "Tiamat": { "element": "wind", "raidId": 30501 },
+    "Colossus": { "element": "fire", "raidId": 30502 },
+    "Leviatan": { "element": "water", "raidId": 30503 },
+    "Yggdrasil": { "element": "earth", "raidId": 30504 },
+    "Luminiera": { "element": "light", "raidId": 30505 },
+    "Celeste": { "element": "dark", "raidId": 30506 }
+  },
+  "M1 Raids": {
+    "Tiamat": { "element": "wind", "raidId": 30005, "raidSubId": 18 },
+    "Colossus": { "element": "fire", "raidId": 30010, "raidSubId": 19 },
+    "Leviatan": { "element": "water", "raidId": 30016, "raidSubId": 20 },
+    "Yggdrasil": { "element": "earth", "raidId": 30026, "raidSubId": 21 },
+    "Luminiera": { "element": "light", "raidId": 30027, "raidSubId": 26 },
+    "Celeste": { "element": "dark", "raidId": 30028, "raidSubId": 31 }
+  },
+  "M1 HL Raids": {
+    "Tiamat": { "element": "wind", "raidId": 30044, "raidSubId": 32 },
+    "Colossus": { "element": "fire", "raidId": 30049, "raidSubId": 47 },
+    "Leviatan": { "element": "water", "raidId": 30051, "raidSubId": 48 },
+    "Yggdrasil": { "element": "earth", "raidId": 30053, "raidSubId": 49 },
+    "Luminiera": { "element": "light", "raidId": 30056, "raidSubId": 50 },
+    "Celeste": { "element": "dark", "raidId": 30058, "raidSubId": 51 }
+  },
+  "M2 HL Raids": {
+    "Grimnir": { "element": "wind", "raidId": 30318, "raidSubId": 525 },
+    "Shiva": { "element": "fire", "raidId": 30315, "raidSubId": 522 },
+    "Europa": { "element": "water", "raidId": 30316, "raidSubId": 523 },
+    "Alexiel": { "element": "earth", "raidId": 30317, "raidSubId": 524 },
+    "Metatron": { "element": "light", "raidId": 30319, "raidSubId": 526 },
+    "Avatar": { "element": "dark", "raidId": 30322, "raidSubId": 527 }
+  },
+  "T1 Summons": {
+    "Nezha": { "element": "wind", "raidId": 30042, "raidSubId": 1343 },
+    "Twin Elements": { "element": "fire", "raidId": 30041, "raidSubId": 1313 },
+    "Macula Marius": { "element": "water", "raidId": 30038, "raidSubId": 1323 },
+    "Medusa": { "element": "earth", "raidId": 30039, "raidSubId": 1333 },
+    "Apollo": { "element": "light", "raidId": 30043, "raidSubId": 1353 },
+    "Olivia": { "element": "dark", "raidId": 30040, "raidSubId": 1363 }
+  },
+  "T2 Summons": {
+    "Garuda": { "element": "wind", "raidId": 30138, "raidSubId": 1343 },
+    "Grani": { "element": "fire", "raidId": 30048, "raidSubId": 1323 },
+    "Athena": { "element": "water", "raidId": 30107, "raidSubId": 1313 },
+    "Baal": { "element": "earth", "raidId": 30137, "raidSubId": 1333 },
+    "Odin": { "element": "light", "raidId": 30046, "raidSubId": 1353 },
+    "Lich": { "element": "dark", "raidId": 30055, "raidSubId": 1363 }
+  },
+  "Extra": {
+    "News": { "url": "/#news" },
+    "Updates": { "url": "/#news/0/1" },
+    "Wiki": { "url": "https://gbf.wiki/Main_Page" }
+  }
+}
