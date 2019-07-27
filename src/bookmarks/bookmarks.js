@@ -1,3 +1,5 @@
+const { storage, tabs } = chrome;
+
 const baseUrl = 'http://game.granbluefantasy.jp';
 
 const bookmarkSettings = {
@@ -8,6 +10,7 @@ const bookmarkSettings = {
   'M2 HL Raids': true,
   'T1 Summons': false,
   'T2 Summons': false,
+  Trials: true,
 };
 
 const initialize = () => {
@@ -35,15 +38,17 @@ const initialize = () => {
 const onUrlClick = (event, url) => {
   ({
     1: () => {
-      chrome.tabs.update({ active: true, url });
+      tabs.update({ active: true, url });
       window.close();
     },
-    2: () => window.open(url),
+    2: () => {
+      tabs.create({ url });
+    },
   }[event.which]());
 };
 
 const onStoredUrlClick = (event, key) => {
-  chrome.storage.sync.get([key], response => {
+  storage.sync.get([key], response => {
     const url = response[key];
     if (url) {
       onUrlClick(event, url);
