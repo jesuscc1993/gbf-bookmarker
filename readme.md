@@ -1,6 +1,15 @@
 # GBF Bookmarker
 
-<p style="text-align: center;"><img src="readme_assets/preview.png"></p>
+![Preview](readme_assets/preview.png)
+
+## Index
+
+- [What it does](#what-it-does)
+- [How it works](#how-it-works)
+- [Limitations](#limitations)
+- [Special bookmarks](#special-bookmarks)
+- [Bookmarks list](#bookmarks-list)
+- [Installation](#installation)
 
 ## What it does
 
