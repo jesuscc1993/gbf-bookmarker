@@ -24,7 +24,7 @@ const initialize = () => {
       const minutes = jstDate.getMinutes();
       const formattedDate = `${hour}:${minutes > 9 ? minutes : '0' + minutes}`;
 
-      const settingsItem = jQuery(`<li class="option"><a>Settings</a></li>`);
+      const settingsItem = jQuery(`<li class="option"><a>Options</a></li>`);
       settingsItem.click(() => tabs.create({ url: `src/options/options.html` }));
       jQuery('#bookmarks').append(settingsItem);
 
