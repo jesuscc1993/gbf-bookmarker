@@ -1,0 +1,50 @@
+body {
+  color: #3e2723;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  margin: 16px 24px;
+  width: 592px;
+  background: url(../../assets/images/backgrounds/bookmarks.jpg) no-repeat;
+  background-position: top left;
+  background-size: cover;
+  /*input[type='checkbox'] {
+    width: 0;
+    margin: 0 20px 0 0;
+
+    &:before {
+      font-family: 'Material Icons';
+      font-size: 18px;
+      color: #1976d2;
+    }
+
+    &:checked {
+      &:before {
+        content: 'check_box';
+      }
+    }
+    &:not(:checked) {
+      &:before {
+        content: 'check_box_outline_blank';
+      }
+    }
+  }*/
+}
+body * {
+  box-sizing: border-box;
+}
+body a {
+  text-decoration: none;
+}
+body form p {
+  display: flex;
+  margin: 0.5em 0;
+}
+body form button {
+  padding: 4px;
+  min-width: 128px;
+}
+body input[type=checkbox] {
+  margin-right: 4px;
+}
+
+/*# sourceMappingURL=options.css.map */

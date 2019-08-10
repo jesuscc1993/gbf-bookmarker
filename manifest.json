@@ -1,20 +1,21 @@
 {
-  "name": "GBF Bookmarker",
-  "description": "Bookmarks ongoing events and more so you do not have to and provides bookmarks to the most useful sections.",
-  "version": "1.0.0",
   "author": "MetalTxus (Jesús Miguel Cruz Cana)",
-  "manifest_version": 2,
+  "background": {
+    "scripts": ["src/background/background.js"]
+  },
+  "browser_action": {
+    "default_popup": "src/bookmarks/bookmarks.html",
+    "default_title": "Show bookmarks"
+  },
+  "description": "Bookmarks ongoing events and more so you do not have to and provides bookmarks to the most useful sections.",
   "icons": {
     "16": "assets/images/icons/icon_16px.png",
     "48": "assets/images/icons/icon.png",
     "128": "assets/images/icons/djeeta.png"
   },
+  "manifest_version": 2,
+  "name": "GBF Bookmarker",
+  "options_page": "src/options/options.html",
   "permissions": ["activeTab", "browsingData", "notifications", "storage", "tabs"],
-  "background": {
-    "scripts": ["src/background/background.js"]
-  },
-  "browser_action": {
-    "default_title": "Show bookmarks",
-    "default_popup": "src/bookmarks/bookmarks.html"
-  }
+  "version": "1.0.0"
 }

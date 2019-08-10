@@ -2,39 +2,35 @@ const { storage, tabs } = chrome;
 
 const baseUrl = 'http://game.granbluefantasy.jp';
 
-const bookmarkSettings = {
-  'H Raids': false,
-  'H+ Raids': true,
-  'M1 HL Raids': true,
-  'M1 Raids': true,
-  'M2 HL Raids': true,
-  'T1 Summons': false,
-  'T2 Summons': false,
-  Extra: false,
-  Inventory: false,
-  Trials: true,
-  Upgrade: false,
-};
-
 const initialize = () => {
-  jQuery.getJSON('../../assets/data/bookmarks.json', bookmarks => {
-    Object.keys(bookmarks).forEach(key => {
-      const bookmark = bookmarks[key];
-      let bookmarksElement;
+  storage.sync.get(['settings'], ({ settings }) => {
+    jQuery.getJSON('../../assets/data/bookmarks.json', bookmarks => {
+      Object.keys(bookmarks).forEach(key => {
+        const bookmark = bookmarks[key];
+        let bookmarksElement;
 
-      if (bookmark.url || bookmark.urlKey) {
-        bookmarksElement = getSingleBookmark(key, bookmark);
-      } else if (bookmarkSettings[key] !== false) {
-        bookmarksElement = getBookmarksGroup(key, bookmark);
-      }
-      if (bookmarksElement) jQuery('#bookmarks').append(bookmarksElement);
+        if (!!settings.bookmarks[key]) {
+          if (bookmark.url || bookmark.urlKey) {
+            bookmarksElement = getSingleBookmark(key, bookmark);
+          } else {
+            bookmarksElement = getBookmarksGroup(key, bookmark);
+          }
+        }
+        if (bookmarksElement) jQuery('#bookmarks').append(bookmarksElement);
+      });
+
+      const jstDate = new Date(new Date().toLocaleString('en-US', { timeZone: 'Japan' }));
+      const hour = jstDate.getHours();
+      const minutes = jstDate.getMinutes();
+      const formattedDate = `${hour}:${minutes > 9 ? minutes : '0' + minutes}`;
+
+      const settingsItem = jQuery(`<li class="option"><a>Settings</a></li>`);
+      settingsItem.click(() => tabs.create({ url: `src/options/options.html` }));
+      jQuery('#bookmarks').append(settingsItem);
+
+      const timeItem = jQuery(`<li class="option disabled"><i>${formattedDate} (JST)</i></li>`);
+      jQuery('#bookmarks').append(timeItem);
     });
-
-    const jstDate = new Date(new Date().toLocaleString('en-US', { timeZone: 'Japan' }));
-    const hour = jstDate.getHours();
-    const minutes = jstDate.getMinutes();
-    const formattedDate = `${hour}:${minutes > 9 ? minutes : '0' + minutes}`;
-    jQuery('#bookmarks').append(`<li class="option disabled"><i>${formattedDate} (JST)</i></li>`);
   });
 };
 
