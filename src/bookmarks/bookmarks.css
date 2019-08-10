@@ -89,7 +89,7 @@ body .bookmark-group .toggle:before {
 }
 body .bookmark-group ul {
   display: flex;
-  flex-direction: row-reverse;
+  justify-content: flex-end;
   flex-wrap: wrap;
   left: 0;
   width: 75%;

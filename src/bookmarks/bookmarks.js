@@ -5,12 +5,15 @@ const baseUrl = 'http://game.granbluefantasy.jp';
 const bookmarkSettings = {
   'H Raids': false,
   'H+ Raids': true,
+  'M1 HL Raids': true,
   'M1 Raids': true,
-  'M1 HL Raids': false,
   'M2 HL Raids': true,
   'T1 Summons': false,
   'T2 Summons': false,
+  Extra: false,
+  Inventory: false,
   Trials: true,
+  Upgrade: false,
 };
 
 const initialize = () => {
