@@ -84,6 +84,6 @@ There are some special bookmarks that work by saving the latest URL the user vis
 
 ## Installation
 
-Chrome's extension store is not free to publish to, so the extension requires to be installed manually. You can follow [these instructions](https://stackoverflow.com/questions/21581645/install-google-chrome-extension-from-script/21588748#21588748) in order todo so (you will need to download and decompress the extension first first).
+Chrome's extension store is not free to publish to, so the extension requires to be installed manually. You can follow [these instructions](https://stackoverflow.com/questions/21581645/install-google-chrome-extension-from-script/21588748#21588748) in order todo so (you will need to download and decompress the extension first).
 
 ![Download](readme_assets/download.png)
