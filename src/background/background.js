@@ -23,17 +23,24 @@ const defaultBookmarkSettings = {
   'M1 HL Raids': true,
   'M2 HL Raids': true,
   'T1 Summons': false,
+  'T1 Summons HL': false,
   'T2 Summons': false,
+  'T3 Summons HL': false,
+  'Beasts HL': false,
+  'Malice HL': false,
+  Nightmare: false,
+  'Nightmare HL': false,
+  Primarch: false,
+  Ultimate: false,
+  'Ultimate HL': false,
+  'Rapture HL': false,
   Trials: true,
   Extra: true,
 };
-
 const initialize = () => {
   storage.sync.get(['settings'], ({ settings }) => {
     if (!settings) {
-      storage.sync.set({
-        settings: { bookmarks: defaultBookmarkSettings },
-      });
+      storage.sync.set({ settings: { bookmarks: defaultBookmarkSettings } });
     }
 
     tabs.onUpdated.addListener((tabId, changeInfo, { url }) => {

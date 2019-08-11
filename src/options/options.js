@@ -4,11 +4,12 @@ let settings = {};
 
 const initialize = () => {
   storage.sync.get(['settings'], response => {
-    jQuery.getJSON('../../assets/data/bookmarks.json', bookmarks => {
-      settings = response.settings;
+    settings = response.settings;
 
+    jQuery.getJSON('../../assets/data/bookmarks.json', bookmarks => {
+      const bookmarksContainer = jQuery('#bookmarks-container');
       Object.keys(bookmarks).forEach(key => {
-        jQuery('#bookmarks').append(getCheckbox(key));
+        bookmarksContainer.append(getCheckbox(key, bookmarks[key]));
       });
     });
   });
@@ -16,15 +17,20 @@ const initialize = () => {
   jQuery('form').submit(submitSettings);
 };
 
-const getCheckbox = bookmarkKey => {
+const getCheckbox = (bookmarkKey, bookmarks) => {
   const id = bookmarkKey.toLowerCase().replace(/ /g, '_');
 
   const checkbox = jQuery(`<input id="${id}" name="${bookmarkKey}" type="checkbox">`);
-  if (!!settings.bookmarks[bookmarkKey]) {
+  if (settings && settings.bookmarks[bookmarkKey]) {
     checkbox.attr('checked', 'checked');
   }
 
   const label = jQuery(`<label for="${id}">${bookmarkKey}</label>`);
+  const childBookmarkKeys = Object.keys(bookmarks);
+  const hasChildBookmarks = !bookmarks.url && !bookmarks.urlKey && childBookmarkKeys.length;
+  if (hasChildBookmarks) {
+    label.attr('title', childBookmarkKeys.join(', '));
+  }
 
   const p = jQuery(`<p>`);
   p.append(checkbox);

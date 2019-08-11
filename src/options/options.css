@@ -1,9 +1,8 @@
 body {
   color: #3e2723;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   margin: 16px 24px;
-  width: 592px;
   background: url(../../assets/images/backgrounds/bookmarks.jpg) no-repeat;
   background-position: top left;
   background-size: cover;
@@ -43,7 +42,7 @@ body form button {
   padding: 4px;
   min-width: 128px;
 }
-body input[type=checkbox] {
+body input[type='checkbox'] {
   margin-right: 4px;
 }
 

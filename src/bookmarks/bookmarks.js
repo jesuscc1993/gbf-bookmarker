@@ -5,18 +5,21 @@ const baseUrl = 'http://game.granbluefantasy.jp';
 const initialize = () => {
   storage.sync.get(['settings'], ({ settings }) => {
     jQuery.getJSON('../../assets/data/bookmarks.json', bookmarks => {
+      const bookmarksContainer = jQuery('#bookmarks-container');
       Object.keys(bookmarks).forEach(key => {
         const bookmark = bookmarks[key];
         let bookmarksElement;
 
-        if (!!settings.bookmarks[key]) {
+        if (settings && settings.bookmarks[key]) {
           if (bookmark.url || bookmark.urlKey) {
             bookmarksElement = getSingleBookmark(key, bookmark);
           } else {
             bookmarksElement = getBookmarksGroup(key, bookmark);
           }
         }
-        if (bookmarksElement) jQuery('#bookmarks').append(bookmarksElement);
+        if (bookmarksElement) {
+          bookmarksContainer.append(bookmarksElement);
+        }
       });
 
       const jstDate = new Date(new Date().toLocaleString('en-US', { timeZone: 'Japan' }));
@@ -26,10 +29,10 @@ const initialize = () => {
 
       const settingsItem = jQuery(`<li class="option"><a>Options</a></li>`);
       settingsItem.click(() => tabs.create({ url: `src/options/options.html` }));
-      jQuery('#bookmarks').append(settingsItem);
+      bookmarksContainer.append(settingsItem);
 
       const timeItem = jQuery(`<li class="option disabled"><i>${formattedDate} (JST)</i></li>`);
-      jQuery('#bookmarks').append(timeItem);
+      bookmarksContainer.append(timeItem);
     });
   });
 };
@@ -57,14 +60,7 @@ const onStoredUrlClick = (event, key) => {
   });
 };
 
-const getRaidBookmark = ({ element, raidId, raidSubId }) => {
-  let url = `/#quest/supporter/${raidId}1/1`;
-  if (raidSubId) url += `/0/${raidSubId}`;
-  return { element, url };
-};
-
-const getSingleBookmark = (key, bookmark) => {
-  const { element, url, urlKey } = bookmark.raidId ? getRaidBookmark(bookmark) : bookmark;
+const getSingleBookmark = (key, { element, url, urlKey }) => {
   const domElement = jQuery(`<li class="option"><a>${key}</a></li>`);
   if (element) {
     domElement.addClass(`${element} element`);

@@ -1,13 +1,13 @@
 body {
   margin: 0;
-  width: 592px;
-  font-family: 'Roboto', sans-serif;
+  width: 640px;
+  font-family: "Roboto", sans-serif;
   font-size: 16px;
 }
 body * {
   box-sizing: border-box;
 }
-body #bookmarks {
+body #bookmarks-container {
   background: url(../../assets/images/backgrounds/bookmarks_half.jpg) no-repeat;
   background-position: top left;
   background-size: cover;
@@ -83,8 +83,8 @@ body .bookmark-group .toggle {
   padding-right: 10px;
 }
 body .bookmark-group .toggle:before {
-  content: 'chevron_left';
-  font-family: 'Material Icons';
+  content: "chevron_left";
+  font-family: "Material Icons";
   vertical-align: middle;
 }
 body .bookmark-group ul {
