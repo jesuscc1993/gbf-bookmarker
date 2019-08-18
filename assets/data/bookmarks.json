@@ -182,7 +182,7 @@
     "Earth": { "element": "earth", "url": "/#quest/supporter/990031/17" },
     "Wind": { "element": "wind", "url": "/#quest/supporter/990041/17" },
     "Light": { "element": "light", "url": "/#quest/supporter/990051/17" },
-    "Odin": { "element": "dark", "url": "/#quest/supporter/990061/17" }
+    "Dark": { "element": "dark", "url": "/#quest/supporter/990061/17" }
   },
   "Extra": {
     "News": { "url": "/#news" },
