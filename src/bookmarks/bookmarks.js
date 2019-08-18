@@ -11,10 +11,10 @@ const initialize = () => {
         let bookmarksElement;
 
         if (settings && settings.bookmarks[key]) {
-          if (bookmark.url || bookmark.urlKey) {
-            bookmarksElement = getSingleBookmark(key, bookmark);
-          } else {
+          if (bookmark.children) {
             bookmarksElement = getBookmarksGroup(key, bookmark);
+          } else {
+            bookmarksElement = getSingleBookmark(key, bookmark);
           }
         }
         if (bookmarksElement) {
@@ -60,31 +60,36 @@ const onStoredUrlClick = (event, key) => {
   });
 };
 
-const getSingleBookmark = (key, { element, url, urlKey }) => {
-  const domElement = jQuery(`<li class="option"><a>${key}</a></li>`);
+const getSingleBookmark = (key, bookmark) => {
+  const { children, element, url, urlKey } = bookmark;
+
+  const bookmarkElement = jQuery(`<li class="option"><a>${key}</a></li>`);
+  if (children) {
+    bookmarkElement.addClass('toggle');
+  }
   if (element) {
-    domElement.addClass(`${element} element`);
+    bookmarkElement.addClass(`${element} element`);
   }
   if (url) {
     const fullUrl = url.includes('http') ? url : `${baseUrl}${url}`;
-    domElement.mousedown(event => onUrlClick(event, fullUrl));
+    bookmarkElement.mousedown(event => onUrlClick(event, fullUrl));
   }
   if (urlKey) {
-    domElement.mousedown(event => onStoredUrlClick(event, urlKey));
+    bookmarkElement.mousedown(event => onStoredUrlClick(event, urlKey));
   }
-  return domElement;
+  return bookmarkElement;
 };
 
 const getBookmarksGroup = (key, bookmark) => {
-  const container = jQuery(`
-    <li class="bookmark-group">
-      <span class="option toggle">
-        ${key}
-      </span>
-      <ul></ul>
-    </li>`);
-  container.find('ul').append(Object.keys(bookmark).map(nestedKey => getSingleBookmark(nestedKey, bookmark[nestedKey])));
-  return container;
+  const { children } = bookmark;
+
+  const containerElement = $(`<ul></ul>`);
+  containerElement.append(Object.keys(children).map(nestedKey => getSingleBookmark(nestedKey, children[nestedKey])));
+
+  const groupElement = jQuery(`<li class="bookmark-group"></li>`);
+  groupElement.append(getSingleBookmark(key, bookmark));
+  groupElement.append(containerElement);
+  return groupElement;
 };
 
 initialize();

@@ -34,6 +34,7 @@ body .option {
   border-left-width: 1px;
   border-bottom-width: 1px;
   background: #fffc;
+  padding: 4px 8px;
 }
 body .option:not(.disabled) {
   cursor: pointer;
@@ -44,7 +45,6 @@ body .option:not(.disabled):hover {
 body .option.toggle,
 body .option > * {
   color: #757575;
-  padding: 4px 8px;
 }
 body .option > *:not(.option) {
   display: block;

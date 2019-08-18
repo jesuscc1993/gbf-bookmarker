@@ -41,6 +41,7 @@ body {
     border-left-width: 1px;
     border-bottom-width: 1px;
     background: #fffc;
+    padding: 4px 8px;
 
     &:not(.disabled) {
       cursor: pointer;
@@ -53,7 +54,6 @@ body {
     &.toggle,
     > * {
       color: #757575;
-      padding: 4px 8px;
     }
 
     > *:not(.option) {
