@@ -25,7 +25,7 @@ const initialize = () => {
               storage.sync.set({ guildWars: url });
             }
           });
-        } else if (isAnySubstringIncluded(url, ['/#event', '/#limited/multi/index/'])) {
+        } else if (isAnySubstringIncluded(url, ['/#event', '/#limited'])) {
           // events
           storage.sync.get(['event'], response => {
             const currentUrl = response.event;
