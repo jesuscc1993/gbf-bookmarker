@@ -108,4 +108,4 @@ Chrome's extension store is not free to publish to, so the extension requires to
 
 1. Download the updated files.
 2. Extract them in the location of your current version of the extension and override them.
-3. Load the updated extension from the "Load unpacked" button [instructions](https://stackoverflow.com/questions/21581645/install-google-chrome-extension-from-script/21588748#21588748).
+3. Load the updated extension from the "Load unpacked" button ([instructions](https://stackoverflow.com/questions/21581645/install-google-chrome-extension-from-script/21588748#21588748)).
