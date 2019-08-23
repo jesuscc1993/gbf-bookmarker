@@ -26,19 +26,19 @@ The extension _only_ communications with the browser through the [Chrome Extensi
 
 ## Limitations
 
-As there's no real communication with the game, quests with requirements or limitted daily runs will return an error when you enter them if you're not supposed to be able. This can be fixed by navigating to a different bookmark.
+As there's no real communication with the game, quests with requirements or limited daily runs will return an error when you enter them if you're not supposed to be able. This can be fixed by navigating to a different bookmark.
 
 For temporal quests and events (including Guild Wars), you will likely be redirected to the home page instead.
 
 ## Special bookmarks
 
-There are some special bookmarks that work by saving the latest URL the user visitted matching certain rules. These include:
+There are some special bookmarks that work by saving the latest URL the user visited matching certain rules. These include:
 
 - **Repeat Quest**: will take you to the last quest where a support summon was selected. Quests with no support summon will not register and I have found no way around this. Luckily, they are a vast minority.
 
-- **Guild Wars**: will take you to the last guild wars (AKA [Unite and Fight](https://gbf.wiki/Unite_and_Fight)) you visitted.
+- **Guild Wars**: will take you to the last guild wars (AKA [Unite and Fight](https://gbf.wiki/Unite_and_Fight)) you visited.
 
-- **Event**: will take you to the last event you visitted.
+- **Event**: will take you to the last event you visited.
 
 ## Bookmarks list
 
@@ -65,15 +65,15 @@ There are some special bookmarks that work by saving the latest URL the user vis
 | **Quests**        | Featured           | Special         | Raids         |
 |                   | Side Stories       | Fate Episodes   | Pending Raids |
 |                   | Trial Battles      | Arcanum         |               |
-| **H Raids**       | Colossus           | Leviatan        | Yggdrasil     |
+| **H Raids**       | Colossus           | Leviathan       | Yggdrasil     |
 |                   | Tiamat             | Luminiera       | Celeste       |
-| **H+ Raids**      | Colossus           | Leviatan        | Yggdrasil     |
+| **H+ Raids**      | Colossus           | Leviathan       | Yggdrasil     |
 |                   | Tiamat             | Luminiera       | Celeste       |
-| **M1 Raids**      | Colossus           | Leviatan        | Yggdrasil     |
+| **M1 Raids**      | Colossus           | Leviathan       | Yggdrasil     |
 |                   | Tiamat             | Luminiera       | Celeste       |
-| **M1+ Raids**     | Colossus           | Leviatan        | Yggdrasil     |
+| **M1+ Raids**     | Colossus           | Leviathan       | Yggdrasil     |
 |                   | Tiamat             | Luminiera       | Celeste       |
-| **M1 HL Raids**   | Colossus           | Leviatan        | Yggdrasil     |
+| **M1 HL Raids**   | Colossus           | Leviathan       | Yggdrasil     |
 |                   | Tiamat             | Luminiera       | Celeste       |
 | **M2 HL Raids**   | Shiva              | Europa          | Alexiel       |
 |                   | Grimnir            | Metatron        | Avatar        |
