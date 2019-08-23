@@ -10,6 +10,7 @@
 - [Special bookmarks](#special-bookmarks)
 - [Bookmarks list](#bookmarks-list)
 - [Installation](#installation)
+- [Update](#update)
 
 ## What it does
 
