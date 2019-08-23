@@ -1,8 +1,9 @@
 body {
-  color: #3e2723;
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   margin: 16px 24px;
+  color: #3e2723;
+  min-height: 100vh;
 
   background: url(../../assets/images/backgrounds/bookmarks.jpg) no-repeat;
   background-position: top left;
@@ -19,7 +20,7 @@ body {
   form {
     p {
       display: flex;
-      margin: 0.5em 0;
+      margin: 0.33em 0;
     }
 
     button {
