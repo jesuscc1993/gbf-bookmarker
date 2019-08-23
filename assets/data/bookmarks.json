@@ -129,6 +129,16 @@
       "Celeste": { "element": "dark", "url": "/#quest/supporter/300281/1/0/31" }
     }
   },
+  "M1+ Raids": {
+    "children": {
+      "Colossus": { "element": "fire", "url": "/#quest/supporter/305091/1/0/19" },
+      "Leviatan": { "element": "water", "url": "/#quest/supporter/305101/1/0/20" },
+      "Yggdrasil": { "element": "earth", "url": "/#quest/supporter/305111/1/0/21" },
+      "Tiamat": { "element": "wind", "url": "/#quest/supporter/305081/1/0/18" },
+      "Luminiera": { "element": "light", "url": "/#quest/supporter/305121/1/0/26" },
+      "Celeste": { "element": "dark", "url": "/#quest/supporter/305131/1/0/31" }
+    }
+  },
   "M1 HL Raids": {
     "children": {
       "Colossus": { "element": "fire", "url": "/#quest/supporter/300491/1/0/47" },
