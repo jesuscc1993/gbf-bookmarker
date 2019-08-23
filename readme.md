@@ -103,3 +103,9 @@ There are some special bookmarks that work by saving the latest URL the user vis
 Chrome's extension store is not free to publish to, so the extension requires to be installed manually. You can follow [these instructions](https://stackoverflow.com/questions/21581645/install-google-chrome-extension-from-script/21588748#21588748) in order todo so (you will need to download and decompress the extension first).
 
 ![Download](readme_assets/download.png)
+
+## Update
+
+1. Download the updated files.
+2. Extract them in the location of your current version of the extension and override them.
+3. Load the updated extension from the "Load unpacked" button [instructions](https://stackoverflow.com/questions/21581645/install-google-chrome-extension-from-script/21588748#21588748).
