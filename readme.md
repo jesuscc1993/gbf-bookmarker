@@ -70,6 +70,8 @@ There are some special bookmarks that work by saving the latest URL the user vis
 |                   | Tiamat             | Luminiera       | Celeste       |
 | **M1 Raids**      | Colossus           | Leviatan        | Yggdrasil     |
 |                   | Tiamat             | Luminiera       | Celeste       |
+| **M1+ Raids**     | Colossus           | Leviatan        | Yggdrasil     |
+|                   | Tiamat             | Luminiera       | Celeste       |
 | **M1 HL Raids**   | Colossus           | Leviatan        | Yggdrasil     |
 |                   | Tiamat             | Luminiera       | Celeste       |
 | **M2 HL Raids**   | Shiva              | Europa          | Alexiel       |
