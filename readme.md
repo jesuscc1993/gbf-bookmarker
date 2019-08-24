@@ -98,7 +98,7 @@ There are some special bookmarks that work by saving the latest URL the user vis
 | **Ultimate HL**   | Ultimate Bahamut   |                 |               |
 | **Rapture HL**    | Lucilius           |                 |               |
 | **Trials**        | Fire               | Water           | Earth         |
-|                   | Wind               | Light           | Odin          |
+|                   | Wind               | Light           | Dark          |
 | **Extra**         | News               | Updates         | Wiki          |
 
 ## Installation
