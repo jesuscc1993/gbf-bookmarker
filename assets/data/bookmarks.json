@@ -182,8 +182,8 @@
   },
   "T2 Summons": {
     "children": {
-      "Grani": { "element": "fire", "url": "/#quest/supporter/300481/1/0/1323" },
-      "Athena": { "element": "water", "url": "/#quest/supporter/301071/1/0/1313" },
+      "Athena": { "element": "fire", "url": "/#quest/supporter/301071/1/0/1313" },
+      "Grani": { "element": "water", "url": "/#quest/supporter/300481/1/0/1323" },
       "Baal": { "element": "earth", "url": "/#quest/supporter/301371/1/0/1333" },
       "Garuda": { "element": "wind", "url": "/#quest/supporter/301381/1/0/1343" },
       "Odin": { "element": "light", "url": "/#quest/supporter/300461/1/0/1353" },

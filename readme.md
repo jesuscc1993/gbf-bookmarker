@@ -82,7 +82,7 @@ There are some special bookmarks that work by saving the latest URL the user vis
 | **T1 Summons HL** | Twin Elements      | Macula Marius   | Medusa        |
 |                   | Nezha              | Apollo          | Olivia        |
 |                   | Rose Queen         |                 |               |
-| **T2 Summons**    | Grani              | Athena          | Baal          |
+| **T2 Summons**    | Athena             | Grani           | Baal          |
 |                   | Garuda             | Odin            | Lich          |
 | **T3 Summons HL** | Prometheus         | Ca Ong          | Gilgamesh     |
 |                   | Morrigna           | Hector          | Anubis        |
