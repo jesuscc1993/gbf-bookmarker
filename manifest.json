@@ -7,6 +7,16 @@
     "default_popup": "src/bookmarks/bookmarks.html",
     "default_title": "Show bookmarks"
   },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "chromeos": "Ctrl+Shift+F",
+        "linux": "Ctrl+Shift+F",
+        "mac": "Command+Shift+F",
+        "windows": "Ctrl+Shift+F"
+      }
+    }
+  },
   "description": "Bookmarks ongoing events and more so you do not have to and provides bookmarks to the most useful sections.",
   "icons": {
     "16": "assets/images/icons/icon_16px.png",
@@ -17,5 +27,5 @@
   "name": "GBF Bookmarker",
   "options_page": "src/options/options.html",
   "permissions": ["activeTab", "browsingData", "notifications", "storage", "tabs"],
-  "version": "1.0.2"
+  "version": "1.0.3"
 }
