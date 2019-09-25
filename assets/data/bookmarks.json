@@ -45,7 +45,7 @@
       "Upgrade": { "url": "/#enhancement/weapon/base" },
       "Uncap": { "url": "/#evolution/weapon/base" },
       "Stash": { "url": "/#container" },
-      "Crate": { "url": "/#present" },
+      "Crate": { "url": "/#present/limit" },
       "Supplies": { "url": "/#item" }
     }
   },
