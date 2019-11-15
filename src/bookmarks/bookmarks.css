@@ -1,5 +1,5 @@
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 14px;
   margin: 0;
   width: 544px;
@@ -83,14 +83,14 @@ body .bookmark-group .toggle {
   padding-right: 10px;
 }
 body .bookmark-group .toggle:before {
-  content: "chevron_left";
-  font-family: "Material Icons";
+  content: 'chevron_left';
+  font-family: 'Material Icons';
   vertical-align: middle;
 }
 body .bookmark-group ul {
   display: flex;
-  justify-content: flex-end;
   flex-wrap: wrap;
+  flex-direction: row-reverse;
   left: 0;
   width: 75%;
   position: absolute;
