@@ -100,6 +100,17 @@
       "Rupie": { "url": "/#gacha/normal" }
     }
   },
+  "Trials": {
+    "url": "/#trial_battle",
+    "children": {
+      "Fire": { "element": "fire", "url": "/#quest/supporter/990011/17" },
+      "Water": { "element": "water", "url": "/#quest/supporter/990021/17" },
+      "Earth": { "element": "earth", "url": "/#quest/supporter/990031/17" },
+      "Wind": { "element": "wind", "url": "/#quest/supporter/990041/17" },
+      "Light": { "element": "light", "url": "/#quest/supporter/990051/17" },
+      "Dark": { "element": "dark", "url": "/#quest/supporter/990061/17" }
+    }
+  },
   "H Raids": {
     "children": {
       "Colossus": { "element": "fire", "url": "/#quest/supporter/300091/1" },
@@ -411,17 +422,6 @@
         "element": "dark",
         "url": "/#quest/supporter/303281/1/0/537"
       }
-    }
-  },
-  "Trials": {
-    "url": "/#trial_battle",
-    "children": {
-      "Fire": { "element": "fire", "url": "/#quest/supporter/990011/17" },
-      "Water": { "element": "water", "url": "/#quest/supporter/990021/17" },
-      "Earth": { "element": "earth", "url": "/#quest/supporter/990031/17" },
-      "Wind": { "element": "wind", "url": "/#quest/supporter/990041/17" },
-      "Light": { "element": "light", "url": "/#quest/supporter/990051/17" },
-      "Dark": { "element": "dark", "url": "/#quest/supporter/990061/17" }
     }
   },
   "Extra": {
