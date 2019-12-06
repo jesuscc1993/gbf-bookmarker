@@ -2,14 +2,15 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   margin: 0;
-  width: 544px;
+  width: 576px;
 
   * {
     box-sizing: border-box;
   }
 
   #bookmarks-container {
-    background: url(../../assets/images/backgrounds/bookmarks_half.jpg) no-repeat;
+    background: url(../../assets/images/backgrounds/bookmarks_half.jpg)
+      no-repeat;
     background-position: top left;
     background-size: cover;
   }
@@ -93,13 +94,15 @@ body {
     }
 
     .toggle {
-      cursor: pointer;
-      padding-right: 10px;
+      position: relative;
 
       &:before {
         content: 'chevron_left';
         font-family: 'Material Icons';
+        left: 0;
+        position: absolute;
         vertical-align: middle;
+        transform: scale(1, 1.5);
       }
     }
 

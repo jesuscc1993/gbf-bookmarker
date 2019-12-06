@@ -1,15 +1,24 @@
+:root {
+  --c-foreground: #3989a9;
+  --c-card-border: #4d94b2;
+  --c-background: #e9f7f8;
+}
+
 body {
   box-sizing: border-box;
-  color: #3e2723;
+  color: var(--c-foreground);
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  font-size: 17px;
   margin: 0;
   min-height: 100vh;
-  padding: 16px 24px;
 
-  background: url(../../assets/images/backgrounds/bookmarks.jpg) no-repeat;
-  background-position: top left;
-  background-size: cover;
+  // background: url(../../assets/images/backgrounds/bookmarks.jpg) no-repeat;
+  // background-position: top left;
+  // background-size: cover;
+
+  background: var(--c-background) url(../../assets/images/settings-lyria.png)
+    no-repeat;
+  background-position: bottom right;
 
   * {
     box-sizing: border-box;
@@ -31,18 +40,23 @@ body {
     }
   }
 
-  input[type='checkbox'] {
-    margin-right: 4px;
-  }
+  // input[type='checkbox'] {
+  //   $size: 15px;
+  //   width: $size;
+  //   height: $size;
+  //   margin: 2px 4px 2px 2px;
+  // }
 
-  /*input[type='checkbox'] {
+  input[type='checkbox'] {
+    $size: 20px;
     width: 0;
-    margin: 0 20px 0 0;
+    margin: 0 $size 0 0;
 
     &:before {
       font-family: 'Material Icons';
-      font-size: 18px;
-      color: #1976d2;
+      font-size: $size;
+      color: var(--c-foreground);
+      cursor: pointer;
     }
 
     &:checked {
@@ -55,5 +69,58 @@ body {
         content: 'check_box_outline_blank';
       }
     }
-  }*/
+  }
+
+  input + label {
+    cursor: pointer;
+    padding-left: 4px;
+  }
+
+  #preview {
+    width: 576px;
+    overflow: hidden;
+    border: none;
+  }
+
+  .flex {
+    display: flex;
+  }
+  .flex1 {
+    flex: 1;
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+    margin: 16px;
+
+    &:not(:first-of-type) {
+      margin-left: 0;
+    }
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 2px solid var(--c-card-border);
+
+    > * {
+      &:not(.equal-padding) {
+        padding: 8px 12px;
+      }
+      &.equal-padding {
+        padding: 12px;
+      }
+    }
+
+    .header {
+      background: var(--c-card-border);
+      font-size: 1.1em;
+      color: white;
+    }
+
+    .contents {
+      flex: 1;
+    }
+  }
 }

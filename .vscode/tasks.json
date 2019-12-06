@@ -4,7 +4,7 @@
     {
       "label": "Compile SASS",
       "type": "shell",
-      "command": "sass ${fileDirname}/${fileBasenameNoExtension}.scss ${fileDirname}/${fileBasenameNoExtension}.css",
+      "command": "sass ${fileDirname}/${fileBasenameNoExtension}.scss ${fileDirname}/${fileBasenameNoExtension}.css --style compressed",
       "group": "build",
       "problemMatcher": []
     }

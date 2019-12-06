@@ -22,16 +22,22 @@ const initialize = () => {
         }
       });
 
-      const jstDate = new Date(new Date().toLocaleString('en-US', { timeZone: 'Japan' }));
+      const jstDate = new Date(
+        new Date().toLocaleString('en-US', { timeZone: 'Japan' }),
+      );
       const hour = jstDate.getHours();
       const minutes = jstDate.getMinutes();
       const formattedDate = `${hour}:${minutes > 9 ? minutes : '0' + minutes}`;
 
       const settingsItem = jQuery(`<li class="option"><a>Options</a></li>`);
-      settingsItem.click(() => tabs.create({ url: `src/options/options.html` }));
+      settingsItem.click(() =>
+        tabs.create({ url: `src/options/options.html` }),
+      );
       bookmarksContainer.append(settingsItem);
 
-      const timeItem = jQuery(`<li class="option disabled"><i>${formattedDate} (JST)</i></li>`);
+      const timeItem = jQuery(
+        `<li class="option disabled"><i>${formattedDate} (JST)</i></li>`,
+      );
       bookmarksContainer.append(timeItem);
     });
   });
@@ -70,11 +76,11 @@ const getSingleBookmark = (key, bookmark) => {
   if (element) {
     bookmarkElement.addClass(`${element} element`);
   }
-  if (url) {
+  if (url && !inPreviewMode()) {
     const fullUrl = url.includes('http') ? url : `${baseUrl}${url}`;
     bookmarkElement.mousedown(event => onUrlClick(event, fullUrl));
   }
-  if (urlKey) {
+  if (urlKey && !inPreviewMode()) {
     bookmarkElement.mousedown(event => onStoredUrlClick(event, urlKey));
   }
   return bookmarkElement;
@@ -84,12 +90,20 @@ const getBookmarksGroup = (key, bookmark) => {
   const { children } = bookmark;
 
   const containerElement = $(`<ul></ul>`);
-  containerElement.append(Object.keys(children).map(nestedKey => getSingleBookmark(nestedKey, children[nestedKey])));
+  containerElement.append(
+    Object.keys(children).map(nestedKey =>
+      getSingleBookmark(nestedKey, children[nestedKey]),
+    ),
+  );
 
   const groupElement = jQuery(`<li class="bookmark-group"></li>`);
   groupElement.append(getSingleBookmark(key, bookmark));
   groupElement.append(containerElement);
   return groupElement;
+};
+
+const inPreviewMode = () => {
+  return location.search.includes('preview=true');
 };
 
 initialize();

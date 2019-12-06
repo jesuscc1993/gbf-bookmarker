@@ -2,19 +2,45 @@
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="options.css" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Roboto"
+    />
   </head>
   <body>
-    <div class="page-contents">
-      <h3>List items</h3>
-      <form>
-        <div id="bookmarks-container"></div>
-        <button>Save</button>
-      </form>
+    <div class="page-contents flex">
+      <div class="col">
+        <div class="card">
+          <div class="header">List items</div>
+          <div class="contents">
+            <form id="bookmarks-container"></form>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card flex1">
+          <div class="header">Live preview</div>
+          <div class="contents equal-padding flex">
+            <iframe
+              id="preview"
+              class="flex1"
+              src="../bookmarks/bookmarks.html?preview=true"
+            ></iframe>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <script type="text/javascript" src="../../vendor/jquery/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="../../vendor/jquery/jquery.min.js"
+    ></script>
     <script type="text/javascript" src="options.js"></script>
   </body>
 </html>
