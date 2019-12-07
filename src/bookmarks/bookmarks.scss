@@ -108,7 +108,7 @@ body {
 
     ul {
       display: flex;
-      justify-content: flex-end;
+      flex-direction: row-reverse;
       flex-wrap: wrap;
       left: 0;
       width: percentage(3/4);
