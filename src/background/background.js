@@ -49,31 +49,39 @@ const initialize = () => {
     });
 
     commands.onCommand.addListener(command => {
-      const action = {
-        'open-event': openEvent,
-        'open-guild-wars': openGuildWars,
-        'repeat-quest': repeatQuest,
-      }[command];
-      action && action();
+      tabs.query({ active: true }, matches => {
+        const firstmatch = matches.find(({ url }) =>
+          url.includes(targetDomain),
+        );
+
+        if (firstmatch) {
+          const action = {
+            'open-event': openEvent,
+            'open-guild-wars': openGuildWars,
+            'repeat-quest': repeatQuest,
+          }[command];
+          action && action(firstmatch.id);
+        }
+      });
     });
   });
 };
 
-const openEvent = () => {
-  openStoredUrl(URL_KEYS.EVENT);
+const openEvent = tabId => {
+  openStoredUrl(tabId, URL_KEYS.EVENT);
 };
-const openGuildWars = () => {
-  openStoredUrl(URL_KEYS.GUILD_WARS);
+const openGuildWars = tabId => {
+  openStoredUrl(tabId, URL_KEYS.GUILD_WARS);
 };
-const repeatQuest = () => {
-  openStoredUrl(URL_KEYS.LAST_QUEST);
+const repeatQuest = tabId => {
+  openStoredUrl(tabId, URL_KEYS.LAST_QUEST);
 };
 
-const openStoredUrl = key => {
+const openStoredUrl = (tabId, key) => {
   storage.sync.get([key], response => {
     const url = response[key];
     if (url) {
-      tabs.update({ active: true, url });
+      tabs.update(tabId, { url });
     } else {
       alert('You need to enter once first to store it.');
     }
