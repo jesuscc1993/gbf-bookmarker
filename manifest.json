@@ -15,6 +15,24 @@
         "mac": "Command+Shift+F",
         "windows": "Ctrl+Shift+F"
       }
+    },
+    "open-event": {
+      "description": "Open event",
+      "suggested_key": {
+        "default": "Shift+Alt+E"
+      }
+    },
+    "open-guild-wars": {
+      "description": "Open Guild Wars",
+      "suggested_key": {
+        "default": "Shift+Alt+G"
+      }
+    },
+    "repeat-quest": {
+      "description": "Repeat quest",
+      "suggested_key": {
+        "default": "Shift+Alt+R"
+      }
     }
   },
   "description": "Bookmarks ongoing events and more so you do not have to and provides bookmarks to the most useful sections.",
@@ -26,6 +44,12 @@
   "manifest_version": 2,
   "name": "GBF Bookmarker",
   "options_page": "src/options/options.html",
-  "permissions": ["activeTab", "browsingData", "notifications", "storage", "tabs"],
+  "permissions": [
+    "activeTab",
+    "browsingData",
+    "notifications",
+    "storage",
+    "tabs"
+  ],
   "version": "1.0.4"
 }
