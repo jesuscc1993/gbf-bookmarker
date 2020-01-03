@@ -49,7 +49,7 @@ const initialize = () => {
     });
 
     commands.onCommand.addListener(command => {
-      tabs.query({ active: true }, matches => {
+      tabs.query({ active: true, lastFocusedWindow: true }, matches => {
         const firstmatch = matches.find(({ url }) =>
           url.includes(targetDomain),
         );
