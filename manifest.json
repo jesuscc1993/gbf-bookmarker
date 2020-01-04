@@ -28,6 +28,18 @@
         "default": "Shift+Alt+G"
       }
     },
+    /*"open-quests": {
+      "description": "Open quests",
+      "suggested_key": {
+        "default": "Shift+Alt+Q"
+      }
+    },
+    "open-party": {
+      "description": "Open party",
+      "suggested_key": {
+        "default": "Shift+Alt+P"
+      }
+    },*/
     "repeat-quest": {
       "description": "Repeat quest",
       "suggested_key": {

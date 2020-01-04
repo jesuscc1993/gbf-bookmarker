@@ -8,6 +8,11 @@ const URL_KEYS = {
   LAST_QUEST: 'lastQuest',
 };
 
+const URLS = {
+  QUEST: `http://${targetDomain}/#quest`,
+  PARTY: `http://${targetDomain}/#party/index/0/npc/0`,
+};
+
 const initialize = () => {
   storage.sync.get(['settings'], ({ settings }) => {
     if (!settings) {
@@ -58,6 +63,8 @@ const initialize = () => {
           const action = {
             'open-event': openEvent,
             'open-guild-wars': openGuildWars,
+            'open-party': openParty,
+            'open-quests': openQuests,
             'repeat-quest': repeatQuest,
           }[command];
           action && action(firstmatch.id);
@@ -77,15 +84,26 @@ const repeatQuest = tabId => {
   openStoredUrl(tabId, URL_KEYS.LAST_QUEST);
 };
 
+const openQuests = tabId => {
+  openUrl(tabId, URLS.QUEST);
+};
+const openParty = tabId => {
+  openUrl(tabId, URLS.PARTY);
+};
+
 const openStoredUrl = (tabId, key) => {
   storage.sync.get([key], response => {
     const url = response[key];
     if (url) {
-      tabs.update(tabId, { url });
+      openUrl(tabId, url);
     } else {
       alert('You need to enter once first to store it.');
     }
   });
+};
+
+const openUrl = (tabId, url) => {
+  tabs.update(tabId, { url });
 };
 
 const isAnySubstringIncluded = (string, substrings) => {
