@@ -63,6 +63,14 @@
       "Arcanum": { "url": "/#arcarum2" }
     }
   },
+  "Raids": {
+    "url": "/#quest/assist",
+    "children": {
+      "Assist": { "url": "/#quest/assist" },
+      "List": { "url": "/#quest/multi/0" },
+      "Results": { "url": "/#quest/assist/unclaimed/0/0" }
+    }
+  },
   "Co-op": {
     "url": "/#coopraid",
     "children": {

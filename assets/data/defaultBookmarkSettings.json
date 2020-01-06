@@ -13,6 +13,7 @@
   "Casino": true,
   "Draw": true,
   "Quests": true,
+  "Raids": false,
   "H Raids": true,
   "H+ Raids": true,
   "M1 Raids": true,
