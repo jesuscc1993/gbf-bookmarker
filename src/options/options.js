@@ -116,11 +116,13 @@ const importSettings = () => {
   const input = prompt(
     'Paste the contents of your "gbf-bookmarker-settings.json" file',
   );
-  try {
-    const settings = JSON.parse(input);
-    applySettings(settings);
-  } catch {
-    alert('ERROR: Invalid settings format.');
+  if (input != null) {
+    try {
+      const settings = JSON.parse(input);
+      applySettings(settings);
+    } catch {
+      alert('ERROR: Invalid settings format.');
+    }
   }
 };
 
