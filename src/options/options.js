@@ -22,6 +22,7 @@ const initialize = () => {
   jQuery('#reset-settings').click(resetSettings);
   jQuery('#export-settings').click(exportSettings);
   jQuery('#import-settings').click(importSettings);
+  jQuery('#import-file-input').on('change', onImportFileChange);
   jQuery('form').submit(submitSettings);
 };
 
@@ -113,17 +114,23 @@ const exportSettings = () => {
 };
 
 const importSettings = () => {
-  const input = prompt(
-    'Paste the contents of your "gbf-bookmarker-settings.json" file',
-  );
-  if (input != null) {
+  var confirmed = confirm('Are you sure you want to override you settings?');
+  if (confirmed) {
+    document.getElementById('import-file-input').click();
+  }
+};
+
+const onImportFileChange = ({ target }) => {
+  const reader = new FileReader();
+  reader.onload = ({ target }) => {
     try {
-      const settings = JSON.parse(input);
+      const settings = JSON.parse(target.result);
       applySettings(settings);
     } catch {
       alert('ERROR: Invalid settings format.');
     }
-  }
+  };
+  reader.readAsText(target.files[0]);
 };
 
 const downloadFile = (content, fileName, type) => {
