@@ -1,6 +1,6 @@
 # GBF Bookmarker
 
-![Preview](readme_assets/preview.png)
+![Preview](readme_assets/popup.png)
 
 ## Index
 
@@ -42,68 +42,11 @@ There are some special bookmarks that work by saving the latest URL the user vis
 
 ## Bookmarks list
 
-| Bookmark group    | Child bookmarks    |                 |               |
-| ----------------- | ------------------ | --------------- | ------------- |
-| **Home**          |                    |                 |               |
-| **Repeat Quest**  |                    |                 |               |
-| **Guild Wars**    |                    |                 |               |
-| **Event**         |                    |                 |               |
-| **Party**         | Characters         | Weapons         | Summons       |
-| **Me**            | Profile            | Journal         | Crew          |
-|                   | Friends            | Trophies        |               |
-| **Inventory**     | Characters         | Weapons         | Summons       |
-|                   | Outfit             |                 |               |
-| **Upgrade**       | Character          | Weapon          | Summon        |
-| **Items**         | Inventory          | Upgrade         | Uncap         |
-|                   | Stash              | Crate           | Supplies      |
-| **Co-op**         | Co-op              | Join            | Shop          |
-| **Shop**          | MobaCoins          | Crystals        | Treasure      |
-|                   | Pendants           | Weapon Series   | Trade Moons   |
-|                   | Journey Drops      | Cerulean Stones | Arcanum       |
-| **Casino**        | Poker              | Bingo           | Cage          |
-| **Draw**          | Premium            | Rupie           |               |
-| **Quests**        | Featured           | Special         | Raids         |
-|                   | Side Stories       | Fate Episodes   | Pending Raids |
-|                   | Trial Battles      | Arcanum         |               |
-| **H Raids**       | Colossus           | Leviathan       | Yggdrasil     |
-|                   | Tiamat             | Luminiera       | Celeste       |
-| **H+ Raids**      | Colossus           | Leviathan       | Yggdrasil     |
-|                   | Tiamat             | Luminiera       | Celeste       |
-| **M1 Raids**      | Colossus           | Leviathan       | Yggdrasil     |
-|                   | Tiamat             | Luminiera       | Celeste       |
-| **M1+ Raids**     | Colossus           | Leviathan       | Yggdrasil     |
-|                   | Tiamat             | Luminiera       | Celeste       |
-| **M1 HL Raids**   | Colossus           | Leviathan       | Yggdrasil     |
-|                   | Tiamat             | Luminiera       | Celeste       |
-| **M2 HL Raids**   | Shiva              | Europa          | Alexiel       |
-|                   | Grimnir            | Metatron        | Avatar        |
-| **T1 Summons**    | Twin Elements      | Macula Marius   | Medusa        |
-|                   | Nezha              | Apollo          | Olivia        |
-| **T1 Summons HL** | Twin Elements      | Macula Marius   | Medusa        |
-|                   | Nezha              | Apollo          | Olivia        |
-|                   | Rose Queen         |                 |               |
-| **T2 Summons**    | Athena             | Grani           | Baal          |
-|                   | Garuda             | Odin            | Lich          |
-| **T3 Summons HL** | Prometheus         | Ca Ong          | Gilgamesh     |
-|                   | Morrigna           | Hector          | Anubis        |
-| **Beasts HL**     | Huanglong & Qilin  |                 |               |
-| **Malice HL**     | Tiamat Malice      |                 |               |
-| **Nightmare**     | Proto Bahamut      | Grand Order     | Huanglong     |
-|                   | Qilin              |                 |               |
-| **Nightmare HL**  | Proto Bahamut      | Akasha          | Lucilius      |
-|                   | The Four Primarchs |                 |               |
-| **Primarchs**     | Michael            | Gabriel         | Uriel         |
-|                   | Raphael            |                 |               |
-| **Ultimate**      | Ultimate Bahamut   |                 |               |
-| **Ultimate HL**   | Ultimate Bahamut   |                 |               |
-| **Rapture HL**    | Lucilius           |                 |               |
-| **Trials**        | Fire               | Water           | Earth         |
-|                   | Wind               | Light           | Dark          |
-| **Extra**         | News               | Updates         | Wiki          |
+### [Bookmarks list](readme_assets/sections/bookmarks-list.md)
 
 ## Installation
 
-Chrome's extension store is not free to publish to, so the extension requires to be installed manually. You can follow [these instructions](https://stackoverflow.com/questions/21581645/install-google-chrome-extension-from-script/21588748#21588748) in order todo so (you will need to download and decompress the extension first).
+Chrome's extension store is not free to publish to, so the extension requires to be installed manually. You can follow [these instructions](readme_assets/sections/installation.md) in order to do so (you will need to download and decompress the extension first).
 
 ![Download](readme_assets/download.png)
 
@@ -111,4 +54,16 @@ Chrome's extension store is not free to publish to, so the extension requires to
 
 1. Download the updated files.
 2. Extract them in the location of your current version of the extension and override them.
-3. Load the updated extension from the "Load unpacked" button ([instructions](https://stackoverflow.com/questions/21581645/install-google-chrome-extension-from-script/21588748#21588748)).
+3. Load the updated extension from the "Load unpacked" button ([instructions](readme_assets/sections/installation.md)).
+
+_NOTE:_ Ocasionally Chrome may think the reimported extension is a differnet one and you will end up with two loaded versions of it. To solve this issue, export your settings on the old version, import them on the new one and delete the former (instructions below).
+
+## Configuration
+
+You can select which menu items you want to see by tapping the "Options" menu item in the extension's popup. You can also export and import your settings, as well as reset them to default.
+
+![Options](readme_assets/options.png)
+
+Additionally, you can configure the extension shortcuts under the URL [chrome://extensions/shortcuts](chrome://extensions/shortcuts)
+
+![Shortcuts](readme_assets/shortcuts.png)
