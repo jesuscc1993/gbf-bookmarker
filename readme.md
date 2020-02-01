@@ -11,6 +11,7 @@
 - [Bookmarks list](#bookmarks-list)
 - [Installation](#installation)
 - [Update](#update)
+- [Configuration](#configuration)
 
 ## What it does
 
