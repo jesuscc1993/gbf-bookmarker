@@ -63,6 +63,8 @@ _NOTE:_ Ocasionally Chrome may think the reimported extension is a differnet one
 
 You can select which menu items you want to see by tapping the "Options" menu item in the extension's popup. You can also export and import your settings, as well as reset them to default.
 
+You can also customize the extension styles, but you will need knowledge of CSS.
+
 ![Options](readme_assets/options.png)
 
 Additionally, you can configure the extension shortcuts under the URL [chrome://extensions/shortcuts](chrome://extensions/shortcuts)
