@@ -4,14 +4,13 @@
     <link rel="stylesheet" type="text/css" href="options.css" />
     <link
       rel="stylesheet"
-      type="text/css"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
     <link
       rel="stylesheet"
-      type="text/css"
       href="https://fonts.googleapis.com/css?family=Roboto"
     />
+    <link rel="stylesheet" href="../../vendor/codemirror/lib/codemirror.css" />
   </head>
   <body>
     <div class="page-contents flex">
@@ -34,6 +33,13 @@
             ></iframe>
           </div>
         </div>
+        <div class="card styles-card">
+          <div class="header">Custom styles</div>
+          <div class="contents equal-padding col">
+            <textarea id="styles" class="flex1"></textarea>
+            <button id="apply-styles">Apply styles</button>
+          </div>
+        </div>
       </div>
       <div class="col">
         <div class="card">
@@ -45,16 +51,15 @@
             <button id="import-settings">Import settings</button>
             <button id="reset-settings">Reset settings</button>
 
-            <input id="import-file-input" type="file" hidden />
+            <input id="import-file-input" type="file" accept=".json" hidden />
           </div>
         </div>
       </div>
     </div>
 
-    <script
-      type="text/javascript"
-      src="../../vendor/jquery/jquery.min.js"
-    ></script>
-    <script type="text/javascript" src="options.js"></script>
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/codemirror/lib/codemirror.js"></script>
+    <script src="../../vendor/codemirror/mode/css.js"></script>
+    <script src="options.js"></script>
   </body>
 </html>

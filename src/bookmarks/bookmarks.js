@@ -3,7 +3,9 @@ const { storage, tabs } = chrome;
 const baseUrl = 'http://game.granbluefantasy.jp';
 
 const initialize = () => {
-  storage.sync.get(['settings'], ({ settings }) => {
+  storage.sync.get(['settings', 'styles'], ({ settings, styles }) => {
+    jQuery(`<style>${styles}</style>`).appendTo('head');
+
     jQuery.getJSON('../../assets/data/bookmarks.json', bookmarks => {
       const bookmarksContainer = jQuery('#bookmarks-container');
       Object.keys(bookmarks).forEach(key => {

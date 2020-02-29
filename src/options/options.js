@@ -1,5 +1,7 @@
 const { storage, tabs } = chrome;
 
+let stylesEditor;
+
 const URL_KEYS = {
   EVENT: 'event',
   GUILD_WARS: 'guildWars',
@@ -7,23 +9,30 @@ const URL_KEYS = {
 };
 
 const initialize = () => {
-  storage.sync.get(['settings'], response => {
-    const settings = response.settings;
-
+  storage.sync.get(['settings', 'styles'], ({ settings, styles }) => {
     jQuery.getJSON('../../assets/data/bookmarks.json', bookmarks => {
       const bookmarksContainer = jQuery('#bookmarks-container');
       Object.keys(bookmarks).forEach(key => {
         bookmarksContainer.append(getCheckbox(settings, key, bookmarks[key]));
       });
     });
+
+    const stylesTextarea = jQuery('#styles');
+    if (styles) stylesTextarea.val(styles);
+    stylesEditor = CodeMirror.fromTextArea(stylesTextarea[0], {
+      lineNumbers: true,
+      tabSize: 2,
+      mode: 'css',
+    });
   });
 
+  jQuery('#apply-styles').click(applyStyles);
   jQuery('#clear-saved-urls').click(clearSavedUrls);
-  jQuery('#reset-settings').click(resetSettings);
   jQuery('#export-settings').click(exportSettings);
   jQuery('#import-settings').click(importSettings);
+  jQuery('#reset-settings').click(resetSettings);
   jQuery('#import-file-input').on('change', onImportFileChange);
-  jQuery('form').submit(submitSettings);
+  jQuery('#bookmarks-container').submit(submitSettings);
 };
 
 const getCheckbox = (settings, bookmarkKey, bookmarks) => {
@@ -102,6 +111,11 @@ const applyDefaultSettings = () => {
 
 const applySettings = settings => {
   storage.sync.set({ settings });
+  location.reload();
+};
+
+const applyStyles = () => {
+  storage.sync.set({ styles: stylesEditor.getValue() });
   location.reload();
 };
 

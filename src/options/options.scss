@@ -76,6 +76,14 @@ body {
     padding-left: 4px;
   }
 
+  .CodeMirror {
+    border: 1px solid #ddd;
+    font-size: 13px;
+    height: 156px;
+    margin-top: 0;
+    width: 576px;
+  }
+
   button {
     background: var(--c-foreground);
     border-radius: 4px;
@@ -101,6 +109,16 @@ body {
     width: 100%;
   }
 
+  .page-contents {
+    > .col {
+      margin: 16px;
+
+      &:not(:first-of-type) {
+        margin-left: 0;
+      }
+    }
+  }
+
   #preview {
     width: 576px;
     overflow: hidden;
@@ -116,10 +134,12 @@ body {
   .col {
     display: flex;
     flex-direction: column;
-    margin: 16px;
 
-    &:not(:first-of-type) {
-      margin-left: 0;
+    > * + * {
+      margin-top: 16px;
+    }
+    > textarea + .CodeMirror {
+      margin-top: 0;
     }
   }
   .column {
