@@ -33,19 +33,7 @@ body {
       display: flex;
       margin: 0.33em 0;
     }
-
-    button {
-      padding: 4px;
-      min-width: 128px;
-    }
   }
-
-  // input[type='checkbox'] {
-  //   $size: 15px;
-  //   width: $size;
-  //   height: $size;
-  //   margin: 2px 4px 2px 2px;
-  // }
 
   input[type='checkbox'] {
     $size: 20px;
@@ -90,6 +78,7 @@ body {
     border: none;
     color: var(--c-background);
     cursor: pointer;
+    display: inline-flex;
     padding: 6px 8px;
     transition: 0.1s;
 
@@ -97,8 +86,8 @@ body {
       filter: brightness(1.2);
     }
 
-    &:not(:last-of-type) {
-      margin-bottom: 4px;
+    .icon + span {
+      flex: 1;
     }
   }
 
@@ -131,20 +120,32 @@ body {
   .flex1 {
     flex: 1;
   }
+  .justify-between {
+    justify-content: space-between;
+  }
   .col {
     display: flex;
     flex-direction: column;
 
-    > * + * {
-      margin-top: 16px;
-    }
     > textarea + .CodeMirror {
       margin-top: 0;
     }
+
+    > button {
+      min-width: 144px;
+
+      &:not(:last-of-type) {
+        margin-bottom: 4px;
+      }
+    }
   }
-  .column {
+  .row {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+
+    > button:not(:last-of-type) {
+      margin-right: 4px;
+    }
   }
 
   .card {
@@ -171,5 +172,32 @@ body {
     .contents {
       flex: 1;
     }
+  }
+
+  .icon {
+    &:before {
+      font-family: 'Material Icons';
+      padding-right: 6px;
+      vertical-align: text-top;
+    }
+
+    &.export:before {
+      content: 'arrow_downward';
+    }
+    &.import:before {
+      content: 'arrow_upward';
+    }
+    &.delete:before {
+      content: 'delete';
+    }
+    &.save:before {
+      content: 'save';
+    }
+  }
+
+  /* layout */
+
+  .margin-top {
+    margin-top: 16px;
   }
 }

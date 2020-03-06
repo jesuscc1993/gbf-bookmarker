@@ -26,13 +26,17 @@ const initialize = () => {
     });
   });
 
-  jQuery('#apply-styles').click(applyStyles);
-  jQuery('#clear-saved-urls').click(clearSavedUrls);
-  jQuery('#export-settings').click(exportSettings);
-  jQuery('#import-settings').click(importSettings);
-  jQuery('#reset-settings').click(resetSettings);
-  jQuery('#import-file-input').on('change', onImportFileChange);
-  jQuery('#bookmarks-container').submit(submitSettings);
+  jQuery('#apply-styles').click(() => applyStyles());
+  jQuery('#bookmarks-container').submit(() => submitSettings());
+  jQuery('#clear-saved-urls').click(() => clearSavedUrls());
+  jQuery('#export-settings').click(() => exportSettings());
+  jQuery('#export-styles').click(() => exportStyles());
+  jQuery('#import-settings').click(() => importSettings());
+  jQuery('#import-styles').click(() => importStyles());
+  jQuery('#reset-settings').click(() => resetSettings());
+  jQuery('#reset-styles').click(() => resetStyles());
+  jQuery('#settings-file-input').on('change', onSettingsFileInputChange);
+  jQuery('#styles-file-input').on('change', onStylesFileInputChange);
 };
 
 const getCheckbox = (settings, bookmarkKey, bookmarks) => {
@@ -72,6 +76,10 @@ const getFormSettings = () => {
   };
 };
 
+const getFormStyles = () => {
+  return stylesEditor.getValue();
+};
+
 const reloadPreview = () => {
   jQuery('#preview')
     .get(0)
@@ -101,6 +109,13 @@ const resetSettings = () => {
   }
 };
 
+const resetStyles = () => {
+  var confirmed = confirm('Are you sure you want to reset you styles?');
+  if (confirmed) {
+    applyStyles('');
+  }
+};
+
 const applyDefaultSettings = () => {
   fetch('../../assets/data/defaultBookmarkSettings.json')
     .then(response => response.json())
@@ -114,8 +129,8 @@ const applySettings = settings => {
   location.reload();
 };
 
-const applyStyles = () => {
-  storage.sync.set({ styles: stylesEditor.getValue() });
+const applyStyles = (styles = getFormStyles()) => {
+  storage.sync.set({ styles });
   location.reload();
 };
 
@@ -127,14 +142,25 @@ const exportSettings = () => {
   );
 };
 
+const exportStyles = () => {
+  downloadFile(getFormStyles(), 'gbf-bookmarker-styles.css', 'text/plain');
+};
+
 const importSettings = () => {
   var confirmed = confirm('Are you sure you want to override you settings?');
   if (confirmed) {
-    document.getElementById('import-file-input').click();
+    document.getElementById('settings-file-input').click();
   }
 };
 
-const onImportFileChange = ({ target }) => {
+const importStyles = () => {
+  var confirmed = confirm('Are you sure you want to override you styles?');
+  if (confirmed) {
+    document.getElementById('styles-file-input').click();
+  }
+};
+
+const onSettingsFileInputChange = ({ target }) => {
   const reader = new FileReader();
   reader.onload = ({ target }) => {
     try {
@@ -144,6 +170,12 @@ const onImportFileChange = ({ target }) => {
       alert('ERROR: Invalid settings format.');
     }
   };
+  reader.readAsText(target.files[0]);
+};
+
+const onStylesFileInputChange = ({ target }) => {
+  const reader = new FileReader();
+  reader.onload = ({ target }) => applyStyles(target.result);
   reader.readAsText(target.files[0]);
 };
 

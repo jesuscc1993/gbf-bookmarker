@@ -33,25 +33,58 @@
             ></iframe>
           </div>
         </div>
-        <div class="card styles-card">
+        <div class="card styles-card margin-top">
           <div class="header">Custom styles</div>
           <div class="contents equal-padding col">
             <textarea id="styles" class="flex1"></textarea>
-            <button id="apply-styles">Apply styles</button>
+            <div class="row margin-top justify-between">
+              <div>
+                <button id="export-styles">
+                  <span class="icon export"></span>
+                  <span>Export styles</span>
+                </button>
+                <button id="import-styles">
+                  <span class="icon import"></span>
+                  <span>Import styles</span>
+                </button>
+                <button id="reset-styles">
+                  <span class="icon delete"></span>
+                  <span>Reset styles</span>
+                </button>
+              </div>
+
+              <div>
+                <button id="apply-styles" class="flex-end">Apply styles</button>
+              </div>
+
+              <input id="styles-file-input" type="file" accept=".css" hidden />
+            </div>
           </div>
         </div>
       </div>
       <div class="col">
         <div class="card">
           <div class="header">More options</div>
-          <div class="contents column">
-            <button id="clear-saved-urls">Clear saved URLs</button>
+          <div class="contents col">
+            <button id="clear-saved-urls">
+              <span class="icon delete"></span>
+              <span>Clear saved URLs</span>
+            </button>
             <hr />
-            <button id="export-settings">Export settings</button>
-            <button id="import-settings">Import settings</button>
-            <button id="reset-settings">Reset settings</button>
+            <button id="export-settings">
+              <span class="icon export"></span>
+              <span>Export settings</span>
+            </button>
+            <button id="import-settings">
+              <span class="icon import"></span>
+              <span>Import settings</span>
+            </button>
+            <button id="reset-settings">
+              <span class="icon delete"></span>
+              <span>Reset settings</span>
+            </button>
 
-            <input id="import-file-input" type="file" accept=".json" hidden />
+            <input id="settings-file-input" type="file" accept=".json" hidden />
           </div>
         </div>
       </div>
