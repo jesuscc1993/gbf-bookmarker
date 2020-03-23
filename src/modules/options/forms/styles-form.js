@@ -1,3 +1,6 @@
+import { downloadFile } from './../../../shared/fileUtils.js';
+import { loadStyles, storeStyles } from './../../../storage/styles.storage.js';
+
 let stylesEditor;
 
 const initializeStyles = () => {

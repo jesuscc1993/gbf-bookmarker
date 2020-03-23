@@ -1,3 +1,5 @@
-const loadStyles = () => getFromStorage('styles');
+import { getFromStorage, setToStorage } from './storage.js';
 
-const storeStyles = settings => setToStorage('styles', settings);
+export const loadStyles = () => getFromStorage('styles');
+
+export const storeStyles = settings => setToStorage('styles', settings);

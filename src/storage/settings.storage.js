@@ -1,3 +1,5 @@
-const loadSettings = () => getFromStorage('settings');
+import { getFromStorage, setToStorage } from './storage.js';
 
-const storeSettings = settings => setToStorage('settings', settings);
+export const loadSettings = () => getFromStorage('settings');
+
+export const storeSettings = settings => setToStorage('settings', settings);

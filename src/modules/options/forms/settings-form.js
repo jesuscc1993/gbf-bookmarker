@@ -1,3 +1,9 @@
+import { downloadFile } from './../../../shared/fileUtils.js';
+import {
+  loadSettings,
+  storeSettings,
+} from './../../../storage/settings.storage.js';
+
 const URL_KEYS = {
   EVENT: 'event',
   GUILD_WARS: 'guildWars',
@@ -120,6 +126,12 @@ const onSettingsFileInputChange = ({ target }) => {
     }
   };
   reader.readAsText(target.files[0]);
+};
+
+const reloadPreview = () => {
+  jQuery('#preview')
+    .get(0)
+    .contentWindow.location.reload();
 };
 
 initializeSettings();
