@@ -43,21 +43,20 @@ There are some special bookmarks that work by saving the latest URL the user vis
 
 ## Bookmarks list
 
-### [Bookmarks list](readme_assets/sections/bookmarks-list.md)
+- ### [Bookmarks list](readme_assets/sections/bookmarks-list.md)
 
 ## Installation
 
-Chrome's extension store is not free to publish to, so the extension requires to be installed manually. You can follow [these instructions](readme_assets/sections/installation.md) in order to do so (you will need to download and decompress the extension first).
+Chrome's extension store is not free to publish to, so the extension requires to be installed manually.
 
-![Download](readme_assets/download.png)
+You will need to download and unpack the [latest release](https://github.com/jesuscc1993/gbf-bookmarker/releases/) and then follow [these instructions](readme_assets/sections/installation.md).
 
 ## Update
 
-1. Download the updated files.
-2. Extract them in the location of your current version of the extension and override them.
-3. Load the updated extension from the "Load unpacked" button ([instructions](readme_assets/sections/installation.md)).
-
-_NOTE:_ Ocasionally Chrome may think the reimported extension is a differnet one and you will end up with two loaded versions of it. To solve this issue, export your settings on the old version, import them on the new one and delete the former (instructions below).
+1. Export your settings and styles in the options page.
+2. Uninstall your current version of the extension (right-click the icon and select **Remove from Chrome**).
+3. Install the latest release following the [installation instructions](#installation).
+4. Import back your settings and styles.
 
 ## Configuration
 
