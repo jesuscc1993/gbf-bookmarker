@@ -1,0 +1,55 @@
+{
+  "author": "MetalTxus (Jesús Miguel Cruz Cana)",
+  "background": {
+    "scripts": ["src/modules/background/background.js"]
+  },
+  "browser_action": {
+    "default_popup": "src/modules/bookmarks/bookmarks.html",
+    "default_title": "Show bookmarks"
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "chromeos": "Ctrl+Shift+F",
+        "linux": "Ctrl+Shift+F",
+        "mac": "Command+Shift+F",
+        "windows": "Ctrl+Shift+F"
+      }
+    },
+    "open-event": {
+      "description": "Open event",
+      "suggested_key": {
+        "default": "Shift+Alt+E"
+      }
+    },
+    "open-guild-wars": {
+      "description": "Open Guild Wars",
+      "suggested_key": {
+        "default": "Shift+Alt+G"
+      }
+    },
+    "repeat-quest": {
+      "description": "Repeat quest",
+      "suggested_key": {
+        "default": "Shift+Alt+R"
+      }
+    }
+  },
+  "description": "Bookmarks ongoing events and more so you do not have to and provides bookmarks to the most useful sections.",
+  "icons": {
+    "16": "assets/images/icons/icon_16px.png",
+    "48": "assets/images/icons/icon.png",
+    "128": "assets/images/icons/icon.png"
+  },
+  "manifest_version": 2,
+  "name": "GBF Bookmarker",
+  "options_page": "src/modules/options/options.html",
+  "permissions": [
+    "activeTab",
+    "browsingData",
+    "notifications",
+    "storage",
+    "tabs"
+  ],
+  "version": "1.0.6"
+}

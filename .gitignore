@@ -1,0 +1,5 @@
+*.css.map
+*.scss
+.vscode
+readme.md
+readme_assets/
