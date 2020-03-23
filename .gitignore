@@ -1,5 +1,6 @@
 *.css.map
 *.scss
 .vscode
+node_modules
 readme.md
 readme_assets/
