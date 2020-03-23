@@ -1,0 +1,21 @@
+{
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/jesuscc1993/gbf-bookmarker/issues"
+  },
+  "description": "Bookmarks ongoing events and more so you do not have to and provides bookmarks to the most useful sections.",
+  "homepage": "https://github.com/jesuscc1993/gbf-bookmarker#readme",
+  "main": "index.js",
+  "name": "gbf-bookmarker",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesuscc1993/gbf-bookmarker.git"
+  },
+  "scripts": {
+    "build": "rimraf **/*.scss && rimraf **/*.css.map && rimraf **/*.md && rimraf readme_assets && git checkout release"
+  },
+  "version": "1.0.6",
+  "dependencies": {
+    "rimraf": "^3.0.2"
+  }
+}
