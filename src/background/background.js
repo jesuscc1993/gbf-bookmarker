@@ -16,12 +16,10 @@ const URLS = {
 const initialize = () => {
   storage.sync.get(['settings'], ({ settings }) => {
     if (!settings) {
-      fetch('../../assets/data/defaultBookmarkSettings.json')
+      fetch('../../assets/data/defaultSettings.json')
         .then(response => response.json())
-        .then(defaultBookmarkSettings => {
-          storage.sync.set({
-            settings: { bookmarks: defaultBookmarkSettings },
-          });
+        .then(defaultSettings => {
+          storage.sync.set({ settings: defaultSettings });
         });
     }
 

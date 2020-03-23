@@ -25,9 +25,9 @@ const initializeSettings = () => {
 };
 
 const applyDefaultSettings = () => {
-  fetch('../../assets/data/defaultBookmarkSettings.json')
+  fetch('../../assets/data/defaultSettings.json')
     .then(response => response.json())
-    .then(bookmarks => applySettings({ bookmarks }));
+    .then(defaultSettings => applySettings(defaultSettings));
 };
 
 const applySettings = settings => {
