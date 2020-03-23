@@ -1,5 +1,23 @@
 import { getFromStorage, setToStorage } from './storage.js';
 
-export const loadSettings = () => getFromStorage('settings');
+export const URL_KEYS = {
+  EVENT: 'event',
+  GUILD_WARS: 'guildWars',
+  LAST_QUEST: 'lastQuest',
+};
 
-export const storeSettings = settings => setToStorage('settings', settings);
+export const loadSettings = () => {
+  return getFromStorage(['settings']).then(response => response.settings);
+};
+
+export const storeSettings = settings => {
+  return setToStorage({ settings }).then(response => response.settings);
+};
+
+export const removeStoredUrls = () => {
+  return removeFromStorage([
+    URL_KEYS.EVENT,
+    URL_KEYS.GUILD_WARS,
+    URL_KEYS.LAST_QUEST,
+  ]);
+};

@@ -1,13 +1,19 @@
 const { storage } = chrome;
 
-export const getFromStorage = key => {
+export const getFromStorage = keys => {
   return new Promise(resolve => {
-    storage.sync.get([key], response => resolve(response[key]));
+    storage.sync.get(keys, response => resolve(response));
   });
 };
 
-export const setToStorage = (key, value) => {
+export const setToStorage = value => {
   return new Promise(resolve => {
-    storage.sync.set({ [key]: value }, () => resolve(value));
+    storage.sync.set(value, () => resolve(value));
+  });
+};
+
+export const removeFromStorage = keys => {
+  return new Promise(resolve => {
+    storage.sync.remove(keys, () => resolve());
   });
 };

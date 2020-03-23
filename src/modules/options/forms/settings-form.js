@@ -1,14 +1,9 @@
 import { downloadFile } from './../../../shared/fileUtils.js';
 import {
   loadSettings,
+  removeStoredUrls,
   storeSettings,
 } from './../../../storage/settings.storage.js';
-
-const URL_KEYS = {
-  EVENT: 'event',
-  GUILD_WARS: 'guildWars',
-  LAST_QUEST: 'lastQuest',
-};
 
 const initializeSettings = () => {
   loadSettings().then(settings => {
@@ -43,12 +38,7 @@ const applySettings = settings => {
 };
 
 const clearSavedUrls = () => {
-  storage.sync.remove([
-    URL_KEYS.EVENT,
-    URL_KEYS.GUILD_WARS,
-    URL_KEYS.LAST_QUEST,
-  ]);
-  alert('Saved URLs have been cleared.');
+  removeStoredUrls.then(() => alert('Saved URLs have been cleared.'));
 };
 
 const exportSettings = () => {
@@ -109,10 +99,7 @@ const resetSettings = () => {
 };
 
 const submitSettings = () => {
-  storage.sync.set({
-    settings: getFormSettings(),
-  });
-  reloadPreview();
+  storeSettings(getFormSettings()).then(() => reloadPreview());
 };
 
 const onSettingsFileInputChange = ({ target }) => {

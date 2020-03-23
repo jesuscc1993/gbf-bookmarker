@@ -1,18 +1,4 @@
 {
-  "_disabled_commands": {
-    "open-party": {
-      "description": "Open party",
-      "suggested_key": {
-        "default": "Shift+Alt+P"
-      }
-    },
-    "open-quests": {
-      "description": "Open quests",
-      "suggested_key": {
-        "default": "Shift+Alt+Q"
-      }
-    }
-  },
   "author": "MetalTxus (Jesús Miguel Cruz Cana)",
   "background": {
     "scripts": ["src/modules/background/background.js"]
