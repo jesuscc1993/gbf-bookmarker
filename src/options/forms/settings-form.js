@@ -5,7 +5,7 @@ const URL_KEYS = {
 };
 
 const initializeSettings = () => {
-  storage.sync.get(['settings'], ({ settings }) => {
+  loadSettings().then(settings => {
     jQuery.getJSON('../../assets/data/bookmarks.json', bookmarks => {
       const bookmarksContainer = jQuery('#bookmarks-container');
       Object.keys(bookmarks).forEach(key => {
@@ -31,8 +31,7 @@ const applyDefaultSettings = () => {
 };
 
 const applySettings = settings => {
-  storage.sync.set({ settings });
-  location.reload();
+  storeSettings(settings).then(() => location.reload());
 };
 
 const clearSavedUrls = () => {

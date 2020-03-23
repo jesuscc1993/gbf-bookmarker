@@ -1,7 +1,7 @@
 let stylesEditor;
 
 const initializeStyles = () => {
-  storage.sync.get(['styles'], ({ styles }) => {
+  loadStyles().then(styles => {
     const stylesTextarea = jQuery('#styles');
     if (styles) stylesTextarea.val(styles);
     stylesEditor = CodeMirror.fromTextArea(stylesTextarea[0], {
@@ -19,8 +19,7 @@ const initializeStyles = () => {
 };
 
 const applyStyles = (styles = getFormStyles()) => {
-  storage.sync.set({ styles });
-  location.reload();
+  storeStyles(styles).then(() => location.reload());
 };
 
 const exportStyles = () => {
