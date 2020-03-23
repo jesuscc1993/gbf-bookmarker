@@ -31,15 +31,17 @@ const getFormStyles = () => {
 };
 
 const importStyles = () => {
-  var confirmed = confirm('Are you sure you want to override you styles?');
-  if (confirmed) {
+  const formHasValue = getFormStyles();
+  if (
+    !formHasValue ||
+    confirm('Are you sure you want to override you styles?')
+  ) {
     document.getElementById('styles-file-input').click();
   }
 };
 
 const resetStyles = () => {
-  var confirmed = confirm('Are you sure you want to reset you styles?');
-  if (confirmed) {
+  if (confirm('Are you sure you want to reset you styles?')) {
     applyStyles('');
   }
 };

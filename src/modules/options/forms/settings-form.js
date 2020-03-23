@@ -6,14 +6,16 @@ const URL_KEYS = {
 
 const initializeSettings = () => {
   loadSettings().then(settings => {
-    jQuery.getJSON('../../assets/data/bookmarks.json', bookmarks => {
-      const bookmarksContainer = jQuery('#bookmarks-container');
-      Object.keys(bookmarks).forEach(key => {
-        bookmarksContainer.append(
-          getBookmarkCheckbox(settings, key, bookmarks[key]),
-        );
+    fetch('../../../assets/data/bookmarks.json')
+      .then(response => response.json())
+      .then(bookmarks => {
+        const bookmarksContainer = jQuery('#bookmarks-container');
+        Object.keys(bookmarks).forEach(key => {
+          bookmarksContainer.append(
+            getBookmarkCheckbox(settings, key, bookmarks[key]),
+          );
+        });
       });
-    });
   });
 
   jQuery('#bookmarks-container').submit(() => submitSettings());
@@ -25,7 +27,7 @@ const initializeSettings = () => {
 };
 
 const applyDefaultSettings = () => {
-  fetch('../../assets/data/defaultSettings.json')
+  fetch('../../../assets/data/defaultSettings.json')
     .then(response => response.json())
     .then(defaultSettings => applySettings(defaultSettings));
 };
@@ -89,15 +91,13 @@ const getFormSettings = () => {
 };
 
 const importSettings = () => {
-  var confirmed = confirm('Are you sure you want to override you settings?');
-  if (confirmed) {
+  if (confirm('Are you sure you want to override you settings?')) {
     document.getElementById('settings-file-input').click();
   }
 };
 
 const resetSettings = () => {
-  var confirmed = confirm('Are you sure you want to reset you settings?');
-  if (confirmed) {
+  if (confirm('Are you sure you want to reset you settings?')) {
     applyDefaultSettings();
   }
 };

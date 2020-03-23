@@ -14,12 +14,12 @@ const URLS = {
 };
 
 const initialize = () => {
-  loadSettings().then(settings => {
+  storage.sync.get('settings', ({ settings }) => {
     if (!settings) {
-      fetch('../../assets/data/defaultSettings.json')
+      fetch('../../../assets/data/defaultSettings.json')
         .then(response => response.json())
         .then(defaultSettings => {
-          storeSettings(defaultSettings);
+          storage.sync.set({ settings: defaultSettings });
         });
     }
 

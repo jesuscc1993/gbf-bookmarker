@@ -6,42 +6,46 @@ const initialize = () => {
   storage.sync.get(['settings', 'styles'], ({ settings, styles }) => {
     jQuery(`<style>${styles}</style>`).appendTo('head');
 
-    jQuery.getJSON('../../assets/data/bookmarks.json', bookmarks => {
-      const bookmarksContainer = jQuery('#bookmarks-container');
-      Object.keys(bookmarks).forEach(key => {
-        const bookmark = bookmarks[key];
-        let bookmarksElement;
+    fetch('../../../assets/data/bookmarks.json')
+      .then(response => response.json())
+      .then(bookmarks => {
+        const bookmarksContainer = jQuery('#bookmarks-container');
+        Object.keys(bookmarks).forEach(key => {
+          const bookmark = bookmarks[key];
+          let bookmarksElement;
 
-        if (settings && settings.bookmarks[key]) {
-          if (bookmark.children) {
-            bookmarksElement = getBookmarksGroup(key, bookmark);
-          } else {
-            bookmarksElement = getSingleBookmark(key, bookmark);
+          if (settings && settings.bookmarks[key]) {
+            if (bookmark.children) {
+              bookmarksElement = getBookmarksGroup(key, bookmark);
+            } else {
+              bookmarksElement = getSingleBookmark(key, bookmark);
+            }
           }
-        }
-        if (bookmarksElement) {
-          bookmarksContainer.append(bookmarksElement);
-        }
+          if (bookmarksElement) {
+            bookmarksContainer.append(bookmarksElement);
+          }
+        });
+
+        const jstDate = new Date(
+          new Date().toLocaleString('en-US', { timeZone: 'Japan' }),
+        );
+        const hour = jstDate.getHours();
+        const minutes = jstDate.getMinutes();
+        const formattedDate = `${hour}:${
+          minutes > 9 ? minutes : '0' + minutes
+        }`;
+
+        const settingsItem = jQuery(`<li class="option"><a>Options</a></li>`);
+        settingsItem.click(() =>
+          tabs.create({ url: `src/modules/options/options.html` }),
+        );
+        bookmarksContainer.append(settingsItem);
+
+        const timeItem = jQuery(
+          `<li class="option disabled"><i>${formattedDate} (JST)</i></li>`,
+        );
+        bookmarksContainer.append(timeItem);
       });
-
-      const jstDate = new Date(
-        new Date().toLocaleString('en-US', { timeZone: 'Japan' }),
-      );
-      const hour = jstDate.getHours();
-      const minutes = jstDate.getMinutes();
-      const formattedDate = `${hour}:${minutes > 9 ? minutes : '0' + minutes}`;
-
-      const settingsItem = jQuery(`<li class="option"><a>Options</a></li>`);
-      settingsItem.click(() =>
-        tabs.create({ url: `src/options/options.html` }),
-      );
-      bookmarksContainer.append(settingsItem);
-
-      const timeItem = jQuery(
-        `<li class="option disabled"><i>${formattedDate} (JST)</i></li>`,
-      );
-      bookmarksContainer.append(timeItem);
-    });
   });
 };
 
