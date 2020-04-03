@@ -12,7 +12,7 @@
     "url": "git+https://github.com/jesuscc1993/gbf-bookmarker.git"
   },
   "scripts": {
-    "build": "rimraf **/*.scss && rimraf **/*.css.map && rimraf **/*.md && rimraf readme_assets && git checkout release"
+    "build": "rimraf dist && cp -r src dist && rimraf dist/**/*.scss && rimraf dist/**/*.css.map && rimraf dist/**/*.md"
   },
   "version": "1.0.6",
   "dependencies": {
