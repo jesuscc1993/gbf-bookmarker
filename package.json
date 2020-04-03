@@ -14,7 +14,7 @@
   "scripts": {
     "build": "rimraf dist && cp -r src dist && rimraf dist/**/*.scss && rimraf dist/**/*.css.map && rimraf dist/**/*.md"
   },
-  "version": "1.0.6",
+  "version": "1.0.7",
   "dependencies": {
     "rimraf": "^3.0.2"
   }
