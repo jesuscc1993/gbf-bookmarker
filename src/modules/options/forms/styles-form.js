@@ -1,4 +1,4 @@
-import { downloadFile } from './../../../shared/fileUtils.js';
+import { downloadFile } from './../../../shared/file.utils.js';
 import { loadStyles, storeStyles } from './../../../storage/styles.storage.js';
 
 let stylesEditor;
