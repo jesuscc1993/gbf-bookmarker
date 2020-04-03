@@ -14,14 +14,20 @@
       rel="stylesheet"
       href="../../../vendor/codemirror/lib/codemirror.css"
     />
+    <link rel="stylesheet" href="../../shared/tooltip/tooltip.css" />
   </head>
   <body>
     <div class="page-contents flex">
       <div class="col">
         <div class="card">
-          <div class="header">List items</div>
+          <div class="header justify-between">
+            <span>List items</span>
+            <span class="icon info with-tooltip">
+              <span class="tooltip">Drag items to rearrange</span>
+            </span>
+          </div>
           <div class="contents">
-            <form id="bookmarks-container"></form>
+            <form id="bookmarks-form"></form>
           </div>
         </div>
       </div>
@@ -99,6 +105,7 @@
     <script src="../../../vendor/codemirror/lib/codemirror.js"></script>
     <script src="../../../vendor/codemirror/mode/css.js"></script>
     <script src="../../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../../vendor/sortable-js/sortable.min.js"></script>
 
     <script type="module" src="forms/settings-form.js"></script>
     <script type="module" src="forms/styles-form.js"></script>

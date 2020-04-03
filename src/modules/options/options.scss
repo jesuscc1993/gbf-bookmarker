@@ -161,8 +161,13 @@ body {
 
     .header {
       background: var(--c-card-border);
-      font-size: 1.1em;
       color: white;
+      display: inline-flex;
+      font-size: 1.1em;
+
+      .icon {
+        font-size: 0.9em;
+      }
     }
 
     .contents {
@@ -171,10 +176,11 @@ body {
   }
 
   .icon {
+    align-items: center;
+    display: inline-flex;
+
     &:before {
       font-family: 'Material Icons';
-      padding-right: 6px;
-      vertical-align: text-top;
     }
 
     &.export:before {
@@ -189,6 +195,16 @@ body {
     &.save:before {
       content: 'save';
     }
+    &.info:before {
+      content: 'info';
+    }
+
+    & + * {
+      padding-left: 6px;
+    }
+  }
+  * + .icon {
+    padding-left: 6px;
   }
 
   /* layout */

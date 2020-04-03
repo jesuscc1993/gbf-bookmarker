@@ -1,30 +1,38 @@
-import { downloadFile } from './../../../shared/fileUtils.js';
+import { downloadFile } from './../../../shared/file.utils.js';
+import { getSortedBookmarks } from './../../../shared/settings.utils.js';
 import {
   loadSettings,
   removeStoredUrls,
   storeSettings,
 } from './../../../storage/settings.storage.js';
 
+const bookmarksForm = jQuery('#bookmarks-form');
+
 const initializeSettings = () => {
   loadSettings().then(settings => {
     fetch('../../../assets/data/bookmarks.json')
       .then(response => response.json())
       .then(bookmarks => {
-        const bookmarksContainer = jQuery('#bookmarks-container');
-        Object.keys(bookmarks).forEach(key => {
-          bookmarksContainer.append(
+        getSortedBookmarks(bookmarks, settings).forEach(key => {
+          bookmarksForm.append(
             getBookmarkCheckbox(settings, key, bookmarks[key]),
           );
         });
       });
   });
 
-  jQuery('#bookmarks-container').submit(() => submitSettings());
+  bookmarksForm.submit(() => submitSettings());
   jQuery('#clear-saved-urls').click(() => clearSavedUrls());
   jQuery('#export-settings').click(() => exportSettings());
   jQuery('#import-settings').click(() => importSettings());
   jQuery('#reset-settings').click(() => resetSettings());
   jQuery('#settings-file-input').on('change', onSettingsFileInputChange);
+
+  new Sortable(bookmarksForm[0], {
+    animation: 150,
+    ghostClass: 'blue-background-class',
+    onUpdate: submitSettings,
+  });
 };
 
 const applyDefaultSettings = () => {
@@ -75,14 +83,22 @@ const getBookmarkCheckbox = (settings, bookmarkKey, bookmarks) => {
 };
 
 const getFormBookmarks = () => {
-  return jQuery('form')
+  return bookmarksForm
     .serializeArray()
     .reduce((formData, field) => ({ ...formData, [field.name]: true }), {});
+};
+
+const getFormBookmarksOrder = () => {
+  return bookmarksForm
+    .find(':checkbox')
+    .toArray()
+    .map(({ name }) => name);
 };
 
 const getFormSettings = () => {
   return {
     bookmarks: getFormBookmarks(),
+    bookmarksOrder: getFormBookmarksOrder(),
   };
 };
 

@@ -1,3 +1,5 @@
+import { getSortedBookmarks } from './../../shared/settings.utils.js';
+
 const { storage, tabs } = chrome;
 
 const baseUrl = 'http://game.granbluefantasy.jp';
@@ -10,7 +12,7 @@ const initialize = () => {
       .then(response => response.json())
       .then(bookmarks => {
         const bookmarksContainer = jQuery('#bookmarks-container');
-        Object.keys(bookmarks).forEach(key => {
+        getSortedBookmarks(bookmarks, settings).forEach(key => {
           const bookmark = bookmarks[key];
           let bookmarksElement;
 
