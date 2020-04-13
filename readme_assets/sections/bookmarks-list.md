@@ -55,6 +55,6 @@
 | **Ultimate**      | Ultimate Bahamut   |                 |               |
 | **Ultimate HL**   | Ultimate Bahamut   |                 |               |
 | **Rapture HL**    | Lucilius           |                 |               |
-| **Trials**        | Fire               | Water           | Earth         |
+| **Trial battles** | Fire               | Water           | Earth         |
 |                   | Wind               | Light           | Dark          |
 | **Extra**         | News               | Updates         | Wiki          |

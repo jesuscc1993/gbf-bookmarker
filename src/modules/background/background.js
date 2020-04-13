@@ -1,5 +1,13 @@
 const { commands, storage, tabs } = chrome;
 
+import {
+  initialize as initializeTranslations,
+  setLanguage,
+  translate,
+} from '../i18n/i18n.service.js';
+import { loadSettings, storeSettings } from '../../storage/settings.storage.js';
+import { fetchJson } from '../../shared/file.utils.js';
+
 const targetDomain = 'game.granbluefantasy.jp';
 
 const URL_KEYS = {
@@ -13,14 +21,12 @@ const URLS = {
   PARTY: `http://${targetDomain}/#party/index/0/npc/0`,
 };
 
-const initialize = () => {
-  storage.sync.get('settings', ({ settings }) => {
+const initializeBackground = () => {
+  loadSettings().then((settings) => {
     if (!settings) {
-      fetch('../../../assets/data/defaultSettings.json')
-        .then(response => response.json())
-        .then(defaultSettings => {
-          storage.sync.set({ settings: defaultSettings });
-        });
+      fetchJson(
+        '../../../assets/data/defaultSettings.json',
+      ).then((defaultSettings) => storeSettings(defaultSettings));
     }
 
     tabs.onUpdated.addListener((tabId, changeInfo, { url }) => {
@@ -32,7 +38,7 @@ const initialize = () => {
         } else if (url.includes('/#event/teamraid')) {
           // guild wars
           const key = URL_KEYS.GUILD_WARS;
-          storage.sync.get([key], response => {
+          storage.sync.get([key], (response) => {
             const currentUrl = response[key];
             if (!url.includes(currentUrl)) {
               storage.sync.set({ [key]: url });
@@ -41,7 +47,7 @@ const initialize = () => {
         } else if (isAnySubstringIncluded(url, ['/#event', '/#limited'])) {
           // events
           const key = URL_KEYS.EVENT;
-          storage.sync.get([key], response => {
+          storage.sync.get([key], (response) => {
             const currentUrl = response[key];
             if (!url.includes(currentUrl)) {
               storage.sync.set({ [key]: url });
@@ -51,8 +57,8 @@ const initialize = () => {
       }
     });
 
-    commands.onCommand.addListener(command => {
-      tabs.query({ active: true, lastFocusedWindow: true }, matches => {
+    commands.onCommand.addListener((command) => {
+      tabs.query({ active: true, lastFocusedWindow: true }, (matches) => {
         const firstmatch = matches.find(({ url }) =>
           url.includes(targetDomain),
         );
@@ -70,32 +76,36 @@ const initialize = () => {
       });
     });
   });
+
+  initializeTranslations().then(({ language }) => {
+    setLanguage(language || navigator.language.toLowerCase());
+  });
 };
 
-const openEvent = tabId => {
+const openEvent = (tabId) => {
   openStoredUrl(tabId, URL_KEYS.EVENT);
 };
-const openGuildWars = tabId => {
+const openGuildWars = (tabId) => {
   openStoredUrl(tabId, URL_KEYS.GUILD_WARS);
 };
-const repeatQuest = tabId => {
+const repeatQuest = (tabId) => {
   openStoredUrl(tabId, URL_KEYS.LAST_QUEST);
 };
 
-const openQuests = tabId => {
+const openQuests = (tabId) => {
   openUrl(tabId, URLS.QUEST);
 };
-const openParty = tabId => {
+const openParty = (tabId) => {
   openUrl(tabId, URLS.PARTY);
 };
 
 const openStoredUrl = (tabId, key) => {
-  storage.sync.get([key], response => {
+  storage.sync.get([key], (response) => {
     const url = response[key];
     if (url) {
       openUrl(tabId, url);
     } else {
-      alert('You need to enter once first to store it.');
+      alert(translate('missing_stored_url'));
     }
   });
 };
@@ -107,9 +117,9 @@ const openUrl = (tabId, url) => {
 const isAnySubstringIncluded = (string, substrings) => {
   return (
     substrings
-      .map(substring => string.includes(substring))
-      .filter(included => included).length > 0
+      .map((substring) => string.includes(substring))
+      .filter((included) => included).length > 0
   );
 };
 
-initialize();
+initializeBackground();

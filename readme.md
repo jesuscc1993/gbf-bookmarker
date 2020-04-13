@@ -69,3 +69,11 @@ You can also customize the extension styles, but you will need knowledge of CSS.
 Additionally, you can configure the extension shortcuts under the URL [chrome://extensions/shortcuts](chrome://extensions/shortcuts)
 
 ![Shortcuts](readme_assets/shortcuts.png)
+
+## Known bugs
+
+- Background code does not react to language change and always displays messages in the same language
+
+## TODO list
+
+- Migrate to TS as this grew too complex for vanilla JS to feel comfortable enough
