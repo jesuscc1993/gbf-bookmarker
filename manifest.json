@@ -1,7 +1,7 @@
 {
   "author": "MetalTxus (Jesús Miguel Cruz Cana)",
   "background": {
-    "scripts": ["src/modules/background/background.js"]
+    "page": "src/modules/background/background.html"
   },
   "browser_action": {
     "default_popup": "src/modules/bookmarks/bookmarks.html",
@@ -51,5 +51,5 @@
     "storage",
     "tabs"
   ],
-  "version": "1.0.6"
+  "version": "1.0.8"
 }

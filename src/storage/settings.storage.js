@@ -7,11 +7,11 @@ export const URL_KEYS = {
 };
 
 export const loadSettings = () => {
-  return getFromStorage(['settings']).then(response => response.settings);
+  return getFromStorage(['settings']).then(({ settings }) => settings);
 };
 
-export const storeSettings = settings => {
-  return setToStorage({ settings }).then(response => response.settings);
+export const storeSettings = (settings) => {
+  return setToStorage({ settings }).then(({ settings }) => settings);
 };
 
 export const removeStoredUrls = () => {

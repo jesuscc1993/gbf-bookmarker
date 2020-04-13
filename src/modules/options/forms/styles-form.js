@@ -1,10 +1,11 @@
 import { downloadFile } from './../../../shared/file.utils.js';
 import { loadStyles, storeStyles } from './../../../storage/styles.storage.js';
+import { translate } from '../../i18n/i18n.service.js';
 
 let stylesEditor;
 
 const initializeStyles = () => {
-  loadStyles().then(styles => {
+  loadStyles().then((styles) => {
     const stylesTextarea = jQuery('#styles');
     if (styles) stylesTextarea.val(styles);
     stylesEditor = CodeMirror.fromTextArea(stylesTextarea[0], {
@@ -18,7 +19,7 @@ const initializeStyles = () => {
   jQuery('#export-styles').click(() => exportStyles());
   jQuery('#import-styles').click(() => importStyles());
   jQuery('#reset-styles').click(() => resetStyles());
-  jQuery('#styles-file-input').on('change', onStylesFileInputChange);
+  jQuery('#styles-file-input').change(onStylesFileInputChange);
 };
 
 const applyStyles = (styles = getFormStyles()) => {
@@ -35,16 +36,13 @@ const getFormStyles = () => {
 
 const importStyles = () => {
   const formHasValue = getFormStyles();
-  if (
-    !formHasValue ||
-    confirm('Are you sure you want to override you styles?')
-  ) {
+  if (!formHasValue || confirm(translate('confirm_styles_override'))) {
     document.getElementById('styles-file-input').click();
   }
 };
 
 const resetStyles = () => {
-  if (confirm('Are you sure you want to reset you styles?')) {
+  if (confirm(translate('confirm_styles_reset'))) {
     applyStyles('');
   }
 };

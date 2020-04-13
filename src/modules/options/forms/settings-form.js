@@ -1,24 +1,30 @@
-import { downloadFile } from './../../../shared/file.utils.js';
+import { downloadFile, fetchJson } from './../../../shared/file.utils.js';
 import { getSortedBookmarks } from './../../../shared/settings.utils.js';
 import {
   loadSettings,
   removeStoredUrls,
   storeSettings,
 } from './../../../storage/settings.storage.js';
+import {
+  getLanguage,
+  initialize as initializeTranslations,
+  setLanguage,
+  translate,
+} from '../../i18n/i18n.service.js';
 
 const bookmarksForm = jQuery('#bookmarks-form');
 
-const initializeSettings = () => {
-  loadSettings().then(settings => {
-    fetch('../../../assets/data/bookmarks.json')
-      .then(response => response.json())
-      .then(bookmarks => {
-        getSortedBookmarks(bookmarks, settings).forEach(key => {
+const initializeSettingsForm = () => {
+  loadSettings().then((settings) => {
+    fetchJson('../../../assets/data/bookmarks.json').then((bookmarks) => {
+      getSortedBookmarks(bookmarks, settings).forEach((key) => {
+        if (bookmarks[key]) {
           bookmarksForm.append(
             getBookmarkCheckbox(settings, key, bookmarks[key]),
           );
-        });
+        }
       });
+    });
   });
 
   bookmarksForm.submit(() => submitSettings());
@@ -26,7 +32,12 @@ const initializeSettings = () => {
   jQuery('#export-settings').click(() => exportSettings());
   jQuery('#import-settings').click(() => importSettings());
   jQuery('#reset-settings').click(() => resetSettings());
-  jQuery('#settings-file-input').on('change', onSettingsFileInputChange);
+  jQuery('#settings-file-input').change(onSettingsFileInputChange);
+
+  initializeTranslations().then(() => {
+    jQuery('#language').val(getLanguage());
+    jQuery('#language').change(changeLanguage);
+  });
 
   new Sortable(bookmarksForm[0], {
     animation: 150,
@@ -36,12 +47,10 @@ const initializeSettings = () => {
 };
 
 const applyDefaultSettings = () => {
-  fetch('../../../assets/data/defaultSettings.json')
-    .then(response => response.json())
-    .then(defaultSettings => applySettings(defaultSettings));
+  fetchJson('../../../assets/data/defaultSettings.json').then(applySettings);
 };
 
-const applySettings = settings => {
+const applySettings = (settings) => {
   storeSettings(settings).then(() => location.reload());
 };
 
@@ -57,18 +66,20 @@ const exportSettings = () => {
   );
 };
 
-const getBookmarkCheckbox = (settings, bookmarkKey, bookmarks) => {
-  const id = bookmarkKey.toLowerCase().replace(/ /g, '_');
+const getBookmarkCheckbox = (settings, bookmarkLiteral, bookmarks) => {
+  const id = bookmarkLiteral;
 
   const checkbox = jQuery(
-    `<input id="${id}" name="${bookmarkKey}" type="checkbox">`,
+    `<input id="${id}" name="${bookmarkLiteral}" type="checkbox">`,
   );
   checkbox.change(submitSettings);
-  if (settings && settings.bookmarks[bookmarkKey]) {
+  if (settings && settings.bookmarks[bookmarkLiteral]) {
     checkbox.attr('checked', 'checked');
   }
 
-  const label = jQuery(`<label for="${id}">${bookmarkKey}</label>`);
+  const label = jQuery(
+    `<label for="${id}">${translate(bookmarkLiteral)}</label>`,
+  );
   const childBookmarkKeys = Object.keys(bookmarks);
   const hasChildBookmarks =
     !bookmarks.url && !bookmarks.urlKey && childBookmarkKeys.length;
@@ -103,19 +114,24 @@ const getFormSettings = () => {
 };
 
 const importSettings = () => {
-  if (confirm('Are you sure you want to override you settings?')) {
+  if (confirm(translate('confirm_settings_override'))) {
     document.getElementById('settings-file-input').click();
   }
 };
 
 const resetSettings = () => {
-  if (confirm('Are you sure you want to reset you settings?')) {
+  if (confirm(translate('confirm_settings_reset'))) {
     applyDefaultSettings();
   }
 };
 
+const changeLanguage = ({ target }) => {
+  setLanguage(target.value);
+  location.reload();
+};
+
 const submitSettings = () => {
-  storeSettings(getFormSettings()).then(() => reloadPreview());
+  storeSettings(getFormSettings()).then(reloadPreview);
 };
 
 const onSettingsFileInputChange = ({ target }) => {
@@ -125,16 +141,14 @@ const onSettingsFileInputChange = ({ target }) => {
       const settings = JSON.parse(target.result);
       applySettings(settings);
     } catch {
-      alert('ERROR: Invalid settings format.');
+      alert(translate('invalid_json_format'));
     }
   };
   reader.readAsText(target.files[0]);
 };
 
 const reloadPreview = () => {
-  jQuery('#preview')
-    .get(0)
-    .contentWindow.location.reload();
+  jQuery('#preview').get(0).contentWindow.location.reload();
 };
 
-initializeSettings();
+initializeSettingsForm();

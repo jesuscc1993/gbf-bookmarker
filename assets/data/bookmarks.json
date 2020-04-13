@@ -1,442 +1,468 @@
 {
-  "Home": { "url": "/#mypage" },
-  "Repeat Quest": { "urlKey": "lastQuest" },
-  "Guild Wars": { "urlKey": "guildWars" },
-  "Event": { "urlKey": "event" },
-  "Party": {
+  "home": { "url": "/#mypage" },
+  "repeat_quest": { "urlKey": "lastQuest" },
+  "guild_wars": { "urlKey": "guildWars" },
+  "event": { "urlKey": "event" },
+  "party": {
     "url": "/#party/index/0/npc/0",
     "children": {
-      "Characters": { "url": "/#party/index/0/npc/0" },
-      "Weapons": { "url": "/#party/index/0/weapon/0" },
-      "Summons": { "url": "/#party/index/0/summon/0" }
+      "characters": { "url": "/#party/index/0/npc/0" },
+      "weapons": { "url": "/#party/index/0/weapon/0" },
+      "summons": { "url": "/#party/index/0/summon/0" }
     }
   },
-  "Me": {
+  "me": {
     "url": "/#profile",
     "children": {
-      "Profile": { "url": "/#profile" },
-      "Journal": { "url": "/#archive/top" },
-      "Crew": { "url": "/#guild" },
-      "Friends": { "url": "/#friend" },
-      "Trophies": { "url": "/#title" }
+      "profile": { "url": "/#profile" },
+      "journal": { "url": "/#archive/top" },
+      "crew": { "url": "/#guild" },
+      "friends": { "url": "/#friend" },
+      "trophies": { "url": "/#title" }
     }
   },
-  "Inventory": {
+  "inventory": {
     "url": "/#list/-1/1/0/3",
     "children": {
-      "Characters": { "url": "/#list/-1/1/0/3" },
-      "Weapons": { "url": "/#list/-1/1/0/1" },
-      "Summons": { "url": "/#list/-1/1/0/2" },
-      "Outfit": { "url": "/#list/-1/1/0/4" }
+      "characters": { "url": "/#list/-1/1/0/3" },
+      "weapons": { "url": "/#list/-1/1/0/1" },
+      "summons": { "url": "/#list/-1/1/0/2" },
+      "outfit": { "url": "/#list/-1/1/0/4" }
     }
   },
-  "Upgrade": {
+  "upgrade": {
     "url": "/#enhancement/weapon/base",
     "children": {
-      "Character": { "url": "/#enhancement/npc/base" },
-      "Weapon": { "url": "/#enhancement/weapon/base" },
-      "Summon": { "url": "/#enhancement/summon/base" }
+      "character": { "url": "/#enhancement/npc/base" },
+      "weapon": { "url": "/#enhancement/weapon/base" },
+      "summon": { "url": "/#enhancement/summon/base" }
     }
   },
-  "Items": {
+  "items": {
     "url": "/#list",
     "children": {
-      "Inventory": { "url": "/#list" },
-      "Upgrade": { "url": "/#enhancement/weapon/base" },
-      "Uncap": { "url": "/#evolution/weapon/base" },
-      "Stash": { "url": "/#container" },
-      "Crate": { "url": "/#present/limit" },
-      "Supplies": { "url": "/#item" }
+      "inventory": { "url": "/#list" },
+      "upgrade": { "url": "/#enhancement/weapon/base" },
+      "uncap": { "url": "/#evolution/weapon/base" },
+      "stash": { "url": "/#container" },
+      "crate": { "url": "/#present/limit" },
+      "supplies": { "url": "/#item" }
     }
   },
-  "Quests": {
+  "quests": {
     "url": "/#quest",
     "children": {
-      "Featured": { "url": "/#quest/index" },
-      "Special": { "url": "/#quest/extra" },
-      "Raids": { "url": "/#quest/assist" },
-      "Trial Battles": { "url": "/#trial_battle" },
-      "Side Stories": { "url": "/#sidestory" },
-      "Fate Episodes": { "url": "/#quest/fate" },
-      "Repeat Quest": { "urlKey": "lastQuest" },
-      "Pending Raids": { "url": "/#quest/assist/unclaimed" },
-      "Arcanum": { "url": "/#arcarum2" }
+      "featured": { "url": "/#quest/index" },
+      "special": { "url": "/#quest/extra" },
+      "raids": { "url": "/#quest/assist" },
+      "trial_battles": { "url": "/#trial_battle" },
+      "side_stories": { "url": "/#sidestory" },
+      "fate_episodes": { "url": "/#quest/fate" },
+      "repeat_quest": { "urlKey": "lastQuest" },
+      "pending_raids": { "url": "/#quest/assist/unclaimed" },
+      "arcanum": { "url": "/#arcarum2" }
     }
   },
-  "Raids": {
+  "raids": {
     "url": "/#quest/assist",
     "children": {
-      "Assist": { "url": "/#quest/assist" },
-      "List": { "url": "/#quest/multi/0" },
-      "Results": { "url": "/#quest/assist/unclaimed/0/0" }
+      "assist": { "url": "/#quest/assist" },
+      "list": { "url": "/#quest/multi/0" },
+      "results": { "url": "/#quest/assist/unclaimed/0/0" }
     }
   },
-  "Co-op": {
+  "co-op": {
     "url": "/#coopraid",
     "children": {
-      "Co-op": { "url": "/#coopraid" },
-      "Join": { "url": "/#coopraid/offer" },
-      "Shop": { "url": "/#coopraid/lineup" }
+      "co-op": { "url": "/#coopraid" },
+      "join": { "url": "/#coopraid/offer" },
+      "shop": { "url": "/#coopraid/lineup" }
     }
   },
-  "Shop": {
+  "shop": {
     "url": "/#shop",
     "children": {
-      "MobaCoins": { "url": "/#shop/moba/0" },
-      "Crystals": { "url": "/#shop/lupi/0" },
-      "Treasure": { "url": "/#shop/exchange/list" },
-      "Pendants": { "url": "/#shop/exchange/points" },
-      "Weapon Series": { "url": "/#archaic" },
-      "Trade Moons": { "url": "/#shop/exchange/moon" },
-      "Journey Drops": { "url": "/#shop/exchange/trajectory" },
-      "Cerulean Stones": { "url": "/#shop/exchange/ceiling" },
-      "Arcanum": { "url": "/#arcarum2/enhancement" }
+      "mobacoins": { "url": "/#shop/moba/0" },
+      "crystals": { "url": "/#shop/lupi/0" },
+      "treasure": { "url": "/#shop/exchange/list" },
+      "pendants": { "url": "/#shop/exchange/points" },
+      "weapon_series": { "url": "/#archaic" },
+      "trade_moons": { "url": "/#shop/exchange/moon" },
+      "journey_drops": { "url": "/#shop/exchange/trajectory" },
+      "cerulean_stones": { "url": "/#shop/exchange/ceiling" },
+      "arcanum": { "url": "/#arcarum2/enhancement" }
     }
   },
-  "Casino": {
+  "casino": {
     "url": "/#casino",
     "children": {
-      "Poker": { "url": "/#casino/game/poker/200040" },
-      "Bingo": { "url": "/#casino/game/bingo/300030" },
-      "Cage": { "url": "/#casino/exchange" }
+      "poker": { "url": "/#casino/game/poker/200040" },
+      "bingo": { "url": "/#casino/game/bingo/300030" },
+      "cage": { "url": "/#casino/exchange" }
     }
   },
-  "Draw": {
+  "draw": {
     "url": "/#gacha",
     "children": {
-      "Premium": { "url": "/#gacha" },
-      "Rupie": { "url": "/#gacha/normal" }
+      "premium": { "url": "/#gacha" },
+      "rupie": { "url": "/#gacha/normal" }
     }
   },
-  "Trials": {
+  "trial_battles": {
     "url": "/#trial_battle",
     "children": {
-      "Fire": { "element": "fire", "url": "/#quest/supporter/990011/17" },
-      "Water": { "element": "water", "url": "/#quest/supporter/990021/17" },
-      "Earth": { "element": "earth", "url": "/#quest/supporter/990031/17" },
-      "Wind": { "element": "wind", "url": "/#quest/supporter/990041/17" },
-      "Light": { "element": "light", "url": "/#quest/supporter/990051/17" },
-      "Dark": { "element": "dark", "url": "/#quest/supporter/990061/17" }
+      "fire": { "element": "fire", "url": "/#quest/supporter/990011/17" },
+      "water": { "element": "water", "url": "/#quest/supporter/990021/17" },
+      "earth": { "element": "earth", "url": "/#quest/supporter/990031/17" },
+      "wind": { "element": "wind", "url": "/#quest/supporter/990041/17" },
+      "light": { "element": "light", "url": "/#quest/supporter/990051/17" },
+      "dark": { "element": "dark", "url": "/#quest/supporter/990061/17" }
     }
   },
-  "H Raids": {
+  "raids_h": {
     "children": {
-      "Colossus": { "element": "fire", "url": "/#quest/supporter/300091/1" },
-      "Leviathan": { "element": "water", "url": "/#quest/supporter/300151/1" },
-      "Yggdrasil": { "element": "earth", "url": "/#quest/supporter/300191/1" },
-      "Tiamat": { "element": "wind", "url": "/#quest/supporter/300041/1" },
-      "Luminiera": { "element": "light", "url": "/#quest/supporter/300221/1" },
-      "Celeste": { "element": "dark", "url": "/#quest/supporter/300251/1" }
+      "colossus": { "element": "fire", "url": "/#quest/supporter/300091/1" },
+      "leviathan": { "element": "water", "url": "/#quest/supporter/300151/1" },
+      "yggdrasil": { "element": "earth", "url": "/#quest/supporter/300191/1" },
+      "tiamat": { "element": "wind", "url": "/#quest/supporter/300041/1" },
+      "luminiera": { "element": "light", "url": "/#quest/supporter/300221/1" },
+      "celeste": { "element": "dark", "url": "/#quest/supporter/300251/1" }
     }
   },
-  "H+ Raids": {
+  "raids_h+": {
     "children": {
-      "Colossus": { "element": "fire", "url": "/#quest/supporter/305021/1" },
-      "Leviathan": { "element": "water", "url": "/#quest/supporter/305031/1" },
-      "Yggdrasil": { "element": "earth", "url": "/#quest/supporter/305041/1" },
-      "Tiamat": { "element": "wind", "url": "/#quest/supporter/305011/1" },
-      "Luminiera": { "element": "light", "url": "/#quest/supporter/305051/1" },
-      "Celeste": { "element": "dark", "url": "/#quest/supporter/305061/1" }
+      "colossus": { "element": "fire", "url": "/#quest/supporter/305021/1" },
+      "leviathan": { "element": "water", "url": "/#quest/supporter/305031/1" },
+      "yggdrasil": { "element": "earth", "url": "/#quest/supporter/305041/1" },
+      "tiamat": { "element": "wind", "url": "/#quest/supporter/305011/1" },
+      "luminiera": { "element": "light", "url": "/#quest/supporter/305051/1" },
+      "celeste": { "element": "dark", "url": "/#quest/supporter/305061/1" }
     }
   },
-  "M1 Raids": {
+  "raids_m1": {
     "children": {
-      "Colossus": {
+      "colossus": {
         "element": "fire",
         "url": "/#quest/supporter/300101/1/0/19"
       },
-      "Leviathan": {
+      "leviathan": {
         "element": "water",
         "url": "/#quest/supporter/300161/1/0/20"
       },
-      "Yggdrasil": {
+      "yggdrasil": {
         "element": "earth",
         "url": "/#quest/supporter/300261/1/0/21"
       },
-      "Tiamat": {
+      "tiamat": {
         "element": "wind",
         "url": "/#quest/supporter/300051/1/0/18"
       },
-      "Luminiera": {
+      "luminiera": {
         "element": "light",
         "url": "/#quest/supporter/300271/1/0/26"
       },
-      "Celeste": {
-        "element": "dark",
-        "url": "/#quest/supporter/300281/1/0/31"
-      }
+      "celeste": { "element": "dark", "url": "/#quest/supporter/300281/1/0/31" }
     }
   },
-  "M1+ Raids": {
+  "raids_m1+": {
     "children": {
-      "Colossus": {
+      "colossus": {
         "element": "fire",
         "url": "/#quest/supporter/305091/1/0/19"
       },
-      "Leviathan": {
+      "leviathan": {
         "element": "water",
         "url": "/#quest/supporter/305101/1/0/20"
       },
-      "Yggdrasil": {
+      "yggdrasil": {
         "element": "earth",
         "url": "/#quest/supporter/305111/1/0/21"
       },
-      "Tiamat": {
+      "tiamat": {
         "element": "wind",
         "url": "/#quest/supporter/305081/1/0/18"
       },
-      "Luminiera": {
+      "luminiera": {
         "element": "light",
         "url": "/#quest/supporter/305121/1/0/26"
       },
-      "Celeste": {
+      "celeste": {
         "element": "dark",
         "url": "/#quest/supporter/305131/1/0/31"
       }
     }
   },
-  "M1 HL Raids": {
+  "raids_m1_hl": {
     "children": {
-      "Colossus": {
+      "colossus": {
         "element": "fire",
         "url": "/#quest/supporter/300491/1/0/47"
       },
-      "Leviathan": {
+      "leviathan": {
         "element": "water",
         "url": "/#quest/supporter/300511/1/0/48"
       },
-      "Yggdrasil": {
+      "yggdrasil": {
         "element": "earth",
         "url": "/#quest/supporter/300531/1/0/49"
       },
-      "Tiamat": { "element": "wind", "url": "/#quest/supporter/300441/1/0/32" },
-      "Luminiera": {
+      "tiamat": {
+        "element": "wind",
+        "url": "/#quest/supporter/300441/1/0/32"
+      },
+      "luminiera": {
         "element": "light",
         "url": "/#quest/supporter/300561/1/0/50"
       },
-      "Celeste": { "element": "dark", "url": "/#quest/supporter/300581/1/0/51" }
+      "celeste": {
+        "element": "dark",
+        "url": "/#quest/supporter/300581/1/0/51"
+      }
     }
   },
-  "M2 HL Raids": {
+  "raids_m2_hl": {
     "children": {
-      "Shiva": { "element": "fire", "url": "/#quest/supporter/303151/1/0/522" },
-      "Europa": {
+      "shiva": {
+        "element": "fire",
+        "url": "/#quest/supporter/303151/1/0/522"
+      },
+      "europa": {
         "element": "water",
         "url": "/#quest/supporter/303161/1/0/523"
       },
-      "Alexiel": {
+      "alexiel": {
         "element": "earth",
         "url": "/#quest/supporter/303171/1/0/524"
       },
-      "Grimnir": {
+      "grimnir": {
         "element": "wind",
         "url": "/#quest/supporter/303181/1/0/525"
       },
-      "Metatron": {
+      "metatron": {
         "element": "light",
         "url": "/#quest/supporter/303191/1/0/526"
       },
-      "Avatar": { "element": "dark", "url": "/#quest/supporter/303221/1/0/527" }
+      "avatar": {
+        "element": "dark",
+        "url": "/#quest/supporter/303221/1/0/527"
+      }
     }
   },
-  "T1 Summons": {
+  "raids_t1": {
     "children": {
-      "Twin Elements": {
+      "twin_elements": {
         "element": "fire",
         "url": "/#quest/supporter/300411/1/0/1313"
       },
-      "Macula Marius": {
+      "macula_marius": {
         "element": "water",
         "url": "/#quest/supporter/300381/1/0/1323"
       },
-      "Medusa": {
+      "medusa": {
         "element": "earth",
         "url": "/#quest/supporter/300391/1/0/1333"
       },
-      "Nezha": {
+      "nezha": {
         "element": "wind",
         "url": "/#quest/supporter/300421/1/0/1343"
       },
-      "Apollo": {
+      "apollo": {
         "element": "light",
         "url": "/#quest/supporter/300431/1/0/1353"
       },
-      "Olivia": {
+      "olivia": {
         "element": "dark",
         "url": "/#quest/supporter/300401/1/0/1363"
       }
     }
   },
-  "T1 Summons HL": {
+  "raids_t1_hl": {
     "children": {
-      "Twin Elements": {
+      "twin_elements": {
         "element": "fire",
         "url": "/#quest/supporter/300501/1/0/41"
       },
-      "Macula Marius": {
+      "macula_marius": {
         "element": "water",
         "url": "/#quest/supporter/300521/1/0/42"
       },
-      "Medusa": {
+      "medusa": {
         "element": "earth",
         "url": "/#quest/supporter/300541/1/0/43"
       },
-      "Nezha": { "element": "wind", "url": "/#quest/supporter/300451/1/0/44" },
-      "Apollo": {
+      "nezha": {
+        "element": "wind",
+        "url": "/#quest/supporter/300451/1/0/44"
+      },
+      "apollo": {
         "element": "light",
         "url": "/#quest/supporter/300571/1/0/45"
       },
-      "Olivia": { "element": "dark", "url": "/#quest/supporter/300591/1/0/46" },
-      "Rose Queen": {
+      "olivia": {
+        "element": "dark",
+        "url": "/#quest/supporter/300591/1/0/46"
+      },
+      "rose_queen": {
         "element": "wind",
         "url": "/#quest/supporter/300471/1/0/1204"
       }
     }
   },
-  "T2 Summons": {
+  "raids_t2": {
     "children": {
-      "Athena": {
+      "athena": {
         "element": "fire",
         "url": "/#quest/supporter/301071/1/0/1313"
       },
-      "Grani": {
+      "grani": {
         "element": "water",
         "url": "/#quest/supporter/300481/1/0/1323"
       },
-      "Baal": {
+      "baal": {
         "element": "earth",
         "url": "/#quest/supporter/301371/1/0/1333"
       },
-      "Garuda": {
+      "garuda": {
         "element": "wind",
         "url": "/#quest/supporter/301381/1/0/1343"
       },
-      "Odin": {
+      "odin": {
         "element": "light",
         "url": "/#quest/supporter/300461/1/0/1353"
       },
-      "Lich": { "element": "dark", "url": "/#quest/supporter/300551/1/0/1363" }
+      "lich": {
+        "element": "dark",
+        "url": "/#quest/supporter/300551/1/0/1363"
+      }
     }
   },
-  "T3 Summons HL": {
+  "raids_t3_hl": {
     "children": {
-      "Prometheus": {
+      "prometheus": {
         "element": "fire",
         "url": "/#quest/supporter/302751/1/0/41"
       },
-      "Ca Ong": {
+      "ca_ong": {
         "element": "water",
         "url": "/#quest/supporter/303041/1/0/42"
       },
-      "Gilgamesh": {
+      "gilgamesh": {
         "element": "earth",
         "url": "/#quest/supporter/302711/1/0/43"
       },
-      "Morrigna": {
+      "morrigna": {
         "element": "wind",
         "url": "/#quest/supporter/303051/1/0/44"
       },
-      "Hector": {
+      "hector": {
         "element": "light",
         "url": "/#quest/supporter/303061/1/0/45"
       },
-      "Anubis": { "element": "dark", "url": "/#quest/supporter/303071/1/0/46" }
+      "anubis": {
+        "element": "dark",
+        "url": "/#quest/supporter/303071/1/0/46"
+      }
     }
   },
-  "Beasts HL": {
+  "raids_beasts_hl": {
     "children": {
-      "Huanglong & Qilin": { "url": "/#quest/supporter/303231/1/0/6005" }
+      "huanglong_&_qilin": { "url": "/#quest/supporter/303231/1/0/6005" }
     }
   },
-  "Malice HL": {
+  "raids_malice_hl": {
     "children": {
-      "Tiamat Malice (w)": {
+      "tiamat_malice_(w)": {
         "element": "wind",
         "url": "/#quest/supporter/303241/1/0/104"
       },
-      "Tiamat Malice (d)": {
+      "tiamat_malice_(d)": {
         "element": "wind",
         "url": "/#quest/supporter/303241/1/0/106"
       }
     }
   },
-  "Nightmare": {
+  "raids_nightmare": {
     "children": {
-      "Proto Bahamut": {
+      "proto_bahamut": {
         "element": "dark",
         "url": "/#quest/supporter/300291/1/0/58"
       },
-      "Grand Order": {
+      "grand_order": {
         "element": "light",
         "url": "/#quest/supporter/301051/1/0/82"
       },
-      "Huanglong": {
+      "huanglong": {
         "element": "light",
         "url": "/#quest/supporter/301671/1/0/6005"
       },
-      "Qilin": { "element": "dark", "url": "/#quest/supporter/301681/1/0/6005" }
+      "qilin": {
+        "element": "dark",
+        "url": "/#quest/supporter/301681/1/0/6005"
+      }
     }
   },
-  "Nightmare HL": {
+  "raids_nightmare_hl": {
     "children": {
-      "Proto Bahamut": {
+      "proto_bahamut": {
         "element": "dark",
         "url": "/#quest/supporter/301061/1/0/59"
       },
-      "Akasha": {
+      "akasha": {
         "element": "light",
         "url": "/#quest/supporter/303251/1/0/533"
       },
-      "Lucilius": {
+      "lucilius": {
         "element": "dark",
         "url": "/#quest/supporter/303271/1/0/506"
       },
-      "The Four Primarchs": { "url": "/#quest/supporter/303291/1/0/5311" }
+      "the_four_primarchs": {
+        "url": "/#quest/supporter/303291/1/0/5311"
+      }
     }
   },
-  "Primarch": {
+  "raids_primarchs": {
     "children": {
-      "Michael": {
+      "michael": {
         "element": "fire",
         "url": "/#quest/supporter/303101/1/0/5311"
       },
-      "Gabriel": {
+      "gabriel": {
         "element": "water",
         "url": "/#quest/supporter/303091/1/0/5321"
       },
-      "Uriel": {
+      "uriel": {
         "element": "earth",
         "url": "/#quest/supporter/303111/1/0/5311"
       },
-      "Raphael": {
+      "raphael": {
         "element": "wind",
         "url": "/#quest/supporter/303081/1/0/5311"
       }
     }
   },
-  "Ultimate": {
+  "raids_ultimate": {
     "children": {
-      "Ultimate Bahamut": { "url": "/#quest/supporter/303131/1/0/133" }
+      "ultimate_bahamut": { "url": "/#quest/supporter/303131/1/0/133" }
     }
   },
-  "Ultimate HL": {
+  "raids_ultimate_hl": {
     "children": {
-      "Ultimate Bahamut": { "url": "/#quest/supporter/303141/1/0/136" }
+      "ultimate_bahamut": { "url": "/#quest/supporter/303141/1/0/136" }
     }
   },
-  "Rapture HL": {
+  "raids_rapture_hl": {
     "children": {
-      "Lucilius": {
+      "lucilius": {
         "element": "dark",
         "url": "/#quest/supporter/303281/1/0/537"
       }
     }
   },
-  "Extra": {
+  "extra_links": {
     "children": {
-      "News": { "url": "/#news" },
-      "Updates": { "url": "/#news/0/1" },
-      "Wiki": { "url": "https://gbf.wiki/Main_Page" }
+      "news": { "url": "/#news" },
+      "updates": { "url": "/#news/0/1" },
+      "wiki": { "url": "https://gbf.wiki/Main_Page" }
     }
   }
 }
