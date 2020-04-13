@@ -9,14 +9,16 @@ import {
 const bookmarksForm = jQuery('#bookmarks-form');
 
 const initializeSettings = () => {
-  loadSettings().then(settings => {
+  loadSettings().then((settings) => {
     fetch('../../../assets/data/bookmarks.json')
-      .then(response => response.json())
-      .then(bookmarks => {
-        getSortedBookmarks(bookmarks, settings).forEach(key => {
-          bookmarksForm.append(
-            getBookmarkCheckbox(settings, key, bookmarks[key]),
-          );
+      .then((response) => response.json())
+      .then((bookmarks) => {
+        getSortedBookmarks(bookmarks, settings).forEach((key) => {
+          if (bookmarks[key]) {
+            bookmarksForm.append(
+              getBookmarkCheckbox(settings, key, bookmarks[key]),
+            );
+          }
         });
       });
   });
@@ -37,11 +39,11 @@ const initializeSettings = () => {
 
 const applyDefaultSettings = () => {
   fetch('../../../assets/data/defaultSettings.json')
-    .then(response => response.json())
-    .then(defaultSettings => applySettings(defaultSettings));
+    .then((response) => response.json())
+    .then((defaultSettings) => applySettings(defaultSettings));
 };
 
-const applySettings = settings => {
+const applySettings = (settings) => {
   storeSettings(settings).then(() => location.reload());
 };
 
@@ -132,9 +134,7 @@ const onSettingsFileInputChange = ({ target }) => {
 };
 
 const reloadPreview = () => {
-  jQuery('#preview')
-    .get(0)
-    .contentWindow.location.reload();
+  jQuery('#preview').get(0).contentWindow.location.reload();
 };
 
 initializeSettings();

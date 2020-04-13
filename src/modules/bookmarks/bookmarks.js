@@ -9,14 +9,14 @@ const initialize = () => {
     jQuery(`<style>${styles}</style>`).appendTo('head');
 
     fetch('../../../assets/data/bookmarks.json')
-      .then(response => response.json())
-      .then(bookmarks => {
+      .then((response) => response.json())
+      .then((bookmarks) => {
         const bookmarksContainer = jQuery('#bookmarks-container');
-        getSortedBookmarks(bookmarks, settings).forEach(key => {
+        getSortedBookmarks(bookmarks, settings).forEach((key) => {
           const bookmark = bookmarks[key];
           let bookmarksElement;
 
-          if (settings && settings.bookmarks[key]) {
+          if (bookmark && settings && settings.bookmarks[key]) {
             if (bookmark.children) {
               bookmarksElement = getBookmarksGroup(key, bookmark);
             } else {
@@ -64,7 +64,7 @@ const onUrlClick = (event, url) => {
 };
 
 const onStoredUrlClick = (event, key) => {
-  storage.sync.get([key], response => {
+  storage.sync.get([key], (response) => {
     const url = response[key];
     if (url) {
       onUrlClick(event, url);
@@ -86,10 +86,10 @@ const getSingleBookmark = (key, bookmark) => {
   }
   if (url && !inPreviewMode()) {
     const fullUrl = url.includes('http') ? url : `${baseUrl}${url}`;
-    bookmarkElement.mousedown(event => onUrlClick(event, fullUrl));
+    bookmarkElement.mousedown((event) => onUrlClick(event, fullUrl));
   }
   if (urlKey && !inPreviewMode()) {
-    bookmarkElement.mousedown(event => onStoredUrlClick(event, urlKey));
+    bookmarkElement.mousedown((event) => onStoredUrlClick(event, urlKey));
   }
   return bookmarkElement;
 };
@@ -99,7 +99,7 @@ const getBookmarksGroup = (key, bookmark) => {
 
   const containerElement = $(`<ul></ul>`);
   containerElement.append(
-    Object.keys(children).map(nestedKey =>
+    Object.keys(children).map((nestedKey) =>
       getSingleBookmark(nestedKey, children[nestedKey]),
     ),
   );

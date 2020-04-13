@@ -239,7 +239,7 @@
       "Avatar": { "element": "dark", "url": "/#quest/supporter/303221/1/0/527" }
     }
   },
-  "T1 Summons": {
+  "T1 Raids": {
     "children": {
       "Twin Elements": {
         "element": "fire",
@@ -267,7 +267,7 @@
       }
     }
   },
-  "T1 Summons HL": {
+  "T1 HL Raids": {
     "children": {
       "Twin Elements": {
         "element": "fire",
@@ -293,7 +293,7 @@
       }
     }
   },
-  "T2 Summons": {
+  "T2 Raids": {
     "children": {
       "Athena": {
         "element": "fire",
@@ -318,7 +318,7 @@
       "Lich": { "element": "dark", "url": "/#quest/supporter/300551/1/0/1363" }
     }
   },
-  "T3 Summons HL": {
+  "T3 HL Raids": {
     "children": {
       "Prometheus": {
         "element": "fire",
@@ -394,7 +394,7 @@
       "The Four Primarchs": { "url": "/#quest/supporter/303291/1/0/5311" }
     }
   },
-  "Primarch": {
+  "Primarchs": {
     "children": {
       "Michael": {
         "element": "fire",
