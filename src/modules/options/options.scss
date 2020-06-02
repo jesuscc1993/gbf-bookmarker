@@ -15,6 +15,7 @@ body {
   font-size: 16px;
   margin: 0;
   min-height: calc(100vh - 17px);
+  background: var(--c-background);
 
   * {
     box-sizing: border-box;
@@ -103,12 +104,15 @@ body {
     }
   }
 
-  .page-contents {
-    background: var(--c-background)
-      url(../../../assets/images/settings-lyria.png) no-repeat;
+  .wrapper {
+    $background-size: 224px;
+    background: url(../../../assets/images/settings-lyria.png) no-repeat;
     background-position: bottom right;
-    min-width: 1080px;
+    background-size: $background-size $background-size;
+    display: inline-block;
+  }
 
+  .page-contents {
     > .col {
       margin: 16px;
 
