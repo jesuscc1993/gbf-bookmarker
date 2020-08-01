@@ -1,0 +1,66 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  border: 2px solid var(--c-card-border);
+
+  > * {
+    &:not(.equal-padding) {
+      padding: 8px 12px;
+    }
+    &.equal-padding {
+      padding: 12px;
+    }
+  }
+
+  .header {
+    background: var(--c-card-border);
+    color: white;
+    display: inline-flex;
+    font-size: 1.1em;
+    min-height: 38px;
+
+    .icon {
+      font-size: 0.9em;
+    }
+  }
+
+  .contents {
+    flex: 1;
+  }
+}
+
+.icon {
+  align-items: center;
+  display: inline-flex;
+
+  &:before {
+    font-family: 'Material Icons';
+  }
+
+  &.delete:before {
+    content: 'delete';
+  }
+  &.export:before {
+    content: 'arrow_downward';
+  }
+  &.import:before {
+    content: 'arrow_upward';
+  }
+  &.info:before {
+    content: 'info';
+  }
+  &.refresh:before {
+    content: 'refresh';
+  }
+  &.save:before {
+    content: 'save';
+  }
+
+  & + * {
+    padding-left: 8px;
+  }
+}
+* + .icon {
+  padding-left: 8px;
+}

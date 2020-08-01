@@ -12,14 +12,10 @@ body {
   box-sizing: border-box;
   color: var(--c-foreground);
   font-family: 'Roboto', sans-serif;
-  font-size: 16px;
+  font-size: 15.5px;
   margin: 0;
   min-height: calc(100vh - 17px);
   background: var(--c-background);
-
-  * {
-    box-sizing: border-box;
-  }
 
   a {
     text-decoration: none;
@@ -161,73 +157,9 @@ body {
     display: flex;
     flex-direction: row;
 
-    > button:not(:last-of-type) {
+    > button:not(:last-child) {
       margin-right: 4px;
     }
-  }
-
-  .card {
-    display: flex;
-    flex-direction: column;
-    border-radius: 8px;
-    border: 2px solid var(--c-card-border);
-
-    > * {
-      &:not(.equal-padding) {
-        padding: 8px 12px;
-      }
-      &.equal-padding {
-        padding: 12px;
-      }
-    }
-
-    .header {
-      background: var(--c-card-border);
-      color: white;
-      display: inline-flex;
-      font-size: 1.1em;
-      min-height: 38px;
-
-      .icon {
-        font-size: 0.9em;
-      }
-    }
-
-    .contents {
-      flex: 1;
-    }
-  }
-
-  .icon {
-    align-items: center;
-    display: inline-flex;
-
-    &:before {
-      font-family: 'Material Icons';
-    }
-
-    &.export:before {
-      content: 'arrow_downward';
-    }
-    &.import:before {
-      content: 'arrow_upward';
-    }
-    &.delete:before {
-      content: 'delete';
-    }
-    &.save:before {
-      content: 'save';
-    }
-    &.info:before {
-      content: 'info';
-    }
-
-    & + * {
-      padding-left: 8px;
-    }
-  }
-  * + .icon {
-    padding-left: 8px;
   }
 
   /* layout */
