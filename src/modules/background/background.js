@@ -79,6 +79,21 @@ const initializeBackground = () => {
 
   initializeTranslations().then(({ language }) => {
     setLanguage(language || navigator.language.toLowerCase());
+
+    chrome.contextMenus.create({
+      title: translate('developed_by'),
+      contexts: ['browser_action'],
+      onclick: () => {
+        window.open('https://github.com/jesuscc1993');
+      },
+    });
+    chrome.contextMenus.create({
+      title: translate('about_extension'),
+      contexts: ['browser_action'],
+      onclick: () => {
+        window.open('https://github.com/jesuscc1993/gbf-bookmarker');
+      },
+    });
   });
 };
 

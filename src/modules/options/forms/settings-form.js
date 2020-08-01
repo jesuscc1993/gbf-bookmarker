@@ -37,6 +37,7 @@ const initializeSettingsForm = () => {
   initializeTranslations().then(() => {
     jQuery('#language').val(getLanguage());
     jQuery('#language').change(changeLanguage);
+    jQuery('#reload-language').click(() => reloadLanguage());
   });
 
   new Sortable(bookmarksForm[0], {
@@ -127,6 +128,11 @@ const resetSettings = () => {
 
 const changeLanguage = ({ target }) => {
   setLanguage(target.value);
+  location.reload();
+};
+
+const reloadLanguage = () => {
+  setLanguage(getLanguage());
   location.reload();
 };
 
