@@ -136,7 +136,8 @@
       "yggdrasil": { "element": "earth", "url": "/#quest/supporter/305041/1" },
       "tiamat": { "element": "wind", "url": "/#quest/supporter/305011/1" },
       "luminiera": { "element": "light", "url": "/#quest/supporter/305051/1" },
-      "celeste": { "element": "dark", "url": "/#quest/supporter/305061/1" }
+      "celeste": { "element": "dark", "url": "/#quest/supporter/305061/1" },
+      "pro": { "url": "/#quest/supporter/305261/28" }
     }
   },
   "raids_m1_ex": {
