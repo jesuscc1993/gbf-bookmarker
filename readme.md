@@ -47,11 +47,11 @@ There are some special bookmarks that work by saving the latest URL the user vis
 
 ## Installation
 
+You will need to download and unpack the [latest release](https://github.com/jesuscc1993/gbf-bookmarker/releases/) and then follow [these instructions](readme_assets/sections/installation.md).
+
 > The Chrome Web store [requires a 5,00 US\$ one time publishing fee](https://developer.chrome.com/webstore/publish#pay-the-developer-signup-fee) and given I will not be making any money out of the extension I do not plan on paying it.
 >
-> - Want to help? You can donate any amount via [PayPal](https://www.paypal.com/donate/?token=CNsMN-nbjwq0tXqLAcEnlZnTyo7N8xT16z0tgD6t6gbxzT8kxNneWv520Yis1Uh57FXbGm). If total donations cover the fee I will then publish the extension.
-
-You will need to download and unpack the [latest release](https://github.com/jesuscc1993/gbf-bookmarker/releases/) and then follow [these instructions](readme_assets/sections/installation.md).
+> - Want to help? You can donate any amount via [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=3AZXFRDVAHWKY&source=url). If total donations cover the fee I will then publish the extension.
 
 ## Update
 
