@@ -8,8 +8,8 @@ export const supportedLanguages = ['en-us', 'es-es'];
 
 export const initialize = () => {
   return getFromStorage(['language', 'translations']).then((response) => {
-    _translations = response.translations;
     _language = response.language;
+    _translations = response.translations;
     return response;
   });
 };
@@ -20,9 +20,15 @@ export const setLanguage = (language) => {
     language = supportedLanguages[0];
   }
 
-  return fetchJson(
-    `../../../assets/i18n/${language}.json`,
-  ).then((translations) => storeLanguageTranslations(language, translations));
+  _language = language;
+
+  return new Promise((resolve) =>
+    fetchTranslations(language).then((translations) => {
+      _translations = translations;
+      storeLanguageTranslations(language, translations);
+      resolve();
+    }),
+  );
 };
 
 export const translate = (literal) => {
@@ -41,6 +47,10 @@ const _translateDom = () => {
   jQuery('[translate]').each(
     (i, e) => (e.innerText = translate(jQuery(e).attr('translate'))),
   );
+};
+
+const fetchTranslations = (language) => {
+  return fetchJson(`../../../assets/i18n/${language}.json`);
 };
 
 const storeLanguageTranslations = (language, translations) => {
