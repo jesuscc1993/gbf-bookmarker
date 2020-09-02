@@ -1,7 +1,10 @@
 {
-  "author": "",
+  "author": "jesuscc1993",
   "bugs": {
     "url": "https://github.com/jesuscc1993/gbf-bookmarker/issues"
+  },
+  "dependencies": {
+    "rimraf": "^3.0.2"
   },
   "description": "Bookmarks ongoing events and more so you do not have to and provides bookmarks to the most useful sections.",
   "homepage": "https://github.com/jesuscc1993/gbf-bookmarker#readme",
@@ -16,8 +19,5 @@
     "copy-build-folders": "rimraf dist && mkdir dist && cp -r assets dist/assets && cp -r src dist/src && cp -r vendor dist/vendor",
     "push-to-master": "git checkout master && git merge develop && git push"
   },
-  "version": "1.0.7",
-  "dependencies": {
-    "rimraf": "^3.0.2"
-  }
+  "version": "1.0.8"
 }
