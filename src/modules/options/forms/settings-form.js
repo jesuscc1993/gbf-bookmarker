@@ -127,13 +127,11 @@ const resetSettings = () => {
 };
 
 const changeLanguage = ({ target }) => {
-  setLanguage(target.value);
-  location.reload();
+  setLanguage(target.value).then(() => location.reload());
 };
 
 const reloadLanguage = () => {
-  setLanguage(getLanguage());
-  location.reload();
+  setLanguage(getLanguage()).then(() => location.reload());
 };
 
 const submitSettings = () => {
