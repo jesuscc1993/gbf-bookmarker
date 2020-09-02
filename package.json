@@ -1,5 +1,5 @@
 {
-  "author": "jesuscc1993",
+  "author": "MetalTxus (Jesús Miguel Cruz Cana)",
   "bugs": {
     "url": "https://github.com/jesuscc1993/gbf-bookmarker/issues"
   },
@@ -19,5 +19,5 @@
     "copy-build-folders": "rimraf dist && mkdir dist && cp -r assets dist/assets && cp -r src dist/src && cp -r vendor dist/vendor",
     "push-to-master": "git checkout master && git merge develop && git push"
   },
-  "version": "1.0.8"
+  "version": "1.0.10"
 }
