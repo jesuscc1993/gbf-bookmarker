@@ -18,5 +18,5 @@
     "build": "rimraf dist && yarn copy-build-folders && rimraf dist/**/*.scss && rimraf dist/**/*.css.map && rimraf dist/**/*.md",
     "copy-build-folders": "rimraf dist && mkdir dist && cp -r assets dist/assets && cp -r src dist/src && cp -r vendor dist/vendor"
   },
-  "version": "1.0.10"
+  "version": "1.0.11"
 }
