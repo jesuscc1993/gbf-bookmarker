@@ -230,10 +230,12 @@
     "children": {
       "tiamat_malice_wind": { "element": "wind", "url": "/#quest/supporter/303241/1/0/104" },
       "leviathan_malice_fire": { "element": "water", "url": "/#quest/supporter/305151/1/0/101" },
-      "phronesis_water": { "element": "light", "url": "/#quest/supporter/305251/1/0/102" },
+      "luminiera_water": { "element": "light", "url": "/#quest/supporter/305271/1/0/102" },
       "tiamat_malice_dark": { "element": "wind", "url": "/#quest/supporter/303241/1/0/106" },
       "leviathan_malice_water": { "element": "water", "url": "/#quest/supporter/305151/1/0/102" },
-      "phronesis_earth": { "element": "light", "url": "/#quest/supporter/305251/1/0/103" }
+      "luminiera_light": { "element": "light", "url": "/#quest/supporter/305271/1/0/105" },
+      "phronesis_water": { "element": "earth", "url": "/#quest/supporter/305251/1/0/102" },
+      "phronesis_earth": { "element": "earth", "url": "/#quest/supporter/305251/1/0/103" }
     }
   },
   "raids_nightmare": {
