@@ -78,6 +78,4 @@ Additionally, you can configure the extension shortcuts under the URL [chrome://
 
 ## TODO list
 
-- Add the following raids
-  - Phronesis
 - Migrate to TS as this grew too complex for vanilla JS to feel comfortable enough
