@@ -1,8 +1,8 @@
 *.css.map
 *.scss
-.vscode
-.prettierrc
 .prettierignore
+.prettierrc
+.vscode
+build/
 node_modules
 readme.md
-readme_assets/
