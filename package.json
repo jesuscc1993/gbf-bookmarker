@@ -15,8 +15,10 @@
     "url": "git+https://github.com/jesuscc1993/gbf-bookmarker.git"
   },
   "scripts": {
-    "build": "rimraf dist && yarn copy-build-folders && rimraf dist/**/*.scss && rimraf dist/**/*.css.map && rimraf dist/**/*.md",
-    "copy-build-folders": "rimraf dist && mkdir dist && cp -r assets dist/assets && cp -r src dist/src && cp -r vendor dist/vendor"
+    "build": "rimraf build && yarn build-folders && yarn clean-build-folders && yarn copy-build-folders",
+    "build-folders": "rimraf build && mkdir build && cp -r assets build/assets && cp -r src build/src && cp -r vendor build/vendor",
+    "clean-build-folders": "rimraf build/**/*.scss && rimraf build/**/*.css.map && rimraf build/**/*.md",
+    "copy-build-folders": "git checkout release && rimraf assets && rimraf src && rimraf vendor && mv build/* . && rimraf build"
   },
   "version": "1.0.12"
 }
