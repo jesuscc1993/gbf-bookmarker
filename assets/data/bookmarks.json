@@ -88,9 +88,12 @@
       "pendants": { "url": "/#shop/exchange/points" },
       "weapon_series": { "url": "/#archaic" },
       "trade_moons": { "url": "/#shop/exchange/moon" },
+      "dailyPoints": { "url": "/#shop/exchange/login_point" },
       "journey_drops": { "url": "/#shop/exchange/trajectory" },
       "cerulean_stones": { "url": "/#shop/exchange/ceiling" },
-      "arcanum": { "url": "/#arcarum2/enhancement" }
+      "arcanum": { "url": "/#arcarum2/enhancement" },
+      "outfitSets": { "url": "/#shop/skin/top" },
+      "skyLeap": { "url": "/#shop/exchange/skyleap_point" }
     }
   },
   "casino": {
