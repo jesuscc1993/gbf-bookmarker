@@ -16,7 +16,12 @@ const initializeBookmarks = () => {
         const bookmark = bookmarks[key];
         let bookmarksElement;
 
-        if (bookmark && settings && settings.bookmarks[key]) {
+        if (
+          bookmark &&
+          bookmark.enabled !== false &&
+          settings &&
+          settings.bookmarks[key]
+        ) {
           if (bookmark.children) {
             bookmarksElement = getBookmarksGroup(key, bookmark);
           } else {
