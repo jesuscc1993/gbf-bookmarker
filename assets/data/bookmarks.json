@@ -257,10 +257,9 @@
   },
   "raids_i_3b": {
     "children": {
-      "horus": { "element": "light", "url": "" },
-      "osiris": { "element": "dark", "url": "" }
-    },
-    "enabled": false
+      "horus": { "element": "light", "url": "/#quest/supporter/305361/1/0/45" },
+      "osiris": { "element": "dark", "url": "/#quest/supporter/305371/1/0/46" }
+    }
   },
   "raids_i_4": {
     "children": {
@@ -281,6 +280,8 @@
       "leviathan_malice_fire": { "element": "water", "url": "/#quest/supporter/305151/1/0/101" },
       "phronesis_water": { "element": "earth", "url": "/#quest/supporter/305251/1/0/102" },
       "luminiera_light": { "element": "light", "url": "/#quest/supporter/305271/1/0/105" },
+      "animus_dark": { "element": "dark", "url": "/#quest/supporter/305291/1/0/106" },
+      "animus_earth": { "element": "dark", "url": "/#quest/supporter/305291/1/0/103" },
       "luminiera_water": { "element": "light", "url": "/#quest/supporter/305271/1/0/102" }
     }
   },

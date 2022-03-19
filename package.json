@@ -20,5 +20,5 @@
     "clean-build-folders": "rimraf build/**/*.scss && rimraf build/**/*.css.map && rimraf build/**/*.md",
     "copy-build-folders": "git checkout release && rimraf assets && rimraf src && rimraf vendor && mv build/* . && rimraf build"
   },
-  "version": "1.0.13"
+  "version": "1.0.14"
 }
