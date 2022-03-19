@@ -79,3 +79,5 @@ Additionally, you can configure the extension shortcuts under the URL [chrome://
 ## TODO list
 
 - Migrate to TS as this grew too complex for vanilla JS to feel comfortable enough
+- Add Beelzebub raid (too weak to unlock it at the moment)
+- Add Belial raid (too weak to unlock it at the moment)
