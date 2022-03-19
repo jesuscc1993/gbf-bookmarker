@@ -18,7 +18,7 @@ const initializeSettingsForm = () => {
   loadSettings().then((settings) => {
     fetchJson('../../../assets/data/bookmarks.json').then((bookmarks) => {
       getSortedBookmarks(bookmarks, settings).forEach((key) => {
-        if (bookmarks[key]) {
+        if (bookmarks[key] && bookmarks[key].enabled !== false) {
           bookmarksForm.append(
             getBookmarkCheckbox(settings, key, bookmarks[key]),
           );
