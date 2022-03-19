@@ -1,6 +1,6 @@
-import { getSortedBookmarks } from '../../shared/settings.utils.js';
-import { translate } from '../../modules/i18n/i18n.service.js';
-import { fetchJson } from '../../shared/file.utils.js';
+importScripts('../../shared/settings.utils.js');
+importScripts('../../modules/i18n/i18n.service.js');
+importScripts('../../shared/file.utils.js');
 
 const { storage, tabs } = chrome;
 

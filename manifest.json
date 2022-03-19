@@ -1,11 +1,11 @@
 {
-  "author": "MetalTxus (Jesús Miguel Cruz Cana)",
-  "background": {
-    "page": "src/modules/background/background.html"
-  },
-  "browser_action": {
+  "action": {
     "default_popup": "src/modules/bookmarks/bookmarks.html",
     "default_title": "Show bookmarks"
+  },
+  "author": "MetalTxus (Jesús Miguel Cruz Cana)",
+  "background": {
+    "service_worker": "src/modules/background/background.js"
   },
   "commands": {
     "_execute_browser_action": {
@@ -41,9 +41,9 @@
     "48": "assets/images/icons/icon.png",
     "128": "assets/images/icons/icon.png"
   },
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "GBF Bookmarker",
   "options_page": "src/modules/options/options.html",
   "permissions": ["activeTab", "browsingData", "contextMenus", "notifications", "storage", "tabs"],
-  "version": "1.0.10"
+  "version": "1.0.14"
 }

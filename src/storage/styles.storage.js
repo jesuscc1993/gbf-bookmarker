@@ -1,9 +1,9 @@
-import { getFromStorage, setToStorage } from './storage.js';
+importScripts('./storage.js');
 
 export const loadStyles = () => {
-  return getFromStorage(['styles']).then(response => response.styles);
+  return getFromStorage(['styles']).then((response) => response.styles);
 };
 
-export const storeStyles = styles => {
-  return setToStorage({ styles }).then(response => response.styles);
+export const storeStyles = (styles) => {
+  return setToStorage({ styles }).then((response) => response.styles);
 };

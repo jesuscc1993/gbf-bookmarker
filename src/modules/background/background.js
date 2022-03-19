@@ -1,12 +1,8 @@
 const { commands, storage, tabs } = chrome;
 
-import {
-  initialize as initializeTranslations,
-  setLanguage,
-  translate,
-} from '../i18n/i18n.service.js';
-import { loadSettings, storeSettings } from '../../storage/settings.storage.js';
-import { fetchJson } from '../../shared/file.utils.js';
+importScripts('../i18n/i18n.service.js');
+importScripts('../../storage/settings.storage.js');
+importScripts('../../shared/file.utils.js');
 
 const targetDomain = 'game.granbluefantasy.jp';
 
@@ -24,9 +20,9 @@ const URLS = {
 const initializeBackground = () => {
   loadSettings().then((settings) => {
     if (!settings) {
-      fetchJson(
-        '../../../assets/data/defaultSettings.json',
-      ).then((defaultSettings) => storeSettings(defaultSettings));
+      fetchJson('../../../assets/data/defaultSettings.json').then(
+        (defaultSettings) => storeSettings(defaultSettings),
+      );
     }
 
     tabs.onUpdated.addListener((tabId, changeInfo, { url }) => {

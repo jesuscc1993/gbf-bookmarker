@@ -1,6 +1,6 @@
-import { downloadFile } from './../../../shared/file.utils.js';
-import { loadStyles, storeStyles } from './../../../storage/styles.storage.js';
-import { translate } from '../../i18n/i18n.service.js';
+importScripts('./../../../shared/file.utils.js');
+importScripts('./../../../storage/styles.storage.js');
+importScripts('../../i18n/i18n.service.js');
 
 let stylesEditor;
 

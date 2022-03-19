@@ -1,16 +1,7 @@
-import { downloadFile, fetchJson } from './../../../shared/file.utils.js';
-import { getSortedBookmarks } from './../../../shared/settings.utils.js';
-import {
-  loadSettings,
-  removeStoredUrls,
-  storeSettings,
-} from './../../../storage/settings.storage.js';
-import {
-  getLanguage,
-  initialize as initializeTranslations,
-  setLanguage,
-  translate,
-} from '../../i18n/i18n.service.js';
+importScripts('./../../../shared/file.utils.js');
+importScripts('./../../../shared/settings.utils.js');
+importScripts('./../../../storage/settings.storage.js');
+importScripts('../../i18n/i18n.service.js');
 
 const bookmarksForm = jQuery('#bookmarks-form');
 

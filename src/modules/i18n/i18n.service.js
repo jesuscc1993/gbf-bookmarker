@@ -1,5 +1,5 @@
-import { fetchJson } from '../../shared/file.utils.js';
-import { getFromStorage, setToStorage } from '../../storage/storage.js';
+importScripts('../../shared/file.utils.js');
+importScripts('../../storage/storage.js');
 
 let _translations;
 let _language;
