@@ -257,6 +257,8 @@
   },
   "raids_i_3b": {
     "children": {
+      "atum": { "element": "fire", "url": "/#quest/supporter/305321/1/0/41" },
+      "bennu": { "element": "earth", "url": "/#quest/supporter/305341/1/0/43" },
       "horus": { "element": "light", "url": "/#quest/supporter/305361/1/0/45" },
       "osiris": { "element": "dark", "url": "/#quest/supporter/305371/1/0/46" }
     }
