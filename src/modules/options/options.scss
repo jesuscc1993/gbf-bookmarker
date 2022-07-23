@@ -60,8 +60,9 @@ body {
   .CodeMirror {
     border: 1px solid #ddd;
     font-size: 13px;
-    height: 156px;
+    height: 328px;
     margin-top: 0;
+    max-height: calc(100vh - 142px);
     width: 576px;
   }
 
@@ -94,9 +95,9 @@ body {
       line-height: 1em;
       font-size: 1.25em;
 
-      + span {
-        flex: 1;
-      }
+      // + span {
+      //   flex: 1;
+      // }
     }
   }
 
@@ -106,6 +107,7 @@ body {
     background-position: bottom right;
     background-size: $background-size $background-size;
     display: inline-block;
+    width: 100vw;
   }
 
   .page-contents {
@@ -114,6 +116,18 @@ body {
 
       &:not(:first-of-type) {
         margin-left: 0;
+      }
+    }
+  }
+
+  .card {
+    .contents {
+      max-height: calc(100vh - 74px);
+      padding: 8px 8px 8px 12px;
+
+      > *:not(.CodeMirror) {
+        max-height: 100%;
+        overflow-y: auto;
       }
     }
   }
@@ -146,7 +160,7 @@ body {
     }
 
     > button {
-      min-width: 160px;
+      min-width: 156px;
 
       &:not(:last-child) {
         margin-bottom: 4px;
