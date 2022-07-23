@@ -1,7 +1,5 @@
 *.css.map
 *.scss
-.prettierignore
-.prettierrc
 .vscode
 build/
 node_modules

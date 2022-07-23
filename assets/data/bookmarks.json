@@ -258,7 +258,9 @@
   "raids_i_3b": {
     "children": {
       "atum": { "element": "fire", "url": "/#quest/supporter/305321/1/0/41" },
+      "tefnut": { "element": "water", "url": "/#quest/supporter/305331/1/0/42" },
       "bennu": { "element": "earth", "url": "/#quest/supporter/305341/1/0/43" },
+      "ra": { "element": "wind", "url": "/#quest/supporter/305351/1/0/44" },
       "horus": { "element": "light", "url": "/#quest/supporter/305361/1/0/45" },
       "osiris": { "element": "dark", "url": "/#quest/supporter/305371/1/0/46" }
     }
@@ -319,7 +321,12 @@
       "beelzebub": { "element": "dark", "url": "/#quest/supporter/305181/1/0/533" }
     }
   },
-  "raids_i_10": {
+  "raids_i_10a": {
+    "children": {
+      "diaspora": { "element": "water", "url": "/#quest/supporter/305391/1/0/550" }
+    }
+  },
+  "raids_i_10b": {
     "children": {
       "super_ultimate_bahamut": { "element": "dark", "url": "/#quest/supporter/305311/1/0/138" }
     }
