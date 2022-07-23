@@ -66,18 +66,23 @@ body {
     &.wind a {
       color: #66bb6a;
     }
+
     &.fire a {
       color: #ef5350;
     }
+
     &.water a {
       color: #42a5f5;
     }
+
     &.earth a {
       color: #8d6e63;
     }
+
     &.light a {
       color: #ffca28;
     }
+
     &.dark a {
       color: #ab47bc;
     }
@@ -91,6 +96,7 @@ body {
       height: 0;
       overflow: hidden;
     }
+
     &:hover ul {
       height: initial;
     }
