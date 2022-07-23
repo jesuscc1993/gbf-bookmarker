@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../../shared/styles/styles.css" />
     <link rel="stylesheet" href="options.css" />
   </head>
+
   <body>
     <div class="wrapper">
       <div class="page-contents flex">
@@ -25,6 +26,7 @@
           <div class="card">
             <div class="header justify-between">
               <span translate="list_items"></span>
+
               <span class="icon info with-tooltip">
                 <span
                   class="tooltip"
@@ -32,14 +34,17 @@
                 ></span>
               </span>
             </div>
+
             <div class="contents">
               <form id="bookmarks-form"></form>
             </div>
           </div>
         </div>
+
         <div id="live-preview" class="col">
           <div class="card flex1">
             <div class="header" translate="live_preview"></div>
+
             <div class="contents equal-padding flex">
               <iframe
                 id="preview"
@@ -48,20 +53,27 @@
               ></iframe>
             </div>
           </div>
-          <div class="card styles-card margin-top">
+        </div>
+
+        <div id="custom-styles" class="col">
+          <div class="card styles-card">
             <div class="header" translate="custom_styles"></div>
+
             <div class="contents equal-padding col">
               <textarea id="styles" class="flex1"></textarea>
+
               <div class="row margin-top justify-between">
                 <div>
                   <button id="export-styles">
                     <span class="icon export"></span>
                     <span translate="export_styles"></span>
                   </button>
+
                   <button id="import-styles">
                     <span class="icon import"></span>
                     <span translate="import_styles"></span>
                   </button>
+
                   <button id="reset-styles">
                     <span class="icon delete"></span>
                     <span translate="reset_styles"></span>
@@ -85,48 +97,52 @@
             </div>
           </div>
         </div>
+
         <div id="more-options" class="col">
           <div class="card">
             <div class="header" translate="more_options"></div>
-            <div class="contents col">
-              <button id="clear-saved-urls">
-                <span class="icon delete"></span>
-                <span translate="clear_saved_urls"></span>
-              </button>
 
-              <hr />
-
-              <button id="export-settings">
-                <span class="icon export"></span>
-                <span translate="export_settings"></span>
-              </button>
-              <button id="import-settings">
-                <span class="icon import"></span>
-                <span translate="import_settings"></span>
-              </button>
-              <button id="reset-settings">
-                <span class="icon delete"></span>
-                <span translate="reset_settings"></span>
-              </button>
-
-              <hr />
-
-              <div class="row">
-                <button id="reload-language">
-                  <span class="icon refresh"></span>
+            <div class="contents">
+              <div class="col">
+                <button id="clear-saved-urls">
+                  <span class="icon delete"></span>
+                  <span translate="clear_saved_urls"></span>
                 </button>
-                <select id="language" class="flex1">
-                  <option value="en-us">English</option>
-                  <option value="es-es">Español</option>
-                </select>
-              </div>
 
-              <input
-                id="settings-file-input"
-                type="file"
-                accept=".json"
-                hidden
-              />
+                <hr />
+
+                <button id="export-settings">
+                  <span class="icon export"></span>
+                  <span translate="export_settings"></span>
+                </button>
+                <button id="import-settings">
+                  <span class="icon import"></span>
+                  <span translate="import_settings"></span>
+                </button>
+                <button id="reset-settings">
+                  <span class="icon delete"></span>
+                  <span translate="reset_settings"></span>
+                </button>
+
+                <hr />
+
+                <div class="row">
+                  <button id="reload-language">
+                    <span class="icon refresh"></span>
+                  </button>
+                  <select id="language" class="flex1">
+                    <option value="en-us">English</option>
+                    <option value="es-es">Español</option>
+                  </select>
+                </div>
+
+                <input
+                  id="settings-file-input"
+                  type="file"
+                  accept=".json"
+                  hidden
+                />
+              </div>
             </div>
           </div>
         </div>
