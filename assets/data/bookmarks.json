@@ -337,5 +337,14 @@
       "updates": { "url": "/#news/0/1" },
       "wiki": { "url": "https://gbf.wiki/Main_Page" }
     }
+  },
+  "clock": {
+    "custom": true
+  },
+  "clock-jst": {
+    "custom": true
+  },
+  "options": {
+    "custom": true
   }
 }

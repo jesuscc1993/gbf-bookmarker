@@ -22,7 +22,9 @@ const initializeBookmarks = () => {
           settings &&
           settings.bookmarks[key]
         ) {
-          if (bookmark.children) {
+          if (bookmark.custom) {
+            bookmarksElement = getCustomBookmark(key);
+          } else if (bookmark.children) {
             bookmarksElement = getBookmarksGroup(key, bookmark);
           } else {
             bookmarksElement = getSingleBookmark(key, bookmark);
@@ -32,26 +34,6 @@ const initializeBookmarks = () => {
           bookmarksContainer.append(bookmarksElement);
         }
       });
-
-      const jstDate = new Date(
-        new Date().toLocaleString('en-US', { timeZone: 'Japan' }),
-      );
-      const hour = jstDate.getHours();
-      const minutes = jstDate.getMinutes();
-      const formattedDate = `${hour}:${minutes > 9 ? minutes : '0' + minutes}`;
-
-      const settingsItem = jQuery(
-        `<li class="option"><a>${translate('options')}</a></li>`,
-      );
-      settingsItem.click(() =>
-        tabs.create({ url: `src/modules/options/options.html` }),
-      );
-      bookmarksContainer.append(settingsItem);
-
-      const timeItem = jQuery(
-        `<li class="option disabled"><i>${formattedDate} (JST)</i></li>`,
-      );
-      bookmarksContainer.append(timeItem);
     });
   });
 };
@@ -79,11 +61,52 @@ const onStoredUrlClick = (event, key) => {
   });
 };
 
+const getCustomBookmark = (key) => {
+  switch (key) {
+    case 'clock': {
+      return getClock(new Date());
+    }
+
+    case 'clock-jst': {
+      const jstDate = new Date(
+        new Date().toLocaleString('en-US', { timeZone: 'Japan' })
+      );
+
+      return getClock(jstDate, '(JST)');
+    }
+
+    case 'options': {
+      const settingsItem = jQuery(
+        `<li class="option"><a>${translate('options')}</a></li>`
+      );
+
+      settingsItem.click(() =>
+        tabs.create({ url: `src/modules/options/options.html` })
+      );
+
+      return settingsItem;
+    }
+  }
+};
+
+const getClock = (date, suffix) => {
+  const hour = date.getHours();
+  const minutes = date.getMinutes();
+  const formattedDate = `${hour}:${minutes > 9 ? minutes : '0' + minutes}`;
+
+  const timeItem = jQuery(
+    `<li class="option disabled"><i>${formattedDate}${
+      suffix ? ` ${suffix}` : ''
+    }</i></li>`
+  );
+  return timeItem;
+};
+
 const getSingleBookmark = (literal, bookmark) => {
   const { children, element, url, urlKey } = bookmark;
 
   const bookmarkElement = jQuery(
-    `<li class="option"><a>${translate(literal)}</a></li>`,
+    `<li class="option"><a>${translate(literal)}</a></li>`
   );
   if (children) {
     bookmarkElement.addClass('toggle');
@@ -107,8 +130,8 @@ const getBookmarksGroup = (key, bookmark) => {
   const containerElement = $(`<ul></ul>`);
   containerElement.append(
     Object.keys(children).map((nestedKey) =>
-      getSingleBookmark(nestedKey, children[nestedKey]),
-    ),
+      getSingleBookmark(nestedKey, children[nestedKey])
+    )
   );
 
   const groupElement = jQuery(`<li class="bookmark-group"></li>`);
