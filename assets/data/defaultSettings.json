@@ -34,6 +34,8 @@
     "repeat_quest": true,
     "shop": true,
     "trial_battles": true,
-    "upgrade": false
+    "upgrade": false,
+    "clock-jst": true,
+    "options": true
   }
 }
