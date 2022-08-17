@@ -69,7 +69,7 @@ const getCustomBookmark = (key) => {
 
     case 'clock-jst': {
       const jstDate = new Date(
-        new Date().toLocaleString('en-US', { timeZone: 'Japan' })
+        new Date().toLocaleString('en-US', { timeZone: 'Japan' }),
       );
 
       return getClock(jstDate, '(JST)');
@@ -77,11 +77,11 @@ const getCustomBookmark = (key) => {
 
     case 'options': {
       const settingsItem = jQuery(
-        `<li class="option"><a>${translate('options')}</a></li>`
+        `<li class="option"><a>${translate('options')}</a></li>`,
       );
 
       settingsItem.click(() =>
-        tabs.create({ url: `src/modules/options/options.html` })
+        tabs.create({ url: `src/modules/options/options.html` }),
       );
 
       return settingsItem;
@@ -97,7 +97,7 @@ const getClock = (date, suffix) => {
   const timeItem = jQuery(
     `<li class="option disabled"><i>${formattedDate}${
       suffix ? ` ${suffix}` : ''
-    }</i></li>`
+    }</i></li>`,
   );
   return timeItem;
 };
@@ -106,21 +106,27 @@ const getSingleBookmark = (literal, bookmark) => {
   const { children, element, url, urlKey } = bookmark;
 
   const bookmarkElement = jQuery(
-    `<li class="option"><a>${translate(literal)}</a></li>`
+    `<li class="option"><a>${translate(literal)}</a></li>`,
   );
+
   if (children) {
     bookmarkElement.addClass('toggle');
   }
   if (element) {
     bookmarkElement.addClass(`${element} element`);
   }
-  if (url && !inPreviewMode()) {
-    const fullUrl = url.includes('http') ? url : `${baseUrl}${url}`;
-    bookmarkElement.mousedown((event) => onUrlClick(event, fullUrl));
+
+  if (!inPreviewMode()) {
+    if (url) {
+      const fullUrl = url.includes('http') ? url : `${baseUrl}${url}`;
+      bookmarkElement.mousedown((event) => onUrlClick(event, fullUrl));
+    } else if (urlKey) {
+      bookmarkElement.mousedown((event) => onStoredUrlClick(event, urlKey));
+    } else if (url === '') {
+      bookmarkElement.mousedown(() => alert(translate('tbi')));
+    }
   }
-  if (urlKey && !inPreviewMode()) {
-    bookmarkElement.mousedown((event) => onStoredUrlClick(event, urlKey));
-  }
+
   return bookmarkElement;
 };
 
@@ -130,8 +136,8 @@ const getBookmarksGroup = (key, bookmark) => {
   const containerElement = $(`<ul></ul>`);
   containerElement.append(
     Object.keys(children).map((nestedKey) =>
-      getSingleBookmark(nestedKey, children[nestedKey])
-    )
+      getSingleBookmark(nestedKey, children[nestedKey]),
+    ),
   );
 
   const groupElement = jQuery(`<li class="bookmark-group"></li>`);
