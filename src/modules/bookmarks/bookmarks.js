@@ -103,6 +103,8 @@ const getClock = (date, suffix) => {
 };
 
 const getSingleBookmark = (literal, bookmark) => {
+  if (bookmark === null) return jQuery(`<li class="option"></li>`);
+
   const { children, element, url, urlKey } = bookmark;
 
   const bookmarkElement = jQuery(
