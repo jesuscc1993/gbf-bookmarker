@@ -17,8 +17,8 @@ const URL_KEYS = {
 };
 
 const URLS = {
-  QUEST: `http://${targetDomain}/#quest`,
-  PARTY: `http://${targetDomain}/#party/index/0/npc/0`,
+  QUEST: `https://${targetDomain}/#quest`,
+  PARTY: `https://${targetDomain}/#party/index/0/npc/0`,
 };
 
 const initializeBackground = () => {
