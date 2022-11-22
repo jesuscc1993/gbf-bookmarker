@@ -296,7 +296,9 @@
   },
   "raids_i_8a": {
     "children": {
-      "diaspora": { "element": "water", "url": "/#quest/supporter/305391/1/0/550" }
+      "mugen": { "element": "fire", "url": "/#quest/supporter/305391/1/0/550" },
+      "diaspora": { "element": "water", "url": "/#quest/supporter/305391/1/0/550" },
+      "siegfried": { "element": "earth", "url": "/#quest/supporter/305401/1/0/551" }
     }
   },
   "raids_i_8b": {
