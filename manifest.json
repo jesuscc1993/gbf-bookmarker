@@ -28,6 +28,15 @@
         "default": "Shift+Alt+G"
       }
     },
+    "open-party": {
+      "description": "Open party"
+    },
+    "open-quests": {
+      "description": "Open quests"
+    },
+    "open-raids": {
+      "description": "Open raids"
+    },
     "repeat-quest": {
       "description": "Repeat quest",
       "suggested_key": {
@@ -45,5 +54,5 @@
   "name": "GBF Bookmarker",
   "options_page": "src/modules/options/options.html",
   "permissions": ["activeTab", "browsingData", "contextMenus", "notifications", "storage", "tabs"],
-  "version": "1.0.18"
+  "version": "1.0.19"
 }
