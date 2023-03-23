@@ -71,19 +71,19 @@ const initializeBackground = () => {
   initializeTranslations().then(({ language }) => {
     setLanguage(language || navigator.language.toLowerCase()).then(() => {
       chrome.contextMenus.create({
+        contexts: contextMenuContexts,
         id: ContextMenuItem.About,
         title: translate('about_extension'),
-        contexts: ['all'],
       });
       chrome.contextMenus.create({
+        contexts: contextMenuContexts,
         id: ContextMenuItem.Issues,
         title: translate('open_issue'),
-        contexts: ['all'],
       });
       chrome.contextMenus.create({
+        contexts: contextMenuContexts,
         id: ContextMenuItem.Developer,
         title: translate('developed_by'),
-        contexts: ['all'],
       });
       chrome.contextMenus.onClicked.addListener((info, tab) => {
         const action = {
@@ -139,6 +139,8 @@ const isAnySubstringIncluded = (string, substrings) => {
 };
 
 const targetDomain = 'game.granbluefantasy.jp';
+
+const contextMenuContexts = ['action'];
 
 const UrlKeys = {
   Event: 'event',
