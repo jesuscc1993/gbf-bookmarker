@@ -8,23 +8,6 @@ import {
 import { loadSettings, storeSettings } from '../../storage/settings.storage.js';
 import { fetchJson } from '../../shared/file.utils.js';
 
-const targetDomain = 'game.granbluefantasy.jp';
-
-const URL_KEYS = {
-  EVENT: 'event',
-  GUILD_WARS: 'guildWars',
-  LAST_QUEST: 'lastQuest',
-};
-
-const URLS = {
-  ARCARUM: `https://${targetDomain}/#arcarum2`,
-  FATE: `https://${targetDomain}/#quest/fate`,
-  PARTY: `https://${targetDomain}/#party/index/0/npc/0`,
-  QUEST: `https://${targetDomain}/#quest`,
-  RAIDS: `https://${targetDomain}/#quest/assist`,
-  WORLD: `https://${targetDomain}/#quest/island`,
-};
-
 const initializeBackground = () => {
   loadSettings().then((settings) => {
     if (!settings) {
@@ -37,11 +20,11 @@ const initializeBackground = () => {
       if (changeInfo.status == 'complete' && url.includes(targetDomain)) {
         if (url.includes('/supporter/')) {
           // quests
-          const key = URL_KEYS.LAST_QUEST;
+          const key = UrlKeys.LastQuest;
           storage.sync.set({ [key]: url });
         } else if (url.includes('/#event/teamraid')) {
           // guild wars
-          const key = URL_KEYS.GUILD_WARS;
+          const key = UrlKeys.GuildWars;
           storage.sync.get([key], (response) => {
             const currentUrl = response[key];
             if (!url.includes(currentUrl)) {
@@ -50,7 +33,7 @@ const initializeBackground = () => {
           });
         } else if (isAnySubstringIncluded(url, ['/#event', '/#limited'])) {
           // events
-          const key = URL_KEYS.EVENT;
+          const key = UrlKeys.Event;
           storage.sync.get([key], (response) => {
             const currentUrl = response[key];
             if (!url.includes(currentUrl)) {
@@ -69,15 +52,15 @@ const initializeBackground = () => {
 
         if (firstmatch) {
           const action = {
-            'open-arcarum': openArcarum,
-            'open-event': openEvent,
-            'open-fate': openFate,
-            'open-guild-wars': openGuildWars,
-            'open-party': openParty,
-            'open-quests': openQuests,
-            'open-raids': openRaids,
-            'open-world': openWorld,
-            'repeat-quest': repeatQuest,
+            [ShortcutAction.Arcarum]: openArcarum,
+            [ShortcutAction.Event]: openEvent,
+            [ShortcutAction.FateEpisodes]: openFate,
+            [ShortcutAction.GuildWars]: openGuildWars,
+            [ShortcutAction.Party]: openParty,
+            [ShortcutAction.Quests]: openQuests,
+            [ShortcutAction.Raids]: openRaids,
+            [ShortcutAction.RepeatQuest]: repeatQuest,
+            [ShortcutAction.World]: openWorld,
           }[command];
           action && action(firstmatch.id);
         }
@@ -88,33 +71,46 @@ const initializeBackground = () => {
   initializeTranslations().then(({ language }) => {
     setLanguage(language || navigator.language.toLowerCase()).then(() => {
       chrome.contextMenus.create({
-        title: translate('developed_by'),
-        contexts: ['browser_action'],
-        onclick: () => {
-          window.open('https://github.com/jesuscc1993');
-        },
+        id: ContextMenuItem.About,
+        title: translate('about_extension'),
+        contexts: ['all'],
       });
       chrome.contextMenus.create({
-        title: translate('about_extension'),
-        contexts: ['browser_action'],
-        onclick: () => {
-          window.open('https://github.com/jesuscc1993/gbf-bookmarker');
-        },
+        id: ContextMenuItem.Issues,
+        title: translate('open_issue'),
+        contexts: ['all'],
+      });
+      chrome.contextMenus.create({
+        id: ContextMenuItem.Developer,
+        title: translate('developed_by'),
+        contexts: ['all'],
+      });
+      chrome.contextMenus.onClicked.addListener((info, tab) => {
+        const action = {
+          [ContextMenuItem.About]: openAbout,
+          [ContextMenuItem.Developer]: openDeveloper,
+          [ContextMenuItem.Issues]: openIssues,
+        }[info.menuItemId];
+        action && action();
       });
     });
   });
 };
 
-const openEvent = (tabId) => openStoredUrl(tabId, URL_KEYS.EVENT);
-const openGuildWars = (tabId) => openStoredUrl(tabId, URL_KEYS.GUILD_WARS);
-const repeatQuest = (tabId) => openStoredUrl(tabId, URL_KEYS.LAST_QUEST);
+const openEvent = (tabId) => openStoredUrl(tabId, UrlKeys.Event);
+const openGuildWars = (tabId) => openStoredUrl(tabId, UrlKeys.GuildWars);
+const repeatQuest = (tabId) => openStoredUrl(tabId, UrlKeys.LastQuest);
 
-const openArcarum = (tabId) => openUrl(tabId, URLS.ARCARUM);
-const openFate = (tabId) => openUrl(tabId, URLS.FATE);
-const openParty = (tabId) => openUrl(tabId, URLS.PARTY);
-const openQuests = (tabId) => openUrl(tabId, URLS.QUEST);
-const openRaids = (tabId) => openUrl(tabId, URLS.RAIDS);
-const openWorld = (tabId) => openUrl(tabId, URLS.WORLD);
+const openArcarum = (tabId) => openUrl(tabId, Urls.Arcarum);
+const openFate = (tabId) => openUrl(tabId, Urls.FateEpisodes);
+const openParty = (tabId) => openUrl(tabId, Urls.Party);
+const openQuests = (tabId) => openUrl(tabId, Urls.Quest);
+const openRaids = (tabId) => openUrl(tabId, Urls.Raids);
+const openWorld = (tabId) => openUrl(tabId, Urls.World);
+
+const openAbout = () => openTab(Urls.About);
+const openDeveloper = () => openTab(Urls.Developer);
+const openIssues = () => openTab(Urls.Issues);
 
 const openStoredUrl = (tabId, key) => {
   storage.sync.get([key], (response) => {
@@ -130,6 +126,9 @@ const openStoredUrl = (tabId, key) => {
 const openUrl = (tabId, url) => {
   tabs.update(tabId, { url });
 };
+const openTab = (url) => {
+  tabs.create({ url });
+};
 
 const isAnySubstringIncluded = (string, substrings) => {
   return (
@@ -137,6 +136,45 @@ const isAnySubstringIncluded = (string, substrings) => {
       .map((substring) => string.includes(substring))
       .filter((included) => included).length > 0
   );
+};
+
+const targetDomain = 'game.granbluefantasy.jp';
+
+const UrlKeys = {
+  Event: 'event',
+  GuildWars: 'guildWars',
+  LastQuest: 'lastQuest',
+};
+
+const Urls = {
+  Arcarum: `https://${targetDomain}/#arcarum2`,
+  FateEpisodes: `https://${targetDomain}/#quest/fate`,
+  Party: `https://${targetDomain}/#party/index/0/npc/0`,
+  Quest: `https://${targetDomain}/#quest`,
+  Raids: `https://${targetDomain}/#quest/assist`,
+  World: `https://${targetDomain}/#quest/island`,
+
+  About: `https://github.com/jesuscc1993/gbf-bookmarker#gbf-bookmarker`,
+  Developer: `https://github.com/jesuscc1993`,
+  Issues: `https://github.com/jesuscc1993/gbf-bookmarker/issues`,
+};
+
+const ShortcutAction = {
+  Arcarum: 'open-arcarum',
+  Event: 'open-event',
+  FateEpisodes: 'open-fate-episodes',
+  GuildWars: 'open-guild-wars',
+  Party: 'open-party',
+  Quests: 'open-quests',
+  Raids: 'open-raids',
+  RepeatQuest: 'repeat-quest',
+  World: 'open-world',
+};
+
+const ContextMenuItem = {
+  About: 'gbf-bookmarker-about',
+  Developer: 'gbf-bookmarker-developer',
+  Issues: 'gbf-bookmarker-issues',
 };
 
 initializeBackground();
