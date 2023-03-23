@@ -16,6 +16,12 @@
         "windows": "Ctrl+Shift+F"
       }
     },
+    "open-arcarum": {
+      "description": "Open arcarum"
+    },
+    "open-fate": {
+      "description": "Open fate episodes"
+    },
     "open-event": {
       "description": "Open event",
       "suggested_key": {
@@ -23,7 +29,7 @@
       }
     },
     "open-guild-wars": {
-      "description": "Open Guild Wars",
+      "description": "Open Unite and Fight",
       "suggested_key": {
         "default": "Shift+Alt+G"
       }
@@ -36,6 +42,9 @@
     },
     "open-raids": {
       "description": "Open raids"
+    },
+    "open-world": {
+      "description": "Open world"
     },
     "repeat-quest": {
       "description": "Repeat quest",
