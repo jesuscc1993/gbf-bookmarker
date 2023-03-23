@@ -38,11 +38,12 @@ body {
   }
 
   .option {
+    background: #fffc;
     border: 0 solid #0001;
     border-left-width: 1px;
     border-bottom-width: 1px;
-    background: #fffc;
-    padding: 4px 6px;
+    line-height: 28px;
+    padding: 0 6px;
 
     &:not(.disabled) {
       cursor: pointer;
@@ -65,18 +66,23 @@ body {
     &.wind a {
       color: #66bb6a;
     }
+
     &.fire a {
       color: #ef5350;
     }
+
     &.water a {
       color: #42a5f5;
     }
+
     &.earth a {
       color: #8d6e63;
     }
+
     &.light a {
       color: #ffca28;
     }
+
     &.dark a {
       color: #ab47bc;
     }
@@ -90,6 +96,7 @@ body {
       height: 0;
       overflow: hidden;
     }
+
     &:hover ul {
       height: initial;
     }

@@ -13,8 +13,12 @@ const URL_KEYS = {
 };
 
 const URLS = {
-  QUEST: `http://${targetDomain}/#quest`,
-  PARTY: `http://${targetDomain}/#party/index/0/npc/0`,
+  ARCARUM: `https://${targetDomain}/#arcarum2`,
+  FATE: `https://${targetDomain}/#quest/fate`,
+  PARTY: `https://${targetDomain}/#party/index/0/npc/0`,
+  QUEST: `https://${targetDomain}/#quest`,
+  RAIDS: `https://${targetDomain}/#quest/assist`,
+  WORLD: `https://${targetDomain}/#quest/island`,
 };
 
 const initializeBackground = () => {
@@ -61,10 +65,14 @@ const initializeBackground = () => {
 
         if (firstmatch) {
           const action = {
+            'open-arcarum': openArcarum,
             'open-event': openEvent,
+            'open-fate': openFate,
             'open-guild-wars': openGuildWars,
             'open-party': openParty,
             'open-quests': openQuests,
+            'open-raids': openRaids,
+            'open-world': openWorld,
             'repeat-quest': repeatQuest,
           }[command];
           action && action(firstmatch.id);
@@ -93,22 +101,16 @@ const initializeBackground = () => {
   });
 };
 
-const openEvent = (tabId) => {
-  openStoredUrl(tabId, URL_KEYS.EVENT);
-};
-const openGuildWars = (tabId) => {
-  openStoredUrl(tabId, URL_KEYS.GUILD_WARS);
-};
-const repeatQuest = (tabId) => {
-  openStoredUrl(tabId, URL_KEYS.LAST_QUEST);
-};
+const openEvent = (tabId) => openStoredUrl(tabId, URL_KEYS.EVENT);
+const openGuildWars = (tabId) => openStoredUrl(tabId, URL_KEYS.GUILD_WARS);
+const repeatQuest = (tabId) => openStoredUrl(tabId, URL_KEYS.LAST_QUEST);
 
-const openQuests = (tabId) => {
-  openUrl(tabId, URLS.QUEST);
-};
-const openParty = (tabId) => {
-  openUrl(tabId, URLS.PARTY);
-};
+const openArcarum = (tabId) => openUrl(tabId, URLS.ARCARUM);
+const openFate = (tabId) => openUrl(tabId, URLS.FATE);
+const openParty = (tabId) => openUrl(tabId, URLS.PARTY);
+const openQuests = (tabId) => openUrl(tabId, URLS.QUEST);
+const openRaids = (tabId) => openUrl(tabId, URLS.RAIDS);
+const openWorld = (tabId) => openUrl(tabId, URLS.WORLD);
 
 const openStoredUrl = (tabId, key) => {
   storage.sync.get([key], (response) => {

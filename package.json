@@ -16,9 +16,9 @@
   },
   "scripts": {
     "build": "rimraf build && yarn build-folders && yarn clean-build-folders && yarn copy-build-folders",
-    "build-folders": "rimraf build && mkdir build && cp -r assets build/assets && cp -r src build/src && cp -r vendor build/vendor",
+    "build-folders": "rimraf build && mkdir build && cp -r assets build/assets && cp -r src build/src && cp -r vendor build/vendor && cp manifest.json build/manifest.json",
     "clean-build-folders": "rimraf build/**/*.scss && rimraf build/**/*.css.map && rimraf build/**/*.md",
-    "copy-build-folders": "git checkout release && rimraf assets && rimraf src && rimraf vendor && mv build/* . && rimraf build"
+    "copy-build-folders": "git checkout release && rimraf assets && rimraf src && rimraf vendor && rimraf package.json && mv build/* . && rimraf build"
   },
-  "version": "1.0.14"
+  "version": "1.0.21"
 }

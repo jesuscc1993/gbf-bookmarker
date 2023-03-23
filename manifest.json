@@ -16,6 +16,12 @@
         "windows": "Ctrl+Shift+F"
       }
     },
+    "open-arcarum": {
+      "description": "Open arcarum"
+    },
+    "open-fate": {
+      "description": "Open fate episodes"
+    },
     "open-event": {
       "description": "Open event",
       "suggested_key": {
@@ -23,10 +29,22 @@
       }
     },
     "open-guild-wars": {
-      "description": "Open Guild Wars",
+      "description": "Open Unite and Fight",
       "suggested_key": {
         "default": "Shift+Alt+G"
       }
+    },
+    "open-party": {
+      "description": "Open party"
+    },
+    "open-quests": {
+      "description": "Open quests"
+    },
+    "open-raids": {
+      "description": "Open raids"
+    },
+    "open-world": {
+      "description": "Open world"
     },
     "repeat-quest": {
       "description": "Repeat quest",
@@ -45,5 +63,5 @@
   "name": "GBF Bookmarker",
   "options_page": "src/modules/options/options.html",
   "permissions": ["activeTab", "browsingData", "contextMenus", "notifications", "storage", "tabs"],
-  "version": "1.0.14"
+  "version": "1.0.21"
 }
