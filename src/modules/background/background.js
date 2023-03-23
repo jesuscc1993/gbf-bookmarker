@@ -18,15 +18,16 @@ const URL_KEYS = {
 
 const URLS = {
   QUEST: `https://${targetDomain}/#quest`,
+  RAIDS: `https://${targetDomain}/#quest/assist`,
   PARTY: `https://${targetDomain}/#party/index/0/npc/0`,
 };
 
 const initializeBackground = () => {
   loadSettings().then((settings) => {
     if (!settings) {
-      fetchJson(
-        '../../../assets/data/defaultSettings.json',
-      ).then((defaultSettings) => storeSettings(defaultSettings));
+      fetchJson('../../../assets/data/defaultSettings.json').then(
+        (defaultSettings) => storeSettings(defaultSettings),
+      );
     }
 
     tabs.onUpdated.addListener((tabId, changeInfo, { url }) => {
@@ -69,6 +70,7 @@ const initializeBackground = () => {
             'open-guild-wars': openGuildWars,
             'open-party': openParty,
             'open-quests': openQuests,
+            'open-raids': openRaids,
             'repeat-quest': repeatQuest,
           }[command];
           action && action(firstmatch.id);
@@ -97,22 +99,13 @@ const initializeBackground = () => {
   });
 };
 
-const openEvent = (tabId) => {
-  openStoredUrl(tabId, URL_KEYS.EVENT);
-};
-const openGuildWars = (tabId) => {
-  openStoredUrl(tabId, URL_KEYS.GUILD_WARS);
-};
-const repeatQuest = (tabId) => {
-  openStoredUrl(tabId, URL_KEYS.LAST_QUEST);
-};
+const openEvent = (tabId) => openStoredUrl(tabId, URL_KEYS.EVENT);
+const openGuildWars = (tabId) => openStoredUrl(tabId, URL_KEYS.GUILD_WARS);
+const repeatQuest = (tabId) => openStoredUrl(tabId, URL_KEYS.LAST_QUEST);
 
-const openQuests = (tabId) => {
-  openUrl(tabId, URLS.QUEST);
-};
-const openParty = (tabId) => {
-  openUrl(tabId, URLS.PARTY);
-};
+const openParty = (tabId) => openUrl(tabId, URLS.PARTY);
+const openQuests = (tabId) => openUrl(tabId, URLS.QUEST);
+const openRaids = (tabId) => openUrl(tabId, URLS.RAIDS);
 
 const openStoredUrl = (tabId, key) => {
   storage.sync.get([key], (response) => {
