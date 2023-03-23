@@ -70,28 +70,30 @@ const initializeBackground = () => {
 
   initializeTranslations().then(({ language }) => {
     setLanguage(language || navigator.language.toLowerCase()).then(() => {
-      chrome.contextMenus.create({
-        contexts: contextMenuContexts,
-        id: ContextMenuItem.About,
-        title: translate('about_extension'),
-      });
-      chrome.contextMenus.create({
-        contexts: contextMenuContexts,
-        id: ContextMenuItem.Issues,
-        title: translate('open_issue'),
-      });
-      chrome.contextMenus.create({
-        contexts: contextMenuContexts,
-        id: ContextMenuItem.Developer,
-        title: translate('developed_by'),
-      });
-      chrome.contextMenus.onClicked.addListener((info, tab) => {
-        const action = {
-          [ContextMenuItem.About]: openAbout,
-          [ContextMenuItem.Developer]: openDeveloper,
-          [ContextMenuItem.Issues]: openIssues,
-        }[info.menuItemId];
-        action && action();
+      chrome.contextMenus.removeAll(() => {
+        chrome.contextMenus.create({
+          contexts: contextMenuContexts,
+          id: ContextMenuItem.About,
+          title: translate('about_extension'),
+        });
+        chrome.contextMenus.create({
+          contexts: contextMenuContexts,
+          id: ContextMenuItem.Issues,
+          title: translate('open_issue'),
+        });
+        chrome.contextMenus.create({
+          contexts: contextMenuContexts,
+          id: ContextMenuItem.Developer,
+          title: translate('developed_by'),
+        });
+        chrome.contextMenus.onClicked.addListener((info, tab) => {
+          const action = {
+            [ContextMenuItem.About]: openAbout,
+            [ContextMenuItem.Developer]: openDeveloper,
+            [ContextMenuItem.Issues]: openIssues,
+          }[info.menuItemId];
+          action && action();
+        });
       });
     });
   });
