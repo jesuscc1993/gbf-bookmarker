@@ -1,14 +1,15 @@
 {
-  "author": "MetalTxus (Jesús Miguel Cruz Cana)",
-  "background": {
-    "page": "src/modules/background/background.html"
-  },
-  "browser_action": {
+  "action": {
     "default_popup": "src/modules/bookmarks/bookmarks.html",
     "default_title": "Show bookmarks"
   },
+  "author": "MetalTxus (Jesús Miguel Cruz Cana)",
+  "background": {
+    "service_worker": "src/modules/background/background.js",
+    "type": "module"
+  },
   "commands": {
-    "_execute_browser_action": {
+    "_execute_action": {
       "suggested_key": {
         "chromeos": "Ctrl+Shift+F",
         "linux": "Ctrl+Shift+F",
@@ -19,14 +20,14 @@
     "open-arcarum": {
       "description": "Open arcarum"
     },
-    "open-fate": {
-      "description": "Open fate episodes"
-    },
     "open-event": {
       "description": "Open event",
       "suggested_key": {
         "default": "Shift+Alt+E"
       }
+    },
+    "open-fate-episodes": {
+      "description": "Open fate episodes"
     },
     "open-guild-wars": {
       "description": "Open Unite and Fight",
@@ -59,9 +60,9 @@
     "48": "assets/images/icons/icon.png",
     "128": "assets/images/icons/icon.png"
   },
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "GBF Bookmarker",
   "options_page": "src/modules/options/options.html",
   "permissions": ["activeTab", "browsingData", "contextMenus", "notifications", "storage", "tabs"],
-  "version": "1.0.21"
+  "version": "1.0.22"
 }
