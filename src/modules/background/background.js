@@ -12,7 +12,7 @@ const initializeBackground = () => {
   loadSettings().then((settings) => {
     if (!settings) {
       fetchJson('../../../assets/data/defaultSettings.json').then(
-        (defaultSettings) => storeSettings(defaultSettings),
+        (defaultSettings) => storeSettings(defaultSettings)
       );
     }
 
@@ -47,7 +47,7 @@ const initializeBackground = () => {
     commands.onCommand.addListener((command) => {
       tabs.query({ active: true, lastFocusedWindow: true }, (matches) => {
         const firstmatch = matches.find(({ url }) =>
-          url.includes(targetDomain),
+          url.includes(targetDomain)
         );
 
         if (firstmatch) {
@@ -56,6 +56,7 @@ const initializeBackground = () => {
             [ShortcutAction.Event]: openEvent,
             [ShortcutAction.FateEpisodes]: openFate,
             [ShortcutAction.GuildWars]: openGuildWars,
+            [ShortcutAction.Home]: openHome,
             [ShortcutAction.Party]: openParty,
             [ShortcutAction.Quests]: openQuests,
             [ShortcutAction.Raids]: openRaids,
@@ -106,6 +107,7 @@ const repeatQuest = (tabId) => openStoredUrl(tabId, UrlKeys.LastQuest);
 
 const openArcarum = (tabId) => openUrl(tabId, Urls.Arcarum);
 const openFate = (tabId) => openUrl(tabId, Urls.FateEpisodes);
+const openHome = (tabId) => openUrl(tabId, Urls.Home);
 const openParty = (tabId) => openUrl(tabId, Urls.Party);
 const openQuests = (tabId) => openUrl(tabId, Urls.Quest);
 const openRaids = (tabId) => openUrl(tabId, Urls.Raids);
@@ -155,6 +157,7 @@ const UrlKeys = {
 const Urls = {
   Arcarum: `https://${targetDomain}/#arcarum2`,
   FateEpisodes: `https://${targetDomain}/#quest/fate`,
+  Home: `https://${targetDomain}/#mypage`,
   Party: `https://${targetDomain}/#party/index/0/npc/0`,
   Quest: `https://${targetDomain}/#quest`,
   Raids: `https://${targetDomain}/#quest/assist`,
@@ -171,6 +174,7 @@ const ShortcutAction = {
   Event: 'open-event',
   FateEpisodes: 'open-fate-episodes',
   GuildWars: 'open-guild-wars',
+  Home: 'open-home',
   Party: 'open-party',
   Quests: 'open-quests',
   Raids: 'open-raids',
