@@ -29,12 +29,6 @@
     "open-fate-episodes": {
       "description": "Open fate episodes"
     },
-    "open-guild-wars": {
-      "description": "Open Unite and Fight",
-      "suggested_key": {
-        "default": "Shift+Alt+G"
-      }
-    },
     "open-party": {
       "description": "Open party"
     },
@@ -43,6 +37,15 @@
     },
     "open-raids": {
       "description": "Open raids"
+    },
+    "open-stage": {
+      "description": "Open stage"
+    },
+    "open-guild-wars": {
+      "description": "Open Unite and Fight",
+      "suggested_key": {
+        "default": "Shift+Alt+G"
+      }
     },
     "open-world": {
       "description": "Open world"

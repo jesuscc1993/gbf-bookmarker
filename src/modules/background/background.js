@@ -60,6 +60,7 @@ const initializeBackground = () => {
             [ShortcutAction.Quests]: openQuests,
             [ShortcutAction.Raids]: openRaids,
             [ShortcutAction.RepeatQuest]: repeatQuest,
+            [ShortcutAction.Stage]: openStage,
             [ShortcutAction.World]: openWorld,
           }[command];
           action && action(firstmatch.id);
@@ -109,6 +110,7 @@ const openParty = (tabId) => openUrl(tabId, Urls.Party);
 const openQuests = (tabId) => openUrl(tabId, Urls.Quest);
 const openRaids = (tabId) => openUrl(tabId, Urls.Raids);
 const openWorld = (tabId) => openUrl(tabId, Urls.World);
+const openStage = (tabId) => openUrl(tabId, Urls.Stage);
 
 const openAbout = () => openTab(Urls.About);
 const openDeveloper = () => openTab(Urls.Developer);
@@ -156,6 +158,7 @@ const Urls = {
   Party: `https://${targetDomain}/#party/index/0/npc/0`,
   Quest: `https://${targetDomain}/#quest`,
   Raids: `https://${targetDomain}/#quest/assist`,
+  Stage: `https://${targetDomain}/#quest/stage`,
   World: `https://${targetDomain}/#quest/island`,
 
   About: `https://github.com/jesuscc1993/gbf-bookmarker#gbf-bookmarker`,
@@ -172,6 +175,7 @@ const ShortcutAction = {
   Quests: 'open-quests',
   Raids: 'open-raids',
   RepeatQuest: 'repeat-quest',
+  Stage: 'open-stage',
   World: 'open-world',
 };
 
