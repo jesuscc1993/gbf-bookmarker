@@ -32,6 +32,9 @@
     "open-home": {
       "description": "Open home"
     },
+    "open-inventory": {
+      "description": "Open inventory"
+    },
     "open-party": {
       "description": "Open party"
     },
