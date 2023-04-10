@@ -192,7 +192,8 @@
       "baal": { "element": "earth", "url": "/#quest/supporter/301371/1/0/1333" },
       "garuda": { "element": "wind", "url": "/#quest/supporter/301381/1/0/1343" },
       "odin": { "element": "light", "url": "/#quest/supporter/300461/1/0/1353" },
-      "lich": { "element": "dark", "url": "/#quest/supporter/300551/1/0/1363" }
+      "lich": { "element": "dark", "url": "/#quest/supporter/300551/1/0/1363" },
+      "pro": {"url": "/#quest/supporter/305471/28"}
     }
   },
   "raids_s_4": {
@@ -223,7 +224,8 @@
       "leviathan": { "element": "water", "url": "/#quest/supporter/300511/1/0/48" },
       "yggdrasil": { "element": "earth", "url": "/#quest/supporter/300531/1/0/49" },
       "luminiera": { "element": "light", "url": "/#quest/supporter/300561/1/0/50" },
-      "celeste": { "element": "dark", "url": "/#quest/supporter/300581/1/0/51" }
+      "celeste": { "element": "dark", "url": "/#quest/supporter/300581/1/0/51" },
+      "pro": { "url": "/#quest/supporter/305461/28" }
     }
   },
   "raids_i_2a": {
@@ -306,6 +308,15 @@
   "raids_i_8b": {
     "children": {
       "super_ultimate_bahamut": { "element": "dark", "url": "/#quest/supporter/305311/1/0/138" }
+    }
+  },
+  "pro": {
+    "children": {
+      "raids_s_1": { "url": "/#quest/supporter/305261/28" },
+      "raids_s_2": { "url": "/#quest/supporter/305441/28" },
+      "raids_s_3": { "url": "/#quest/supporter/305471/28" },
+      "raids_i_1": { "url": "/#quest/supporter/305461/28" },
+      "halo": { "url": "/#quest/supporter/305301/28" }
     }
   },
   "extra_links": {
