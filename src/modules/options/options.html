@@ -14,14 +14,17 @@
       rel="stylesheet"
       href="../../../vendor/codemirror/lib/codemirror.css"
     />
-    <link rel="stylesheet" href="../../shared/tooltip/tooltip.css" />
-    <link rel="stylesheet" href="../../shared/styles/styles.css" />
+    <link rel="stylesheet" href="../../shared/styles/card.css" />
+    <link rel="stylesheet" href="../../shared/styles/colors.css" />
+    <link rel="stylesheet" href="../../shared/styles/icon.css" />
+    <link rel="stylesheet" href="../../shared/styles/scrollbar.css" />
+    <link rel="stylesheet" href="../../shared/styles/tooltip.css" />
     <link rel="stylesheet" href="options.css" />
   </head>
 
   <body>
     <div class="wrapper">
-      <div class="page-contents flex">
+      <div class="page-contents row flex">
         <div id="list-items" class="col">
           <div class="card">
             <div class="header justify-between">
@@ -45,103 +48,111 @@
           <div class="card flex1">
             <div class="header" translate="live_preview"></div>
 
-            <div class="contents equal-padding flex">
+            <div class="contents equal-padding flex column">
               <iframe
                 id="preview"
                 class="flex1"
                 src="../bookmarks/bookmarks.html?preview=true"
               ></iframe>
-            </div>
-          </div>
-        </div>
-
-        <div id="custom-styles" class="col">
-          <div class="card styles-card">
-            <div class="header" translate="custom_styles"></div>
-
-            <div class="contents equal-padding col">
-              <textarea id="styles" class="flex1"></textarea>
 
               <div class="row margin-top justify-between">
-                <div>
-                  <button id="export-styles">
+                <div class="row">
+                  <button id="export-settings">
                     <span class="icon export"></span>
-                    <span translate="export_styles"></span>
+                    <span translate="export_settings"></span>
                   </button>
 
-                  <button id="import-styles">
+                  <button id="import-settings">
                     <span class="icon import"></span>
-                    <span translate="import_styles"></span>
+                    <span translate="import_settings"></span>
                   </button>
 
-                  <button id="reset-styles">
+                  <button id="reset-settings">
                     <span class="icon delete"></span>
-                    <span translate="reset_styles"></span>
+                    <span translate="reset_settings"></span>
                   </button>
                 </div>
 
                 <div>
-                  <button id="apply-styles" class="flex-end">
-                    <span class="icon save"></span>
-                    <span translate="apply_styles"></span>
+                  <button id="clear-saved-urls" class="flex-end">
+                    <span class="icon delete"></span>
+                    <span translate="clear_saved_urls"></span>
                   </button>
                 </div>
-
-                <input
-                  id="styles-file-input"
-                  type="file"
-                  accept=".css"
-                  hidden
-                />
               </div>
             </div>
           </div>
         </div>
 
-        <div id="more-options" class="col">
-          <div class="card">
-            <div class="header" translate="more_options"></div>
+        <div id="options" class="col">
+          <div id="custom-styles" class="row">
+            <div class="card styles-card">
+              <div class="header" translate="custom_styles"></div>
 
-            <div class="contents">
-              <div class="col">
-                <button id="clear-saved-urls">
-                  <span class="icon delete"></span>
-                  <span translate="clear_saved_urls"></span>
-                </button>
+              <div class="contents equal-padding col">
+                <textarea id="styles" class="flex1"></textarea>
 
-                <hr />
+                <div class="row margin-top justify-between">
+                  <div class="row">
+                    <button id="export-styles">
+                      <span class="icon export"></span>
+                      <span translate="export_styles"></span>
+                    </button>
 
-                <button id="export-settings">
-                  <span class="icon export"></span>
-                  <span translate="export_settings"></span>
-                </button>
-                <button id="import-settings">
-                  <span class="icon import"></span>
-                  <span translate="import_settings"></span>
-                </button>
-                <button id="reset-settings">
-                  <span class="icon delete"></span>
-                  <span translate="reset_settings"></span>
-                </button>
+                    <button id="import-styles">
+                      <span class="icon import"></span>
+                      <span translate="import_styles"></span>
+                    </button>
 
-                <hr />
+                    <button id="reset-styles">
+                      <span class="icon delete"></span>
+                      <span translate="reset_styles"></span>
+                    </button>
+                  </div>
 
-                <div class="row">
-                  <button id="reload-language">
-                    <span class="icon refresh"></span>
-                  </button>
-                  <select id="language" class="flex1">
-                    <option value="en-us">English</option>
-                    <option value="es-es">Español</option>
-                  </select>
+                  <div>
+                    <button id="apply-styles" class="flex-end">
+                      <span class="icon save"></span>
+                      <span translate="apply_styles"></span>
+                    </button>
+                  </div>
+
+                  <input
+                    id="styles-file-input"
+                    type="file"
+                    accept=".css"
+                    hidden
+                  />
                 </div>
+              </div>
+            </div>
+          </div>
 
-                <input
-                  id="settings-file-input"
-                  type="file"
-                  accept=".json"
-                  hidden
-                />
+          <div id="more-options" class="row">
+            <div class="card">
+              <div class="header" translate="language"></div>
+
+              <div class="contents">
+                <div class="col">
+                  <div class="row justify-between">
+                    <select id="language">
+                      <option value="en-us">English</option>
+                      <option value="es-es">Español</option>
+                    </select>
+
+                    <button id="reload-language">
+                      <span class="icon refresh"></span>
+                      <span translate="reload"></span>
+                    </button>
+                  </div>
+
+                  <input
+                    id="settings-file-input"
+                    type="file"
+                    accept=".json"
+                    hidden
+                  />
+                </div>
               </div>
             </div>
           </div>

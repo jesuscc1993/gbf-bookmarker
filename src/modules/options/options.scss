@@ -1,15 +1,18 @@
+$margin: 16px;
+
 * {
   box-sizing: border-box;
 }
 
 body {
+  animation: fade-in 150ms;
+  background: var(--c-background);
   box-sizing: border-box;
   color: var(--c-foreground);
   font-family: 'Roboto', sans-serif;
   font-size: 15.5px;
   margin: 0;
   min-height: calc(100vh - 17px);
-  background: var(--c-background);
 
   a {
     text-decoration: none;
@@ -57,7 +60,7 @@ body {
     font-size: 13px;
     height: 328px;
     margin-top: 0;
-    max-height: calc(100vh - 142px);
+    max-height: calc(100vh - 236px);
     width: 576px;
   }
 
@@ -97,7 +100,7 @@ body {
   }
 
   .wrapper {
-    $background-size: 224px;
+    $background-size: 320px;
     background: url(../../../assets/images/settings-lyria.png) no-repeat;
     background-position: bottom right;
     background-size: $background-size $background-size;
@@ -105,13 +108,13 @@ body {
     width: 100vw;
   }
 
-  .page-contents {
+  .row {
     > .col {
-      margin: 16px;
+      margin: $margin 0 $margin $margin;
+    }
 
-      &:not(:first-of-type) {
-        margin-left: 0;
-      }
+    + .row {
+      margin-top: $margin;
     }
   }
 
@@ -132,13 +135,17 @@ body {
   }
 
   #preview {
-    width: 576px;
-    overflow: hidden;
     border: none;
+    height: calc(100vh - 128px);
+    width: 594px;
   }
 
   .flex {
     display: flex;
+
+    &.column {
+      flex-direction: column;
+    }
   }
 
   .flex1 {
@@ -170,14 +177,33 @@ body {
     display: flex;
     flex-direction: row;
 
-    > button:not(:last-child) {
-      margin-right: 4px;
+    > {
+      button,
+      select {
+        &:not(:last-child) {
+          margin-right: 4px;
+        }
+      }
     }
   }
 
   /* layout */
 
   .margin-top {
-    margin-top: 16px;
+    margin-top: $margin;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    pointer-events: all;
   }
 }
