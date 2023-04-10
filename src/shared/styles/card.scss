@@ -1,8 +1,9 @@
 .card {
-  display: flex;
-  flex-direction: column;
+  background: var(--c-background);
   border-radius: 8px;
   border: 2px solid var(--c-card-border);
+  display: flex;
+  flex-direction: column;
 
   > * {
     &:not(.equal-padding) {

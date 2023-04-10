@@ -58,10 +58,10 @@ body {
   .CodeMirror {
     border: 1px solid #ddd;
     font-size: 13px;
-    height: 328px;
+    height: calc(100vh - 236px);
     margin-top: 0;
-    max-height: calc(100vh - 236px);
-    width: 576px;
+    max-width: calc(100vw - 900px);
+    width: 594px;
   }
 
   button,
