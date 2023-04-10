@@ -73,5 +73,5 @@
   "name": "GBF Bookmarker",
   "options_page": "src/modules/options/options.html",
   "permissions": ["activeTab", "browsingData", "contextMenus", "notifications", "storage", "tabs"],
-  "version": "1.0.22"
+  "version": "1.0.23"
 }
