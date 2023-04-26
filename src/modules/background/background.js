@@ -1,4 +1,4 @@
-const { commands, storage, tabs } = chrome;
+const { commands, tabs } = chrome;
 
 import {
   initialize as initializeTranslations,
@@ -7,6 +7,7 @@ import {
 } from '../i18n/i18n.service.js';
 import { loadSettings, storeSettings } from '../../storage/settings.storage.js';
 import { fetchJson } from '../../shared/file.utils.js';
+import { getFromStorage, setToStorage } from '../../storage/storage.js';
 
 const initializeBackground = () => {
   loadSettings().then((settings) => {
@@ -21,23 +22,23 @@ const initializeBackground = () => {
         if (url.includes('/supporter/')) {
           // quests
           const key = UrlKeys.LastQuest;
-          storage.sync.set({ [key]: url });
+          setToStorage({ [key]: url });
         } else if (url.includes('/#event/teamraid')) {
           // guild wars
           const key = UrlKeys.GuildWars;
-          storage.sync.get([key], (response) => {
+          getFromStorage([key]).then((response) => {
             const currentUrl = response[key];
             if (!url.includes(currentUrl)) {
-              storage.sync.set({ [key]: url });
+              setToStorage({ [key]: url });
             }
           });
         } else if (isAnySubstringIncluded(url, ['/#event', '/#limited'])) {
           // events
           const key = UrlKeys.Event;
-          storage.sync.get([key], (response) => {
+          getFromStorage([key]).then((response) => {
             const currentUrl = response[key];
             if (!url.includes(currentUrl)) {
-              storage.sync.set({ [key]: url });
+              setToStorage({ [key]: url });
             }
           });
         }
@@ -46,11 +47,11 @@ const initializeBackground = () => {
 
     commands.onCommand.addListener((command) => {
       tabs.query({ active: true, lastFocusedWindow: true }, (matches) => {
-        const firstmatch = matches.find(({ url }) =>
+        const firstMatch = matches.find(({ url }) =>
           url.includes(targetDomain),
         );
 
-        if (firstmatch) {
+        if (firstMatch) {
           const action = {
             [ShortcutAction.Arcarum]: openArcarum,
             [ShortcutAction.Event]: openEvent,
@@ -65,7 +66,7 @@ const initializeBackground = () => {
             [ShortcutAction.Stage]: openStage,
             [ShortcutAction.World]: openWorld,
           }[command];
-          action && action(firstmatch.id);
+          action && action(firstMatch.id);
         }
       });
     });
@@ -76,13 +77,18 @@ const initializeBackground = () => {
       chrome.contextMenus.removeAll(() => {
         chrome.contextMenus.create({
           contexts: contextMenuContexts,
-          id: ContextMenuItem.About,
-          title: translate('about_extension'),
+          id: ContextMenuItem.ManageShortcuts,
+          title: translate('manage_shortcuts'),
         });
         chrome.contextMenus.create({
           contexts: contextMenuContexts,
           id: ContextMenuItem.Issues,
           title: translate('open_issue'),
+        });
+        chrome.contextMenus.create({
+          contexts: contextMenuContexts,
+          id: ContextMenuItem.About,
+          title: translate('about_extension'),
         });
         chrome.contextMenus.create({
           contexts: contextMenuContexts,
@@ -94,6 +100,7 @@ const initializeBackground = () => {
             [ContextMenuItem.About]: openAbout,
             [ContextMenuItem.Developer]: openDeveloper,
             [ContextMenuItem.Issues]: openIssues,
+            [ContextMenuItem.ManageShortcuts]: openShortcuts,
           }[info.menuItemId];
           action && action();
         });
@@ -119,9 +126,10 @@ const openStage = (tabId) => openUrl(tabId, Urls.Stage);
 const openAbout = () => openTab(Urls.About);
 const openDeveloper = () => openTab(Urls.Developer);
 const openIssues = () => openTab(Urls.Issues);
+const openShortcuts = () => openTab(Urls.Shortcuts);
 
 const openStoredUrl = (tabId, key) => {
-  storage.sync.get([key], (response) => {
+  getFromStorage([key]).then((response) => {
     const url = response[key];
     if (url) {
       openUrl(tabId, url);
@@ -170,6 +178,7 @@ const Urls = {
   About: `https://github.com/jesuscc1993/gbf-bookmarker#gbf-bookmarker`,
   Developer: `https://github.com/jesuscc1993`,
   Issues: `https://github.com/jesuscc1993/gbf-bookmarker/issues`,
+  Shortcuts: `chrome://extensions/shortcuts`,
 };
 
 const ShortcutAction = {
@@ -191,6 +200,7 @@ const ContextMenuItem = {
   About: 'gbf-bookmarker-about',
   Developer: 'gbf-bookmarker-developer',
   Issues: 'gbf-bookmarker-issues',
+  ManageShortcuts: 'gbf-bookmarker-shortcuts',
 };
 
 initializeBackground();

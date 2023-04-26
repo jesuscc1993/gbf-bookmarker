@@ -1,13 +1,14 @@
 import { getSortedBookmarks } from '../../shared/settings.utils.js';
 import { translate } from '../../modules/i18n/i18n.service.js';
 import { fetchJson } from '../../shared/file.utils.js';
+import { getFromStorage } from '../../storage/storage.js';
 
-const { storage, tabs } = chrome;
+const { tabs } = chrome;
 
 const baseUrl = 'https://game.granbluefantasy.jp';
 
 const initializeBookmarks = () => {
-  storage.sync.get(['settings', 'styles'], ({ settings, styles }) => {
+  getFromStorage(['settings', 'styles']).then(({ settings, styles }) => {
     jQuery(`<style>${styles}</style>`).appendTo('head');
 
     fetchJson('../../../assets/data/bookmarks.json').then((bookmarks) => {
@@ -47,11 +48,11 @@ const onUrlClick = (event, url) => {
     2: () => {
       tabs.create({ url });
     },
-  }[event.which]());
+  })[event.which]();
 };
 
 const onStoredUrlClick = (event, key) => {
-  storage.sync.get([key], (response) => {
+  getFromStorage([key]).then((response) => {
     const url = response[key];
     if (url) {
       onUrlClick(event, url);
@@ -69,7 +70,7 @@ const getCustomBookmark = (key) => {
 
     case 'clock-jst': {
       const jstDate = new Date(
-        new Date().toLocaleString('en-US', { timeZone: 'Japan' })
+        new Date().toLocaleString('en-US', { timeZone: 'Japan' }),
       );
 
       return getClock(jstDate, '(JST)');
@@ -77,12 +78,14 @@ const getCustomBookmark = (key) => {
 
     case 'options': {
       const settingsItem = jQuery(
-        `<li class="option"><a>${translate('options')}</a></li>`
+        `<li class="option"><a>${translate('options')}</a></li>`,
       );
 
-      settingsItem.click(() =>
-        tabs.create({ url: `src/modules/options/options.html` })
-      );
+      if (!inPreviewMode()) {
+        settingsItem.click(() =>
+          tabs.create({ url: `src/modules/options/options.html` }),
+        );
+      }
 
       return settingsItem;
     }
@@ -90,25 +93,27 @@ const getCustomBookmark = (key) => {
 };
 
 const getClock = (date, suffix) => {
-  const hour = date.getHours();
-  const minutes = date.getMinutes();
-  const formattedDate = `${hour}:${minutes > 9 ? minutes : '0' + minutes}`;
+  const formattedDate = date.toLocaleString('en-US', {
+    hour12: true,
+    timeStyle: 'short',
+  });
 
-  const timeItem = jQuery(
+  return jQuery(
     `<li class="option disabled"><i>${formattedDate}${
       suffix ? ` ${suffix}` : ''
-    }</i></li>`
+    }</i></li>`,
   );
-  return timeItem;
 };
 
 const getSingleBookmark = (literal, bookmark) => {
   if (bookmark === null) return jQuery(`<li class="option"></li>`);
 
-  const { children, element, url, urlKey } = bookmark;
+  const { children, element, title, url, urlKey } = bookmark;
 
   const bookmarkElement = jQuery(
-    `<li class="option"><a>${translate(literal)}</a></li>`
+    `<li class="option"><a title="${translate(title || literal)}">${translate(
+      literal,
+    )}</a></li>`,
   );
 
   if (children) {
@@ -138,8 +143,8 @@ const getBookmarksGroup = (key, bookmark) => {
   const containerElement = $(`<ul></ul>`);
   containerElement.append(
     Object.keys(children).map((nestedKey) =>
-      getSingleBookmark(nestedKey, children[nestedKey])
-    )
+      getSingleBookmark(nestedKey, children[nestedKey]),
+    ),
   );
 
   const groupElement = jQuery(`<li class="bookmark-group"></li>`);

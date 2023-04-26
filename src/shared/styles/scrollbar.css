@@ -1,1 +1,3 @@
-::-webkit-scrollbar,::-webkit-scrollbar-corner,::-webkit-scrollbar-track-piece{background:var(--c-background)}::-webkit-scrollbar{width:14px;height:14px}::-webkit-scrollbar-thumb{background:var(--c-foreground);border:2px solid var(--c-background);border-radius:8px}::-webkit-scrollbar-thumb:hover{background:#44a4cb}/*# sourceMappingURL=scrollbar.css.map */
+::-webkit-scrollbar,::-webkit-scrollbar-corner,::-webkit-scrollbar-track-piece{background:var(--c-background)}::-webkit-scrollbar{width:14px;height:14px}::-webkit-scrollbar-thumb{background:var(--c-foreground);border:2px solid var(--c-background);border-radius:8px}::-webkit-scrollbar-thumb:hover{background:#44a4cb}
+
+/*# sourceMappingURL=scrollbar.css.map */

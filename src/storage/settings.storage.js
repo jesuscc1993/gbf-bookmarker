@@ -1,4 +1,4 @@
-import { getFromStorage, setToStorage } from './storage.js';
+import { getFromStorage, removeFromStorage, setToStorage } from './storage.js';
 
 export const URL_KEYS = {
   EVENT: 'event',

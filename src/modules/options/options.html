@@ -55,8 +55,8 @@
                 src="../bookmarks/bookmarks.html?preview=true"
               ></iframe>
 
-              <div class="row margin-top justify-between">
-                <div class="row">
+              <div class="row buttons-container margin-top justify-between">
+                <div class="row buttons-container">
                   <button id="export-settings">
                     <span class="icon export"></span>
                     <span translate="export_settings"></span>
@@ -86,14 +86,14 @@
 
         <div id="options" class="col">
           <div id="custom-styles" class="row">
-            <div class="card styles-card">
+            <div class="card right-card">
               <div class="header" translate="custom_styles"></div>
 
               <div class="contents equal-padding col">
                 <textarea id="styles" class="flex1"></textarea>
 
-                <div class="row margin-top justify-between">
-                  <div class="row">
+                <div class="row buttons-container margin-top justify-between">
+                  <div class="row buttons-container">
                     <button id="export-styles">
                       <span class="icon export"></span>
                       <span translate="export_styles"></span>
@@ -129,29 +129,33 @@
           </div>
 
           <div id="more-options" class="row">
-            <div class="card">
-              <div class="header" translate="language"></div>
+            <div class="card right-card">
+              <div class="header" translate="more_settings"></div>
 
               <div class="contents">
-                <div class="col">
-                  <div class="row justify-between">
-                    <select id="language">
-                      <option value="en-us">English</option>
-                      <option value="es-es">Español</option>
-                    </select>
+                <div class="col buttons-container">
+                  <div class="row buttons-container">
+                    <label
+                      class="flex1 center-items"
+                      translate="language"
+                    ></label>
 
                     <button id="reload-language">
                       <span class="icon refresh"></span>
-                      <span translate="reload"></span>
                     </button>
-                  </div>
 
-                  <input
-                    id="settings-file-input"
-                    type="file"
-                    accept=".json"
-                    hidden
-                  />
+                    <select id="language" class="min-width">
+                      <option value="en-us">English</option>
+                      <option value="es-es">Espa&ntilde;ol</option>
+                    </select>
+
+                    <input
+                      id="settings-file-input"
+                      type="file"
+                      accept=".json"
+                      hidden
+                    />
+                  </div>
                 </div>
               </div>
             </div>

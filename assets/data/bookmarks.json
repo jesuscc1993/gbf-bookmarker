@@ -60,7 +60,7 @@
       "fate_episodes": { "url": "/#quest/fate" },
       "repeat_quest": { "urlKey": "lastQuest" },
       "pending_raids": { "url": "/#quest/assist/unclaimed" },
-      "arcanum": { "url": "/#arcarum2" }
+      "arcarum": { "url": "/#arcarum2" }
     }
   },
   "co-op": {
@@ -83,7 +83,7 @@
       "dailyPoints": { "url": "/#shop/exchange/login_point" },
       "journey_drops": { "url": "/#shop/exchange/trajectory" },
       "cerulean_stones": { "url": "/#shop/exchange/ceiling" },
-      "arcanum": { "url": "/#arcarum2/enhancement" },
+      "arcarum": { "url": "/#arcarum2/enhancement" },
       "outfitSets": { "url": "/#shop/skin/top" },
       "skyLeap": { "url": "/#shop/exchange/skyleap_point" }
     }
@@ -257,10 +257,10 @@
       "leviathan_malice_fire": { "element": "water", "url": "/#quest/supporter/305151/1/0/101" },
       "phronesis_water": { "element": "earth", "url": "/#quest/supporter/305251/1/0/102" },
       "luminiera_light": { "element": "light", "url": "/#quest/supporter/305271/1/0/105" },
-      "animus_dark": { "element": "dark", "url": "/#quest/supporter/305291/1/0/106" },
+      "animus_dark": { "element": "dark", "url": "/#quest/supporter/305291/1/0/106", "title": "animus_full" },
       "_": null,
       "luminiera_water": { "element": "light", "url": "/#quest/supporter/305271/1/0/102" },
-      "animus_earth": { "element": "dark", "url": "/#quest/supporter/305291/1/0/103" },
+      "animus_earth": { "element": "dark", "url": "/#quest/supporter/305291/1/0/103", "title": "animus_full" },
       "__": null
     }
   },
@@ -287,7 +287,7 @@
       "proto_bahamut": { "element": "dark", "url": "/#quest/supporter/301061/1/0/59" },
       "akasha": { "element": "light", "url": "/#quest/supporter/303251/1/0/533" },
       "grand_order": { "element": "light", "url": "/#quest/supporter/305181/1/0/533" },
-      "ultimate_bahamut": { "url": "/#quest/supporter/303141/1/0/136" }
+      "ultimate_bahamut": { "url": "/#quest/supporter/303141/1/0/136", "title": "ultimate_bahamut_full" }
     }
   },
   "raids_i_7": {
@@ -306,8 +306,9 @@
     }
   },
   "raids_i_8b": {
+    "title": "raids_i_8b_full",
     "children": {
-      "super_ultimate_bahamut": { "element": "dark", "url": "/#quest/supporter/305311/1/0/138" }
+      "super_ultimate_bahamut": { "element": "dark", "url": "/#quest/supporter/305311/1/0/138", "title": "super_ultimate_bahamut_full" }
     }
   },
   "pro": {
