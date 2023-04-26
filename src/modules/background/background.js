@@ -77,13 +77,18 @@ const initializeBackground = () => {
       chrome.contextMenus.removeAll(() => {
         chrome.contextMenus.create({
           contexts: contextMenuContexts,
-          id: ContextMenuItem.About,
-          title: translate('about_extension'),
+          id: ContextMenuItem.ManageShortcuts,
+          title: translate('manage_shortcuts'),
         });
         chrome.contextMenus.create({
           contexts: contextMenuContexts,
           id: ContextMenuItem.Issues,
           title: translate('open_issue'),
+        });
+        chrome.contextMenus.create({
+          contexts: contextMenuContexts,
+          id: ContextMenuItem.About,
+          title: translate('about_extension'),
         });
         chrome.contextMenus.create({
           contexts: contextMenuContexts,
@@ -95,6 +100,7 @@ const initializeBackground = () => {
             [ContextMenuItem.About]: openAbout,
             [ContextMenuItem.Developer]: openDeveloper,
             [ContextMenuItem.Issues]: openIssues,
+            [ContextMenuItem.ManageShortcuts]: openShortcuts,
           }[info.menuItemId];
           action && action();
         });
@@ -120,6 +126,7 @@ const openStage = (tabId) => openUrl(tabId, Urls.Stage);
 const openAbout = () => openTab(Urls.About);
 const openDeveloper = () => openTab(Urls.Developer);
 const openIssues = () => openTab(Urls.Issues);
+const openShortcuts = () => openTab(Urls.Shortcuts);
 
 const openStoredUrl = (tabId, key) => {
   getFromStorage([key]).then((response) => {
@@ -171,6 +178,7 @@ const Urls = {
   About: `https://github.com/jesuscc1993/gbf-bookmarker#gbf-bookmarker`,
   Developer: `https://github.com/jesuscc1993`,
   Issues: `https://github.com/jesuscc1993/gbf-bookmarker/issues`,
+  Shortcuts: `chrome://extensions/shortcuts`,
 };
 
 const ShortcutAction = {
@@ -192,6 +200,7 @@ const ContextMenuItem = {
   About: 'gbf-bookmarker-about',
   Developer: 'gbf-bookmarker-developer',
   Issues: 'gbf-bookmarker-issues',
+  ManageShortcuts: 'gbf-bookmarker-shortcuts',
 };
 
 initializeBackground();
