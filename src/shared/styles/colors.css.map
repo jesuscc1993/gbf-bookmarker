@@ -1,1 +1,9 @@
-{"version":3,"sourceRoot":"","sources":["colors.scss"],"names":[],"mappings":"AAAA,MACE,wBACA,yBACA,wBACA","file":"colors.css"}
+{
+	"version": 3,
+	"file": "colors.css",
+	"sources": [
+		"colors.scss"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,KAAK,AAAC,CACJ,cAAc,CAAA,QAAC,CACf,eAAe,CAAA,QAAC,CAChB,cAAc,CAAA,QAAC,CACf,YAAY,CAAA,kCAAC,CACd"
+}

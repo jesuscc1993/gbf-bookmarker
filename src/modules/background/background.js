@@ -1,4 +1,4 @@
-const { commands, storage, tabs } = chrome;
+const { commands, tabs } = chrome;
 
 import {
   initialize as initializeTranslations,
@@ -7,6 +7,7 @@ import {
 } from '../i18n/i18n.service.js';
 import { loadSettings, storeSettings } from '../../storage/settings.storage.js';
 import { fetchJson } from '../../shared/file.utils.js';
+import { getFromStorage, setToStorage } from '../../storage/storage.js';
 
 const initializeBackground = () => {
   loadSettings().then((settings) => {
@@ -21,23 +22,23 @@ const initializeBackground = () => {
         if (url.includes('/supporter/')) {
           // quests
           const key = UrlKeys.LastQuest;
-          storage.sync.set({ [key]: url });
+          setToStorage({ [key]: url });
         } else if (url.includes('/#event/teamraid')) {
           // guild wars
           const key = UrlKeys.GuildWars;
-          storage.sync.get([key], (response) => {
+          getFromStorage([key]).then((response) => {
             const currentUrl = response[key];
             if (!url.includes(currentUrl)) {
-              storage.sync.set({ [key]: url });
+              setToStorage({ [key]: url });
             }
           });
         } else if (isAnySubstringIncluded(url, ['/#event', '/#limited'])) {
           // events
           const key = UrlKeys.Event;
-          storage.sync.get([key], (response) => {
+          getFromStorage([key]).then((response) => {
             const currentUrl = response[key];
             if (!url.includes(currentUrl)) {
-              storage.sync.set({ [key]: url });
+              setToStorage({ [key]: url });
             }
           });
         }
@@ -121,7 +122,7 @@ const openDeveloper = () => openTab(Urls.Developer);
 const openIssues = () => openTab(Urls.Issues);
 
 const openStoredUrl = (tabId, key) => {
-  storage.sync.get([key], (response) => {
+  getFromStorage([key]).then((response) => {
     const url = response[key];
     if (url) {
       openUrl(tabId, url);

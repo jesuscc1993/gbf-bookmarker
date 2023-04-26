@@ -1,1 +1,9 @@
-{"version":3,"sourceRoot":"","sources":["scrollbar.scss"],"names":[],"mappings":"AAAA,+EAGE,+BAGF,oBACE,WACA,YAGF,0BACE,+BACA,qCACA,kBAGF,gCACE","file":"scrollbar.css"}
+{
+	"version": 3,
+	"file": "scrollbar.css",
+	"sources": [
+		"scrollbar.scss"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,mBAAmB,CACnB,0BAA0B,CAC1B,+BAA+B,AAAC,CAC9B,UAAU,CAAE,mBAAmB,CAChC,AAED,AAAA,mBAAmB,AAAC,CAClB,KAAK,CAAE,IAAI,CACX,MAAM,CAAE,IAAI,CACb,AAED,AAAA,yBAAyB,AAAC,CACxB,UAAU,CAAE,mBAAmB,CAC/B,MAAM,CAAE,GAAG,CAAC,KAAK,CAAC,mBAAmB,CACrC,aAAa,CAAE,GAAG,CACnB,AAED,AAAA,yBAAyB,AAAA,MAAM,AAAC,CAC9B,UAAU,CAAE,OAAO,CACpB"
+}

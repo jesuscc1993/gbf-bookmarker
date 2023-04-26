@@ -1,4 +1,5 @@
 $margin: 16px;
+$spacing: 4px;
 
 * {
   box-sizing: border-box;
@@ -52,16 +53,15 @@ body {
 
   input + label {
     cursor: pointer;
-    padding-left: 4px;
+    padding-left: $spacing;
   }
 
   .CodeMirror {
     border: 1px solid #ddd;
     font-size: 13px;
-    height: calc(100vh - 236px);
+    height: calc(100vh - 272px);
     margin-top: 0;
-    max-width: calc(100vw - 900px);
-    width: 594px;
+    width: 100%;
   }
 
   button,
@@ -80,6 +80,10 @@ body {
 
     &:hover {
       filter: brightness(1.2);
+    }
+
+    &.min-width {
+      min-width: 96px;
     }
 
     + hr {
@@ -121,13 +125,20 @@ body {
   }
 
   .card {
-    .contents {
+    > .contents {
       max-height: calc(100vh - 74px);
       padding: 8px 8px 8px 12px;
 
       > *:not(.CodeMirror) {
         max-height: 100%;
         overflow-y: auto;
+      }
+    }
+
+    &.right-card {
+      > .contents {
+        max-width: calc(100vw - 900px);
+        width: 594px;
       }
     }
   }
@@ -158,6 +169,14 @@ body {
     justify-content: space-between;
   }
 
+  .buttons-container {
+    gap: $spacing;
+
+    .row + .row {
+      margin-top: $spacing;
+    }
+  }
+
   .col {
     display: flex;
     flex-direction: column;
@@ -165,28 +184,11 @@ body {
     > textarea + .CodeMirror {
       margin-top: 0;
     }
-
-    > button {
-      min-width: 156px;
-
-      &:not(:last-child) {
-        margin-bottom: 4px;
-      }
-    }
   }
 
   .row {
     display: flex;
     flex-direction: row;
-
-    > {
-      button,
-      select {
-        &:not(:last-child) {
-          margin-right: 4px;
-        }
-      }
-    }
   }
 
   /* layout */

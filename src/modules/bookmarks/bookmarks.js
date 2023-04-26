@@ -1,13 +1,14 @@
 import { getSortedBookmarks } from '../../shared/settings.utils.js';
 import { translate } from '../../modules/i18n/i18n.service.js';
 import { fetchJson } from '../../shared/file.utils.js';
+import { getFromStorage } from '../../storage/storage.js';
 
-const { storage, tabs } = chrome;
+const { tabs } = chrome;
 
 const baseUrl = 'https://game.granbluefantasy.jp';
 
 const initializeBookmarks = () => {
-  storage.sync.get(['settings', 'styles'], ({ settings, styles }) => {
+  getFromStorage(['settings', 'styles']).then(({ settings, styles }) => {
     jQuery(`<style>${styles}</style>`).appendTo('head');
 
     fetchJson('../../../assets/data/bookmarks.json').then((bookmarks) => {
@@ -51,7 +52,7 @@ const onUrlClick = (event, url) => {
 };
 
 const onStoredUrlClick = (event, key) => {
-  storage.sync.get([key], (response) => {
+  getFromStorage([key]).then((response) => {
     const url = response[key];
     if (url) {
       onUrlClick(event, url);

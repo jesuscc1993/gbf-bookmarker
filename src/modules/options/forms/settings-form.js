@@ -56,7 +56,7 @@ const applySettings = (settings) => {
 };
 
 const clearSavedUrls = () => {
-  removeStoredUrls.then(() => alert('Saved URLs have been cleared.'));
+  removeStoredUrls().then(() => alert('Saved URLs have been cleared.'));
 };
 
 const exportSettings = () => {
