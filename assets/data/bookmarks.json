@@ -287,7 +287,7 @@
       "proto_bahamut": { "element": "dark", "url": "/#quest/supporter/301061/1/0/59" },
       "akasha": { "element": "light", "url": "/#quest/supporter/303251/1/0/533" },
       "grand_order": { "element": "light", "url": "/#quest/supporter/305181/1/0/533" },
-      "ultimate_bahamut": { "url": "/#quest/supporter/303141/1/0/136" }
+      "ultimate_bahamut": { "url": "/#quest/supporter/303141/1/0/136", "title": "ultimate_bahamut_full" }
     }
   },
   "raids_i_7": {
@@ -306,8 +306,9 @@
     }
   },
   "raids_i_8b": {
+    "title": "raids_i_8b_full",
     "children": {
-      "super_ultimate_bahamut": { "element": "dark", "url": "/#quest/supporter/305311/1/0/138" }
+      "super_ultimate_bahamut": { "element": "dark", "url": "/#quest/supporter/305311/1/0/138", "title": "super_ultimate_bahamut_full" }
     }
   },
   "pro": {
