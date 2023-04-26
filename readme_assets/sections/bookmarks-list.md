@@ -17,12 +17,12 @@
 | **Co-op**         | Co-op              | Join            | Shop          |
 | **Shop**          | MobaCoins          | Crystals        | Treasure      |
 |                   | Pendants           | Weapon Series   | Trade Moons   |
-|                   | Journey Drops      | Cerulean Stones | Arcanum       |
+|                   | Journey Drops      | Cerulean Stones | arcarum       |
 | **Casino**        | Poker              | Bingo           | Cage          |
 | **Draw**          | Premium            | Rupie           |               |
 | **Quests**        | Featured           | Special         | Raids         |
 |                   | Side Stories       | Fate Episodes   | Pending Raids |
-|                   | Trial Battles      | Arcanum         |               |
+|                   | Trial Battles      | arcarum         |               |
 | **H Raids**       | Colossus           | Leviathan       | Yggdrasil     |
 |                   | Tiamat             | Luminiera       | Celeste       |
 | **H+ Raids**      | Colossus           | Leviathan       | Yggdrasil     |

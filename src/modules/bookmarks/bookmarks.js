@@ -81,9 +81,11 @@ const getCustomBookmark = (key) => {
         `<li class="option"><a>${translate('options')}</a></li>`,
       );
 
-      settingsItem.click(() =>
-        tabs.create({ url: `src/modules/options/options.html` }),
-      );
+      if (!inPreviewMode()) {
+        settingsItem.click(() =>
+          tabs.create({ url: `src/modules/options/options.html` }),
+        );
+      }
 
       return settingsItem;
     }

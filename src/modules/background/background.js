@@ -47,11 +47,11 @@ const initializeBackground = () => {
 
     commands.onCommand.addListener((command) => {
       tabs.query({ active: true, lastFocusedWindow: true }, (matches) => {
-        const firstmatch = matches.find(({ url }) =>
+        const firstMatch = matches.find(({ url }) =>
           url.includes(targetDomain),
         );
 
-        if (firstmatch) {
+        if (firstMatch) {
           const action = {
             [ShortcutAction.Arcarum]: openArcarum,
             [ShortcutAction.Event]: openEvent,
@@ -66,7 +66,7 @@ const initializeBackground = () => {
             [ShortcutAction.Stage]: openStage,
             [ShortcutAction.World]: openWorld,
           }[command];
-          action && action(firstmatch.id);
+          action && action(firstMatch.id);
         }
       });
     });
