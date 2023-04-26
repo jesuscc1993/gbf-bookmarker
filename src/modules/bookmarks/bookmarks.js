@@ -93,16 +93,16 @@ const getCustomBookmark = (key) => {
 };
 
 const getClock = (date, suffix) => {
-  const hour = date.getHours();
-  const minutes = date.getMinutes();
-  const formattedDate = `${hour}:${minutes > 9 ? minutes : '0' + minutes}`;
+  const formattedDate = date.toLocaleString('en-US', {
+    hour12: true,
+    timeStyle: 'short',
+  });
 
-  const timeItem = jQuery(
+  return jQuery(
     `<li class="option disabled"><i>${formattedDate}${
       suffix ? ` ${suffix}` : ''
     }</i></li>`,
   );
-  return timeItem;
 };
 
 const getSingleBookmark = (literal, bookmark) => {
