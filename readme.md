@@ -9,6 +9,7 @@
 - [Limitations](#limitations)
 - [Special bookmarks](#special-bookmarks)
 - [Bookmarks list](#bookmarks-list)
+- [Shortcuts list](#shortcuts-list)
 - [Installation](#installation)
 - [Update](#update)
 - [Configuration](#configuration)
@@ -45,6 +46,26 @@ There are some special bookmarks that work by saving the latest URL the user vis
 
 - ### [Bookmarks list](readme_assets/sections/bookmarks-list.md)
 
+## Shortcut list
+
+| Action                 | Default shortcut |
+| ---------------------- | ---------------- |
+| Activate the extension | Ctrl + Shift + F |
+| Open arcarum           | Unset            |
+| Open event             | Alt + Shift + E  |
+| Open fate episodes     | Unset            |
+| Open Unite and Fight   | Alt + Shift + G  |
+| Open home              | Unset            |
+| Open inventory         | Unset            |
+| Open party             | Unset            |
+| Open quests            | Unset            |
+| Open raids             | Unset            |
+| Open stage             | Unset            |
+| Open world             | Unset            |
+| Repeat quest           | Alt + Shift + Z  |
+
+You can configure the extension shortcuts under URL (chrome://extensions/shortcuts) or via the extension's context menu.
+
 ## Installation
 
 You will need to download and unpack the [latest release](https://github.com/jesuscc1993/gbf-bookmarker/releases/) and then follow [these instructions](readme_assets/sections/installation.md).
@@ -68,16 +89,10 @@ You can also customize the extension styles, but you will need knowledge of CSS.
 
 ![Options](readme_assets/options.png)
 
-Additionally, you can configure the extension shortcuts under the URL [chrome://extensions/shortcuts](chrome://extensions/shortcuts)
-
-![Shortcuts](readme_assets/shortcuts.png)
-
 ## Known bugs
 
-- Background code does not react to language change and always displays messages in the same language
+- System messages ignore language selection and always display in English
 
 ## TODO list
 
 - Migrate to TS as this grew too complex for vanilla JS to feel comfortable enough
-- Add Beelzebub raid (too weak to unlock it at the moment)
-- Add Belial raid (too weak to unlock it at the moment)

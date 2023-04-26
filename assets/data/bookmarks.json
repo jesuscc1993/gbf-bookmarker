@@ -257,10 +257,10 @@
       "leviathan_malice_fire": { "element": "water", "url": "/#quest/supporter/305151/1/0/101" },
       "phronesis_water": { "element": "earth", "url": "/#quest/supporter/305251/1/0/102" },
       "luminiera_light": { "element": "light", "url": "/#quest/supporter/305271/1/0/105" },
-      "animus_dark": { "element": "dark", "url": "/#quest/supporter/305291/1/0/106" },
+      "animus_dark": { "element": "dark", "url": "/#quest/supporter/305291/1/0/106", "title": "animus_full" },
       "_": null,
       "luminiera_water": { "element": "light", "url": "/#quest/supporter/305271/1/0/102" },
-      "animus_earth": { "element": "dark", "url": "/#quest/supporter/305291/1/0/103" },
+      "animus_earth": { "element": "dark", "url": "/#quest/supporter/305291/1/0/103", "title": "animus_full" },
       "__": null
     }
   },
