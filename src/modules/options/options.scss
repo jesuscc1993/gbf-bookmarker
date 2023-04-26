@@ -166,7 +166,13 @@ body {
   }
 
   .justify-between {
+    display: flex;
     justify-content: space-between;
+  }
+
+  .center-items {
+    display: flex;
+    align-items: center;
   }
 
   .buttons-container {
