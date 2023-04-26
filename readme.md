@@ -46,7 +46,7 @@ There are some special bookmarks that work by saving the latest URL the user vis
 
 - ### [Bookmarks list](readme_assets/sections/bookmarks-list.md)
 
-## Shortcut list
+## Shortcuts list
 
 | Action                 | Default shortcut |
 | ---------------------- | ---------------- |
