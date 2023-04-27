@@ -44,6 +44,7 @@ body {
     border-bottom-width: 1px;
     line-height: 28px;
     padding: 0 6px;
+    color: #757575;
 
     &:not(.disabled) {
       cursor: pointer;
@@ -53,37 +54,32 @@ body {
       }
     }
 
-    &.toggle,
-    > * {
-      color: #757575;
-    }
-
     > *:not(.option) {
       display: block;
       text-shadow: 1px 0 0px #0004;
     }
 
-    &.wind a {
+    &.wind {
       color: #66bb6a;
     }
 
-    &.fire a {
+    &.fire {
       color: #ef5350;
     }
 
-    &.water a {
+    &.water {
       color: #42a5f5;
     }
 
-    &.earth a {
+    &.earth {
       color: #8d6e63;
     }
 
-    &.light a {
+    &.light {
       color: #ffca28;
     }
 
-    &.dark a {
+    &.dark {
       color: #ab47bc;
     }
   }

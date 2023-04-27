@@ -77,9 +77,11 @@ const getCustomBookmark = (key) => {
     }
 
     case 'options': {
-      const settingsItem = jQuery(
-        `<li class="option"><a>${translate('options')}</a></li>`,
-      );
+      const settingsItem = jQuery(`
+        <li class="option">
+          <a>${translate('options')}</a>
+        </li>
+      `);
 
       if (!inPreviewMode()) {
         settingsItem.click(() =>
@@ -98,38 +100,38 @@ const getClock = (date, suffix) => {
     timeStyle: 'short',
   });
 
-  return jQuery(
-    `<li class="option disabled"><i>${formattedDate}${
-      suffix ? ` ${suffix}` : ''
-    }</i></li>`,
-  );
+  return jQuery(`
+    <li class="option disabled">
+      <i>${formattedDate}${suffix ? ` ${suffix}` : ''}</i>
+    </li>
+  `);
 };
 
 const getSingleBookmark = (literal, bookmark) => {
   if (bookmark === null) return jQuery(`<li class="option"></li>`);
 
-  const { children, element, title, url, urlKey } = bookmark;
+  const { children, element, title, url, urls, urlKey } = bookmark;
 
-  const bookmarkElement = jQuery(
-    `<li class="option"><a title="${translate(title || literal)}">${translate(
-      literal,
-    )}</a></li>`,
-  );
+  const bookmarkElement = jQuery(`
+    <li class="option" title="${translate(title || literal)}">
+      ${translate(literal)}
+    </li>
+  `);
 
   if (children) {
     bookmarkElement.addClass('toggle');
   }
   if (element) {
-    bookmarkElement.addClass(`${element} element`);
+    bookmarkElement.addClass(element);
   }
 
   if (!inPreviewMode()) {
     if (url) {
-      const fullUrl = url.includes('http') ? url : `${baseUrl}${url}`;
+      const fullUrl = url.startsWith('/') ? `${baseUrl}${url}` : url;
       bookmarkElement.mousedown((event) => onUrlClick(event, fullUrl));
     } else if (urlKey) {
       bookmarkElement.mousedown((event) => onStoredUrlClick(event, urlKey));
-    } else if (url === '') {
+    } else {
       bookmarkElement.mousedown(() => alert(translate('tbi')));
     }
   }
