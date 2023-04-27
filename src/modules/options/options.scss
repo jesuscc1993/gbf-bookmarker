@@ -1,5 +1,6 @@
-$margin: 16px;
-$spacing: 4px;
+$spacing-lg: 16px;
+$spacing-md: 8px;
+$spacing-sm: 4px;
 
 * {
   box-sizing: border-box;
@@ -53,7 +54,7 @@ body {
 
   input + label {
     cursor: pointer;
-    padding-left: $spacing;
+    padding-left: $spacing-sm;
   }
 
   .CodeMirror {
@@ -116,11 +117,11 @@ body {
 
   .row {
     > .col {
-      margin: $margin 0 $margin $margin;
+      margin: $spacing-lg 0 $spacing-lg $spacing-lg;
     }
 
     + .row {
-      margin-top: $margin;
+      margin-top: $spacing-lg;
     }
   }
 
@@ -176,10 +177,14 @@ body {
   }
 
   .buttons-container {
-    gap: $spacing;
+    gap: $spacing-sm;
+
+    label {
+      padding-right: $spacing-md;
+    }
 
     .row + .row {
-      margin-top: $spacing;
+      margin-top: $spacing-sm;
     }
   }
 
@@ -200,7 +205,7 @@ body {
   /* layout */
 
   .margin-top {
-    margin-top: $margin;
+    margin-top: $spacing-lg;
   }
 }
 

@@ -45,7 +45,10 @@ export const translateDom = () => {
 
 const _translateDom = () => {
   jQuery('[translate]').each(
-    (i, e) => (e.innerText = translate(jQuery(e).attr('translate'))),
+    (_, e) => (e.innerText = translate(jQuery(e).attr('translate'))),
+  );
+  jQuery('[translateTitle]').each(
+    (_, e) => (e.title = translate(jQuery(e).attr('translateTitle'))),
   );
 };
 
