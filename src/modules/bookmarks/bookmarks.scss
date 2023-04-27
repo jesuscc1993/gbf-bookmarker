@@ -47,7 +47,9 @@ body {
     color: #757575;
 
     &:not(.disabled) {
-      cursor: pointer;
+      &.clickable {
+        cursor: pointer;
+      }
 
       &:hover {
         filter: brightness(90%);
@@ -59,28 +61,39 @@ body {
       text-shadow: 1px 0 0px #0004;
     }
 
-    &.wind {
-      color: #66bb6a;
+    .host-material:after {
+      content: '●';
+      cursor: pointer;
+      display: inline-block;
+      font-size: 1.5em;
+      padding: 0 4px;
     }
 
-    &.fire {
-      color: #ef5350;
-    }
+    &,
+    .host-material {
+      &.wind {
+        color: #66bb6a;
+      }
 
-    &.water {
-      color: #42a5f5;
-    }
+      &.fire {
+        color: #ef5350;
+      }
 
-    &.earth {
-      color: #8d6e63;
-    }
+      &.water {
+        color: #42a5f5;
+      }
 
-    &.light {
-      color: #ffca28;
-    }
+      &.earth {
+        color: #8d6e63;
+      }
 
-    &.dark {
-      color: #ab47bc;
+      &.light {
+        color: #ebb100;
+      }
+
+      &.dark {
+        color: #ab47bc;
+      }
     }
   }
 

@@ -193,7 +193,7 @@
       "garuda": { "element": "wind", "url": "/#quest/supporter/301381/1/0/1343" },
       "odin": { "element": "light", "url": "/#quest/supporter/300461/1/0/1353" },
       "lich": { "element": "dark", "url": "/#quest/supporter/300551/1/0/1363" },
-      "pro": {"url": "/#quest/supporter/305471/28"}
+      "pro": { "url": "/#quest/supporter/305471/28" }
     }
   },
   "raids_s_4": {
@@ -250,18 +250,26 @@
   },
   "raids_i_3": {
     "children": {
-      "tiamat_malice_wind": { "element": "wind", "url": "/#quest/supporter/303241/1/0/104" },
-      "leviathan_malice_water": { "element": "water", "url": "/#quest/supporter/305151/1/0/102" },
-      "phronesis_earth": { "element": "earth", "url": "/#quest/supporter/305251/1/0/103" },
-      "tiamat_malice_dark": { "element": "wind", "url": "/#quest/supporter/303241/1/0/106" },
-      "leviathan_malice_fire": { "element": "water", "url": "/#quest/supporter/305151/1/0/101" },
-      "phronesis_water": { "element": "earth", "url": "/#quest/supporter/305251/1/0/102" },
-      "luminiera_light": { "element": "light", "url": "/#quest/supporter/305271/1/0/105" },
-      "animus_dark": { "element": "dark", "url": "/#quest/supporter/305291/1/0/106", "title": "animus_full" },
-      "_": null,
-      "luminiera_water": { "element": "light", "url": "/#quest/supporter/305271/1/0/102" },
-      "animus_earth": { "element": "dark", "url": "/#quest/supporter/305291/1/0/103", "title": "animus_full" },
-      "__": null
+      "tiamat_malice": { "element": "wind", "urls": [
+        { "element": "wind", "url": "/#quest/supporter/303241/1/0/104" },
+        { "element": "dark", "url": "/#quest/supporter/303241/1/0/106" }
+      ]},
+      "leviathan_malice": { "element": "water", "urls": [
+        { "element": "water", "url": "/#quest/supporter/305151/1/0/102" },
+        { "element": "fire", "url": "/#quest/supporter/305151/1/0/101" }
+      ]},
+      "phronesis": { "element": "earth", "urls": [
+        { "element": "earth", "url": "/#quest/supporter/305251/1/0/103" },
+        { "element": "water", "url": "/#quest/supporter/305251/1/0/102" }
+      ]},
+      "luminiera": { "element": "light", "urls": [
+        { "element": "light", "url": "/#quest/supporter/305271/1/0/105" },
+        { "element": "water", "url": "/#quest/supporter/305271/1/0/102" }
+      ]},
+      "anima_animus": { "element": "dark", "title": "anima_animus_full", "urls": [
+        { "element": "dark", "url": "/#quest/supporter/305291/1/0/106" },
+        { "element": "earth", "url": "/#quest/supporter/305291/1/0/103" }
+      ]}
     }
   },
   "raids_i_4": {
@@ -287,7 +295,7 @@
       "proto_bahamut": { "element": "dark", "url": "/#quest/supporter/301061/1/0/59" },
       "akasha": { "element": "light", "url": "/#quest/supporter/303251/1/0/533" },
       "grand_order": { "element": "light", "url": "/#quest/supporter/305181/1/0/533" },
-      "ultimate_bahamut": { "url": "/#quest/supporter/303141/1/0/136", "title": "ultimate_bahamut_full" }
+      "ultimate_bahamut": { "title": "ultimate_bahamut_full", "url": "/#quest/supporter/303141/1/0/136" }
     }
   },
   "raids_i_7": {
@@ -308,7 +316,7 @@
   "raids_i_8b": {
     "title": "raids_i_8b_full",
     "children": {
-      "super_ultimate_bahamut": { "element": "dark", "url": "/#quest/supporter/305311/1/0/138", "title": "super_ultimate_bahamut_full" }
+      "super_ultimate_bahamut": { "element": "dark", "title": "super_ultimate_bahamut_full", "url": "/#quest/supporter/305311/1/0/138" }
     }
   },
   "pro": {
@@ -317,7 +325,7 @@
       "raids_s_2": { "url": "/#quest/supporter/305441/28" },
       "raids_s_3": { "url": "/#quest/supporter/305471/28" },
       "raids_i_1": { "url": "/#quest/supporter/305461/28" },
-      "showdown": {"url": "/#quest/supporter/103951/28"},
+      "showdown": { "url": "/#quest/supporter/103951/28" },
       "halo": { "url": "/#quest/supporter/305301/28" }
     }
   },

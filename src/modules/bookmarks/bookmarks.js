@@ -40,15 +40,20 @@ const initializeBookmarks = () => {
 };
 
 const onUrlClick = (event, url) => {
+  const fullUrl = url.startsWith('/') ? `${baseUrl}${url}` : url;
   ({
-    1: () => {
-      tabs.update({ active: true, url });
-      window.close();
-    },
-    2: () => {
-      tabs.create({ url });
-    },
-  })[event.which]();
+    1: openInCurrentTab,
+    2: openInNewTab,
+  })[event.which](fullUrl);
+};
+
+const openInCurrentTab = (url) => {
+  tabs.update({ active: true, url });
+  window.close();
+};
+
+const openInNewTab = (url) => {
+  tabs.create({ url });
 };
 
 const onStoredUrlClick = (event, key) => {
@@ -111,12 +116,30 @@ const getSingleBookmark = (literal, bookmark) => {
   if (bookmark === null) return jQuery(`<li class="option"></li>`);
 
   const { children, element, title, url, urls, urlKey } = bookmark;
+  const clickable = children || url || urlKey;
 
   const bookmarkElement = jQuery(`
-    <li class="option" title="${translate(title || literal)}">
+    <li
+      class="option ${clickable ? 'clickable' : ''}"
+      title="${translate(title || literal)}"
+    >
       ${translate(literal)}
     </li>
   `);
+
+  if (urls) {
+    urls.forEach(({ element, url }, i) => {
+      const childElement = jQuery(`
+        <span class="host-material ${element}" title="${translate(element)}">
+      `);
+      if (!inPreviewMode()) {
+        childElement.mousedown((event) => onUrlClick(event, url));
+      }
+      i % 2 === 0
+        ? bookmarkElement.append(childElement)
+        : bookmarkElement.prepend(childElement);
+    });
+  }
 
   if (children) {
     bookmarkElement.addClass('toggle');
@@ -127,11 +150,10 @@ const getSingleBookmark = (literal, bookmark) => {
 
   if (!inPreviewMode()) {
     if (url) {
-      const fullUrl = url.startsWith('/') ? `${baseUrl}${url}` : url;
-      bookmarkElement.mousedown((event) => onUrlClick(event, fullUrl));
+      bookmarkElement.mousedown((event) => onUrlClick(event, url));
     } else if (urlKey) {
       bookmarkElement.mousedown((event) => onStoredUrlClick(event, urlKey));
-    } else {
+    } else if (!urls) {
       bookmarkElement.mousedown(() => alert(translate('tbi')));
     }
   }
