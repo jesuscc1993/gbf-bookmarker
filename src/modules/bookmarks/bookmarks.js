@@ -83,7 +83,7 @@ const getCustomBookmark = (key) => {
 
     case 'options': {
       const settingsItem = jQuery(`
-        <li class="option">
+        <li class="option clickable">
           <a>${translate('options')}</a>
         </li>
       `);
@@ -153,7 +153,7 @@ const getSingleBookmark = (literal, bookmark) => {
       bookmarkElement.mousedown((event) => onUrlClick(event, url));
     } else if (urlKey) {
       bookmarkElement.mousedown((event) => onStoredUrlClick(event, urlKey));
-    } else if (!urls) {
+    } else if (!(urls || children)) {
       bookmarkElement.mousedown(() => alert(translate('tbi')));
     }
   }
