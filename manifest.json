@@ -41,8 +41,11 @@
     "open-quests": {
       "description": "Open quests"
     },
-    "open-raids": {
-      "description": "Open raids"
+    "open-raid-assist": {
+      "description": "Open raids (backup request)"
+    },
+    "open-raid-list": {
+      "description": "Open raids (list)"
     },
     "open-stage": {
       "description": "Open stage"
