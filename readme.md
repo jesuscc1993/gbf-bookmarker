@@ -48,21 +48,22 @@ There are some special bookmarks that work by saving the latest URL the user vis
 
 ## Shortcuts list
 
-| Action                 | Default shortcut |
-| ---------------------- | ---------------- |
-| Activate the extension | Ctrl + Shift + F |
-| Open arcarum           | Unset            |
-| Open event             | Alt + Shift + E  |
-| Open fate episodes     | Unset            |
-| Open Unite and Fight   | Alt + Shift + G  |
-| Open home              | Unset            |
-| Open inventory         | Unset            |
-| Open party             | Unset            |
-| Open quests            | Unset            |
-| Open raids             | Unset            |
-| Open stage             | Unset            |
-| Open world             | Unset            |
-| Repeat quest           | Alt + Shift + Z  |
+| Action                       | Default shortcut |
+| ---------------------------- | ---------------- |
+| Activate the extension       | Ctrl + Shift + F |
+| Open arcarum                 | Unset            |
+| Open event                   | Alt + Shift + E  |
+| Open fate episodes           | Unset            |
+| Open Unite and Fight         | Alt + Shift + G  |
+| Open home                    | Unset            |
+| Open inventory               | Unset            |
+| Open party                   | Unset            |
+| Open quests                  | Unset            |
+| Open raids (backup requests) | Unset            |
+| Open raids (list)            | Unset            |
+| Open stage                   | Unset            |
+| Open world                   | Unset            |
+| Repeat quest                 | Alt + Shift + Z  |
 
 You can configure the extension shortcuts under URL (chrome://extensions/shortcuts) or via the extension's context menu.
 
