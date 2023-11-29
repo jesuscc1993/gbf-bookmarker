@@ -9,7 +9,7 @@
     "rimraf": "^3.0.2"
   },
   "homepage": "https://github.com/jesuscc1993/gbf-bookmarker#readme",
-  "license": "Creative Commons Attribution Non Commercial 4.0 International",
+  "license": "CC-BY-NC-4.0",
   "main": "index.js",
   "name": "gbf-bookmarker",
   "repository": {
