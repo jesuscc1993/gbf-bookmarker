@@ -3,10 +3,11 @@
   "bugs": {
     "url": "https://github.com/jesuscc1993/gbf-bookmarker/issues"
   },
-  "dependencies": {
+  "description": "Bookmarks ongoing events and more so you do not have to and provides bookmarks to the most useful sections.",
+  "devDependencies": {
+    "copy": "^0.3.2",
     "rimraf": "^3.0.2"
   },
-  "description": "Bookmarks ongoing events and more so you do not have to and provides bookmarks to the most useful sections.",
   "homepage": "https://github.com/jesuscc1993/gbf-bookmarker#readme",
   "main": "index.js",
   "name": "gbf-bookmarker",
@@ -16,7 +17,7 @@
   },
   "scripts": {
     "build": "rimraf build && yarn build-folders && yarn clean-build-folders && yarn copy-build-folders",
-    "build-folders": "rimraf build && mkdir build && cp -r assets build/assets && cp -r src build/src && cp -r vendor build/vendor && cp manifest.json build/manifest.json",
+    "build-folders": "rimraf build && mkdir build && yarn copy assets build/assets && yarn copy src build/src && yarn copy vendor build/vendor && yarn copy manifest.json build/manifest.json",
     "clean-build-folders": "rimraf build/**/*.scss && rimraf build/**/*.css.map && rimraf build/**/*.md",
     "copy-build-folders": "git checkout release && rimraf assets && rimraf src && rimraf vendor && rimraf package.json && mv build/* . && rimraf build"
   },
