@@ -19,7 +19,10 @@
     "build": "rimraf build && yarn build-folders && yarn clean-build-folders && yarn copy-build-folders",
     "build-folders": "rimraf build && mkdir build && yarn copy assets build/assets && yarn copy src build/src && yarn copy vendor build/vendor && yarn copy manifest.json build/manifest.json",
     "clean-build-folders": "rimraf build/**/*.scss && rimraf build/**/*.css.map && rimraf build/**/*.md",
-    "copy-build-folders": "git checkout release && rimraf assets && rimraf src && rimraf vendor && rimraf package.json && mv build/* . && rimraf build"
+    "copy-build-folders": "git checkout release && rimraf assets && rimraf src && rimraf vendor && rimraf package.json && yarn copy build/* . && rimraf build"
+  },
+  "resolutions": {
+    "glob-parent": "^5.1.2"
   },
   "version": "1.0.25"
 }
