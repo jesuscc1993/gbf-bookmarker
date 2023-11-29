@@ -1,0 +1,29 @@
+{
+  "author": "MetalTxus (Jesús Miguel Cruz Cana)",
+  "bugs": {
+    "url": "https://github.com/jesuscc1993/gbf-bookmarker/issues"
+  },
+  "description": "Bookmarks ongoing events and more so you do not have to and provides bookmarks to the most useful sections.",
+  "devDependencies": {
+    "copy": "^0.3.2",
+    "rimraf": "^3.0.2"
+  },
+  "homepage": "https://github.com/jesuscc1993/gbf-bookmarker#readme",
+  "license": "CC BY-NC 4.0",
+  "main": "index.js",
+  "name": "gbf-bookmarker",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesuscc1993/gbf-bookmarker.git"
+  },
+  "resolutions": {
+    "glob-parent": "^5.1.2"
+  },
+  "scripts": {
+    "build": "rimraf build && yarn build-folders && yarn clean-build-folders && yarn copy-build-folders",
+    "build-folders": "rimraf build && mkdir build && yarn copy assets build/assets && yarn copy src build/src && yarn copy vendor build/vendor && yarn copy manifest.json build/manifest.json",
+    "clean-build-folders": "rimraf build/**/*.scss && rimraf build/**/*.css.map && rimraf build/**/*.md",
+    "copy-build-folders": "git checkout release && rimraf assets && rimraf src && rimraf vendor && rimraf package.json && yarn copy build/* . && rimraf build"
+  },
+  "version": "1.0.25"
+}
