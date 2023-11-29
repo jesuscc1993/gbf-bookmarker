@@ -20,6 +20,7 @@
     "glob-parent": "^5.1.2"
   },
   "scripts": {
+    "release": "node scripts/release.js",
     "build": "rimraf build && yarn build-folders && yarn clean-build-folders && yarn copy-build-folders",
     "build-folders": "rimraf build && mkdir build && yarn copy assets build/assets && yarn copy src build/src && yarn copy vendor build/vendor && yarn copy manifest.json build/manifest.json",
     "clean-build-folders": "rimraf build/**/*.scss && rimraf build/**/*.css.map && rimraf build/**/*.md",
