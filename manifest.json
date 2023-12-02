@@ -41,11 +41,14 @@
     "open-quests": {
       "description": "Open quests"
     },
-    "open-raids": {
-      "description": "Open raids"
+    "open-raid-assist": {
+      "description": "Open raids (backup request)"
+    },
+    "open-raid-list": {
+      "description": "Open raids (list)"
     },
     "open-stage": {
-      "description": "Open stage"
+      "description": "Open quest stage"
     },
     "open-guild-wars": {
       "description": "Open Unite and Fight",
@@ -73,5 +76,5 @@
   "name": "GBF Bookmarker",
   "options_page": "src/modules/options/options.html",
   "permissions": ["activeTab", "browsingData", "contextMenus", "notifications", "storage", "tabs"],
-  "version": "1.0.24"
+  "version": "1.0.25"
 }

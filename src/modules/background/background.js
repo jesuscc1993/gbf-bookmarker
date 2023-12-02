@@ -61,7 +61,8 @@ const initializeBackground = () => {
             [ShortcutAction.Inventory]: openInventory,
             [ShortcutAction.Party]: openParty,
             [ShortcutAction.Quests]: openQuests,
-            [ShortcutAction.Raids]: openRaids,
+            [ShortcutAction.RaidList]: openRaidList,
+            [ShortcutAction.RaidAssist]: openRaidAssist,
             [ShortcutAction.RepeatQuest]: repeatQuest,
             [ShortcutAction.Stage]: openStage,
             [ShortcutAction.World]: openWorld,
@@ -119,7 +120,8 @@ const openHome = (tabId) => openUrl(tabId, Urls.Home);
 const openInventory = (tabId) => openUrl(tabId, Urls.Inventory);
 const openParty = (tabId) => openUrl(tabId, Urls.Party);
 const openQuests = (tabId) => openUrl(tabId, Urls.Quest);
-const openRaids = (tabId) => openUrl(tabId, Urls.Raids);
+const openRaidAssist = (tabId) => openUrl(tabId, Urls.RaidAssist);
+const openRaidList = (tabId) => openUrl(tabId, Urls.RaidList);
 const openWorld = (tabId) => openUrl(tabId, Urls.World);
 const openStage = (tabId) => openUrl(tabId, Urls.Stage);
 
@@ -171,7 +173,8 @@ const Urls = {
   Inventory: `https://${targetDomain}/#list`,
   Party: `https://${targetDomain}/#party/index/0/npc/0`,
   Quest: `https://${targetDomain}/#quest`,
-  Raids: `https://${targetDomain}/#quest/assist`,
+  RaidAssist: `https://${targetDomain}/#quest/assist`,
+  RaidList: `https://${targetDomain}/#quest/multi/0`,
   Stage: `https://${targetDomain}/#quest/stage`,
   World: `https://${targetDomain}/#quest/island`,
 
@@ -190,7 +193,8 @@ const ShortcutAction = {
   Inventory: 'open-inventory',
   Party: 'open-party',
   Quests: 'open-quests',
-  Raids: 'open-raids',
+  RaidAssist: 'open-raid-assist',
+  RaidList: 'open-raid-list',
   RepeatQuest: 'repeat-quest',
   Stage: 'open-stage',
   World: 'open-world',

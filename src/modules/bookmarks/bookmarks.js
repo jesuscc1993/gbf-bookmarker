@@ -40,15 +40,20 @@ const initializeBookmarks = () => {
 };
 
 const onUrlClick = (event, url) => {
+  const fullUrl = url.startsWith('/') ? `${baseUrl}${url}` : url;
   ({
-    1: () => {
-      tabs.update({ active: true, url });
-      window.close();
-    },
-    2: () => {
-      tabs.create({ url });
-    },
-  })[event.which]();
+    1: openInCurrentTab,
+    2: openInNewTab,
+  })[event.which](fullUrl);
+};
+
+const openInCurrentTab = (url) => {
+  tabs.update({ active: true, url });
+  window.close();
+};
+
+const openInNewTab = (url) => {
+  tabs.create({ url });
 };
 
 const onStoredUrlClick = (event, key) => {
@@ -77,9 +82,11 @@ const getCustomBookmark = (key) => {
     }
 
     case 'options': {
-      const settingsItem = jQuery(
-        `<li class="option"><a>${translate('options')}</a></li>`,
-      );
+      const settingsItem = jQuery(`
+        <li class="option clickable">
+          <a>${translate('options')}</a>
+        </li>
+      `);
 
       if (!inPreviewMode()) {
         settingsItem.click(() =>
@@ -98,38 +105,69 @@ const getClock = (date, suffix) => {
     timeStyle: 'short',
   });
 
-  return jQuery(
-    `<li class="option disabled"><i>${formattedDate}${
-      suffix ? ` ${suffix}` : ''
-    }</i></li>`,
-  );
+  return jQuery(`
+    <li class="option">
+      <i>${formattedDate}${suffix ? ` ${suffix}` : ''}</i>
+    </li>
+  `);
 };
 
 const getSingleBookmark = (literal, bookmark) => {
   if (bookmark === null) return jQuery(`<li class="option"></li>`);
 
-  const { children, element, title, url, urlKey } = bookmark;
+  const { children, element, title, url, urls, urlKey } = bookmark;
+  const clickable = children || url || urlKey;
+  const disabled = !(clickable || urls);
+  const className = clickable ? 'clickable' : disabled ? 'disabled' : '';
 
-  const bookmarkElement = jQuery(
-    `<li class="option"><a title="${translate(title || literal)}">${translate(
-      literal,
-    )}</a></li>`,
-  );
+  const bookmarkElement = jQuery(`
+    <li
+      class="option ${className}"
+      title="${translate(title || literal)}"
+    >
+      ${translate(literal)}
+    </li>
+  `);
+
+  if (urls) {
+    urls.forEach(({ element, url }, i) => {
+      const clickable = url;
+      const disabled = !clickable;
+      const className = clickable ? 'clickable' : disabled ? 'disabled' : '';
+
+      const childElement = jQuery(`
+        <span
+          class="host-material ${element} ${className}"
+          title="${translate(element)}"
+        >
+      `);
+
+      if (!inPreviewMode()) {
+        if (url) {
+          childElement.mousedown((event) => onUrlClick(event, url));
+        } else if (!url) {
+          childElement.mousedown(() => alert(translate('tbi')));
+        }
+      }
+      i % 2 === 0
+        ? bookmarkElement.append(childElement)
+        : bookmarkElement.prepend(childElement);
+    });
+  }
 
   if (children) {
     bookmarkElement.addClass('toggle');
   }
   if (element) {
-    bookmarkElement.addClass(`${element} element`);
+    bookmarkElement.addClass(element);
   }
 
   if (!inPreviewMode()) {
     if (url) {
-      const fullUrl = url.includes('http') ? url : `${baseUrl}${url}`;
-      bookmarkElement.mousedown((event) => onUrlClick(event, fullUrl));
+      bookmarkElement.mousedown((event) => onUrlClick(event, url));
     } else if (urlKey) {
       bookmarkElement.mousedown((event) => onStoredUrlClick(event, urlKey));
-    } else if (url === '') {
+    } else if (!(urls || children)) {
       bookmarkElement.mousedown(() => alert(translate('tbi')));
     }
   }
