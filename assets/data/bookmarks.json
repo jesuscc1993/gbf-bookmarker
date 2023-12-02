@@ -235,7 +235,8 @@
       "alexiel": { "element": "earth", "url": "/#quest/supporter/303171/1/0/524" },
       "grimnir": { "element": "wind", "url": "/#quest/supporter/303181/1/0/525" },
       "metatron": { "element": "light", "url": "/#quest/supporter/303191/1/0/526" },
-      "avatar": { "element": "dark", "url": "/#quest/supporter/303221/1/0/527" }
+      "avatar": { "element": "dark", "url": "/#quest/supporter/303221/1/0/527" },
+      "rose_queen": { "element": "wind", "url": "/#quest/supporter/300471/1/0/1204" }
     }
   },
   "raids_i_2b": {
@@ -269,6 +270,10 @@
       "anima_animus": { "element": "dark", "title": "anima_animus_full", "urls": [
         { "element": "dark", "url": "/#quest/supporter/305291/1/0/106" },
         { "element": "earth", "url": "/#quest/supporter/305291/1/0/103" }
+      ]},
+      "legion_void": { "element": "fire", "urls": [
+        { "element": "fire", "url": "" },
+        { "element": "wind", "url": "" }
       ]}
     }
   },
@@ -300,8 +305,9 @@
   },
   "raids_i_7": {
     "children": {
-      "lucilius": { "element": "dark", "url": "/#quest/supporter/303281/1/0/537" },
-      "beelzebub": { "element": "dark", "url": "/#quest/supporter/305181/1/0/533" }
+      "lucilius": { "url": "/#quest/supporter/303281/1/0/537" },
+      "beelzebub": { "url": "/#quest/supporter/305181/1/0/533" },
+      "belial": {"url": "" }
     }
   },
   "raids_i_8a": {
@@ -310,13 +316,15 @@
       "diaspora": { "element": "water", "url": "/#quest/supporter/305391/1/0/550" },
       "siegfried": { "element": "earth", "url": "/#quest/supporter/305401/1/0/551" },
       "siete": { "element": "wind", "url": "/#quest/supporter/305411/1/0/552" },
+      "cosmos": { "element": "light", "url": "/#quest/supporter/305421/1/0/553" },
       "agastia": { "element": "dark", "url": "/#quest/supporter/305431/1/0/554" }
     }
   },
   "raids_i_8b": {
     "title": "raids_i_8b_full",
     "children": {
-      "super_ultimate_bahamut": { "element": "dark", "title": "super_ultimate_bahamut_full", "url": "/#quest/supporter/305311/1/0/138" }
+      "super_ultimate_bahamut": { "title": "super_ultimate_bahamut_full", "url": "/#quest/supporter/305311/1/0/138" },
+      "hexachromatic_hierarch": { "title": "hexachromatic_hierarch_full", "url": "/#quest/supporter/305491/1/0/549" }
     }
   },
   "pro": {

@@ -106,7 +106,7 @@ const getClock = (date, suffix) => {
   });
 
   return jQuery(`
-    <li class="option disabled">
+    <li class="option">
       <i>${formattedDate}${suffix ? ` ${suffix}` : ''}</i>
     </li>
   `);
@@ -117,10 +117,12 @@ const getSingleBookmark = (literal, bookmark) => {
 
   const { children, element, title, url, urls, urlKey } = bookmark;
   const clickable = children || url || urlKey;
+  const disabled = !(clickable || urls);
+  const className = clickable ? 'clickable' : disabled ? 'disabled' : '';
 
   const bookmarkElement = jQuery(`
     <li
-      class="option ${clickable ? 'clickable' : ''}"
+      class="option ${className}"
       title="${translate(title || literal)}"
     >
       ${translate(literal)}
@@ -129,11 +131,23 @@ const getSingleBookmark = (literal, bookmark) => {
 
   if (urls) {
     urls.forEach(({ element, url }, i) => {
+      const clickable = url;
+      const disabled = !clickable;
+      const className = clickable ? 'clickable' : disabled ? 'disabled' : '';
+
       const childElement = jQuery(`
-        <span class="host-material ${element}" title="${translate(element)}">
+        <span
+          class="host-material ${element} ${className}"
+          title="${translate(element)}"
+        >
       `);
+
       if (!inPreviewMode()) {
-        childElement.mousedown((event) => onUrlClick(event, url));
+        if (url) {
+          childElement.mousedown((event) => onUrlClick(event, url));
+        } else if (!url) {
+          childElement.mousedown(() => alert(translate('tbi')));
+        }
       }
       i % 2 === 0
         ? bookmarkElement.append(childElement)

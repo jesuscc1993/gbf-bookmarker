@@ -47,10 +47,6 @@ body {
     color: #757575;
 
     &:not(.disabled) {
-      &.clickable {
-        cursor: pointer;
-      }
-
       &:hover {
         filter: brightness(90%);
       }
@@ -63,7 +59,6 @@ body {
 
     .host-material:after {
       content: '●';
-      cursor: pointer;
       display: inline-block;
       padding: 0 4px;
     }
@@ -140,5 +135,13 @@ body {
 
   a {
     text-decoration: none;
+  }
+
+  .clickable {
+    cursor: pointer;
+  }
+
+  .disabled {
+    cursor: not-allowed;
   }
 }
