@@ -1,11 +1,11 @@
 const { exec } = require('child_process');
 
-const execute = (command) => {
-  exec(command, (error) => {
-    if (error) {
-      console.error(error);
-    }
-  });
+const execute = async (command) => {
+  try {
+    await exec(command);
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 exports.execute = execute;
