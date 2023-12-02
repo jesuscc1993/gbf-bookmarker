@@ -1,5 +1,4 @@
-const { copyFileSync, mkdirSync } = require('fs');
-const { sync: rimrafSync } = require('rimraf');
+const { copyFolder, createPath, remove } = require('./file-utils');
 
 const buildPath = 'build';
 const assetsPath = 'assets';
@@ -7,26 +6,28 @@ const srcPath = 'src';
 const vendorPath = 'vendor';
 const manifestPath = 'manifest.json';
 
+const blacklistedExtensions = ['scss', 'css.map'];
+
 const run = () => {
   remove(buildPath);
-  mkdirSync(buildPath);
+  createPath(buildPath);
 
   copyToBuildFolder(assetsPath);
   copyToBuildFolder(manifestPath);
   copyToBuildFolder(srcPath);
   copyToBuildFolder(vendorPath);
+
+  removeBlacklistedFiles();
 };
 
 const copyToBuildFolder = (path) => {
-  copy(path, `${buildPath}/${path}`);
+  copyFolder(`${path}`, `${buildPath}/${path}`);
 };
 
-const copy = (source, destination) => {
-  copyFileSync(source, destination);
-};
-
-const remove = (path) => {
-  rimrafSync(path);
+const removeBlacklistedFiles = () => {
+  blacklistedExtensions.forEach((blacklistedExtension) => {
+    remove(`${buildPath}/**/*.${blacklistedExtension}`);
+  });
 };
 
 run();
