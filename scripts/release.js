@@ -21,7 +21,7 @@ const run = async () => {
 
   removeBlacklistedFiles();
 
-  await execute('git checkout release');
+  execute('git checkout release');
 
   remove(assetsPath);
   remove(manifestPath);

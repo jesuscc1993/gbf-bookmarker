@@ -1,8 +1,8 @@
-const { exec } = require('child_process');
+const { execSync } = require('child_process');
 
-const execute = async (command) => {
+const execute = (command) => {
   try {
-    await exec(command);
+    execSync(command);
   } catch (error) {
     console.error(error);
   }
