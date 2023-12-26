@@ -94,6 +94,22 @@ You can also customize the extension styles, but you will need knowledge of CSS.
 
 - System messages ignore language selection and always display in English
 
+## Q&A
+
+Q1. A link to "X" raid is missing, when are you going to add it?  
+A1. I can only add new raids once their URL becomes known; usually when the "Start Quest" link is added to the wiki. If you are able to start the missing raid, you can provide me with the raid URL (https://game.granbluefantasy.jp/#quest/supporter/XXXXXX/X/X/XX) and I'll add it.
+
+Q2. A link to "X" section is missing.
+A2. Create an issue detailing what section is missing and how to access it and I'll look into adding it.
+
+Q3. Link "X" cannot be configured with a keyboard shortcut.
+A3. Create an issue requesting the shortcut to be added. I can't realistically add them all by hand and I'd be surprised if CHrome had no cap in place.
+
+## Pending raid URLs
+
+- Belial
+- Legion
+
 ## TODO list
 
 - Migrate to TS as this grew too complex for vanilla JS to feel comfortable enough
