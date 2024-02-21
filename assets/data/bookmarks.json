@@ -303,14 +303,15 @@
       "ultimate_bahamut": { "title": "ultimate_bahamut_full", "url": "/#quest/supporter/303141/1/0/136" }
     }
   },
-  "raids_i_7": {
+  "raids_i_7a": {
     "children": {
       "lucilius": { "url": "/#quest/supporter/303281/1/0/537" },
       "beelzebub": { "url": "/#quest/supporter/305181/1/0/533" },
-      "belial": {"url": "" }
+      "belial": {"url": "" },
+      "the_world": {"url": "" }
     }
   },
-  "raids_i_8a": {
+  "raids_i_7b": {
     "children": {
       "mugen": { "element": "fire", "url": "/#quest/supporter/305391/1/0/550" },
       "diaspora": { "element": "water", "url": "/#quest/supporter/305391/1/0/550" },
@@ -320,11 +321,16 @@
       "agastia": { "element": "dark", "url": "/#quest/supporter/305431/1/0/554" }
     }
   },
-  "raids_i_8b": {
-    "title": "raids_i_8b_full",
+  "raids_i_8": {
+    "title": "raids_i_8_full",
     "children": {
-      "super_ultimate_bahamut": { "title": "super_ultimate_bahamut_full", "url": "/#quest/supporter/305311/1/0/138" },
-      "hexachromatic_hierarch": { "title": "hexachromatic_hierarch_full", "url": "/#quest/supporter/305491/1/0/549" }
+      "super_ultimate_bahamut": { "title": "super_ultimate_bahamut_full", "url": "/#quest/supporter/305311/1/0/138" }
+    }
+  },
+  "raids_i_9": {
+    "children": {
+      "hexachromatic_hierarch": { "title": "hexachromatic_hierarch_full", "url": "/#quest/supporter/305491/1/0/549" },
+      "dark_rapture_zero": { "url": "" }
     }
   },
   "pro": {

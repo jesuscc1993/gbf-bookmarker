@@ -108,7 +108,9 @@ A3. Create an issue requesting the shortcut to be added. I can't realistically a
 ## Pending raid URLs
 
 - Belial
+- Dark Rapture Zero
 - Legion
+- The World
 
 ## TODO list
 
