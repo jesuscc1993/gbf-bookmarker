@@ -285,7 +285,13 @@
       "lindwurm": { "url": "/#quest/supporter/305171/1/0/535" }
     }
   },
-  "raids_i_5": {
+  "raids_i_5a": {
+    "children": {
+      "tiamat": { "element": "wind", "url": "/#quest/supporter/305601/1/0/525" },
+      "luminiera": { "element": "light", "url": "/#quest/supporter/305591/1/0/526" }
+    }
+  },
+  "raids_i_5b": {
     "children": {
       "wilnas": { "element": "fire", "url": "/#quest/supporter/305191/1/0/41" },
       "wamdus": { "element": "water", "url": "/#quest/supporter/305201/1/0/42" },
