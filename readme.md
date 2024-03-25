@@ -109,8 +109,7 @@ A3. Create an issue requesting the shortcut to be added. I can't realistically a
 
 - Belial
 - Dark Rapture Zero
-- Legion
-- The World
+- Legion Void
 
 ## TODO list
 
