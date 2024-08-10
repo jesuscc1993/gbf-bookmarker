@@ -17,6 +17,9 @@
         "windows": "Ctrl+Shift+F"
       }
     },
+    "activate-popup": {
+      "description": "Activate as popup"
+    },
     "open-arcarum": {
       "description": "Open arcarum"
     },
@@ -76,5 +79,11 @@
   "name": "GBF Bookmarker",
   "options_page": "src/modules/options/options.html",
   "permissions": ["activeTab", "browsingData", "contextMenus", "notifications", "storage", "tabs"],
-  "version": "1.0.25"
+  "version": "1.0.25",
+  "web_accessible_resources": [
+    {
+      "resources": [ "src/modules/bookmarks/bookmarks.html" ],
+      "matches": [ "https://game.granbluefantasy.jp/*" ]
+    }
+  ]
 }

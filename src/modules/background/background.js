@@ -60,9 +60,10 @@ const initializeBackground = () => {
             [ShortcutAction.Home]: openHome,
             [ShortcutAction.Inventory]: openInventory,
             [ShortcutAction.Party]: openParty,
+            [ShortcutAction.Popup]: openPopup,
             [ShortcutAction.Quests]: openQuests,
-            [ShortcutAction.RaidList]: openRaidList,
             [ShortcutAction.RaidAssist]: openRaidAssist,
+            [ShortcutAction.RaidList]: openRaidList,
             [ShortcutAction.RepeatQuest]: repeatQuest,
             [ShortcutAction.Stage]: openStage,
             [ShortcutAction.World]: openWorld,
@@ -130,6 +131,13 @@ const openDeveloper = () => openTab(Urls.Developer);
 const openIssues = () => openTab(Urls.Issues);
 const openShortcuts = () => openTab(Urls.Shortcuts);
 
+const openPopup = () => {
+  chrome.windows.create({
+    url: chrome.runtime.getURL('src/modules/bookmarks/bookmarks.html'),
+    type: 'popup',
+  });
+};
+
 const openStoredUrl = (tabId, key) => {
   getFromStorage([key]).then((response) => {
     const url = response[key];
@@ -192,6 +200,7 @@ const ShortcutAction = {
   Home: 'open-home',
   Inventory: 'open-inventory',
   Party: 'open-party',
+  Popup: 'activate-popup',
   Quests: 'open-quests',
   RaidAssist: 'open-raid-assist',
   RaidList: 'open-raid-list',
