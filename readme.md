@@ -1,3 +1,7 @@
+**Notice:**  
+I no longer play the game so I will not be updating the bookmarks regularly.  
+Feel free, however, to send the the URL if wou want me to add them and I will.
+
 # GBF Bookmarker
 
 ![Preview](readme_assets/popup.png)
