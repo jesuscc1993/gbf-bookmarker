@@ -32,6 +32,7 @@ const initializeSettingsForm = () => {
   jQuery('#export-settings').click(() => exportSettings());
   jQuery('#import-settings').click(() => importSettings());
   jQuery('#reset-settings').click(() => resetSettings());
+  jQuery('#setup-hotkeys').click(() => setupHotkeys());
   jQuery('#settings-file-input').change(onSettingsFileInputChange);
 
   initializeTranslations().then(() => {
@@ -132,6 +133,10 @@ const changeLanguage = ({ target }) => {
 
 const reloadLanguage = () => {
   setLanguage(getLanguage()).then(() => location.reload());
+};
+
+const setupHotkeys = () => {
+  chrome.tabs.create({ url: 'chrome://extensions/shortcuts' });
 };
 
 const submitSettings = () => {

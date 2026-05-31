@@ -314,7 +314,7 @@
       "lucilius": { "url": "/#quest/supporter/303281/1/0/537" },
       "beelzebub": { "url": "/#quest/supporter/305181/1/0/533" },
       "belial": {"url": "" },
-      "the_world": {"url": "" }
+      "the_world": {"url": "/#quest/supporter/305571/1/0/25070" }
     }
   },
   "raids_i_7b": {
@@ -344,9 +344,17 @@
       "raids_s_1": { "url": "/#quest/supporter/305261/28" },
       "raids_s_2": { "url": "/#quest/supporter/305441/28" },
       "raids_s_3": { "url": "/#quest/supporter/305471/28" },
-      "raids_i_1": { "url": "/#quest/supporter/305461/28" },
+      "raids_i_1": { "url": "/#quest/supporter/305461/28" }
+    }
+  },
+  "pro_solo": {
+    "children": {
       "showdown": { "url": "/#quest/supporter/103951/28" },
-      "halo": { "url": "/#quest/supporter/305301/28" }
+      "clash": { "url": "/#quest/supporter/103991/28" },
+      "halo": { "url": "/#quest/supporter/305301/28" },
+      "primarchs": { "url": "/#quest/supporter/104081/28" },
+      "six_dragons": { "url": "/#quest/supporter/104111/28" },
+      "treasure": { "url": "/#quest/supporter/104191/28" }
     }
   },
   "extra_links": {
